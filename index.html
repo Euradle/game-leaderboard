@@ -255,14 +255,15 @@ function showAch(t){let h=`<div class="tb">`+["⚡ Habilidade","🧭 Exploraçã
 if(t<3){const L=AL.filter(a=>CAT["hec"[t]].includes(a[0]));h+=`<p>${L.filter(a=>SV.a[a[0]]).length}/${L.length} conquistas</p>`+L.map(a=>{const p=PR[a[0]];return`<div class="ar ${SV.a[a[0]]?"":"lk"}"><span>${a[1]}</span><div><b>${a[2]}</b><br><small>${a[3]}</small>${p?bar(...p()):""}</div></div>`}).join("")}
 else h+=`<p><small>✨ 5 vitórias: pisca dourado · 🔊 10: som exclusivo · 💜 20: mapa roxo · 👑 25: título</small></p>`+D.slice().sort((a,b)=>W(b.c)-W(a.c)||a.n.localeCompare(b.n)).map(d=>{const w=W(d.c);return`<div class="ar ${w?"":"lk"}"><span>${fl(d.c)}</span><div><b>${d.n}</b> ${MT.map(m=>`<span class="${w>=m[0]?"":"dm"}">${m[1]}</span>`).join("")}${bar(w,25)}</div></div>`}).join("");
 pn(h)}
-const gu=async n=>{try{return await window.claude.use(n)}catch(e){return null}};
-async function sync(){try{const db=await gu("db"),u=await gu("user");if(!db||!u||!SV.games)return;const id=await u.id();if(!id)return;
-await db.collection("lb").doc(id).set({n:SV.n,w:Object.values(SV.w).reduce((a,b)=>a+b,0),g:SV.games,a:Object.keys(SV.a).length,f:(SV.av||"").startsWith("f:")?SV.av.slice(2):""})}catch(e){}}
+/* ===== RANKING ONLINE (Supabase): preencha as duas linhas abaixo ===== */
+const SB_URL="",SB_KEY="";
+const sbOn=()=>!!(SB_URL&&SB_KEY),sbH={apikey:SB_KEY,Authorization:"Bearer "+SB_KEY,"Content-Type":"application/json"};
+function ids(){if(!SV.uid){const r=()=>crypto.randomUUID?crypto.randomUUID():Math.random().toString(36).slice(2)+Date.now().toString(36);SV.uid=r();SV.k=r();save()}}
+async function sync(){try{if(!sbOn()||!SV.games)return;ids();await fetch(SB_URL+"/rest/v1/rpc/submit",{method:"POST",headers:sbH,body:JSON.stringify({p_id:SV.uid,p_k:SV.k,p_n:SV.n,p_w:tw(),p_g:SV.games,p_a:Object.keys(SV.a).length,p_f:(SV.av||"").startsWith("f:")?SV.av.slice(2):""})})}catch(e){}}
 async function showLB(){chk("rank");pn(`<h2>🌍 Ranking online</h2><p>Carregando…</p>`);
-try{const db=await gu("db"),u=await gu("user");if(!db||!u)throw 0;const id=await u.id();await sync();
-const q=await db.collection("lb").orderBy("w","desc").limit(20).get();
-pn(`<h2>🌍 Ranking online</h2><p><small>Maiores vencedores (por vitórias). Sua pontuação é enviada ao fim de cada partida.</small></p>`+(q.empty?"<p>Ninguém no ranking ainda. Jogue uma partida!</p>":q.docs.map((d,i)=>{const x=d.data();return`<div class="ar" style="${d.id==id?"border:2px solid var(--ac)":""}"><b>${["🥇","🥈","🥉"][i]||(i+1)+"º"}</b><span>${/^[A-Z]{2}$/.test(x.f||"")?fl(x.f):"🙂"}</span><div><b>${esc(String(x.n||"?")).slice(0,16)}</b><br><small>${+x.w||0} vitórias · ${+x.g||0} partidas · 🏆 ${+x.a||0}</small></div></div>`}).join("")))}
-catch(e){pn(`<h2>🌍 Ranking online</h2><p>O ranking não está disponível agora. Ele funciona para quem abre o jogo logado no claude.ai, com acesso a esta página.</p>`)}}
+try{if(!sbOn())throw 1;ids();await sync();const r=await fetch(SB_URL+"/rest/v1/ranking?select=*&order=w.desc&limit=20",{headers:sbH});if(!r.ok)throw 2;const q=await r.json();
+pn(`<h2>🌍 Ranking online</h2><p><small>Maiores vencedores (por vitórias). Sua pontuação é enviada ao fim de cada partida.</small></p>`+(!q.length?"<p>Ninguém no ranking ainda. Jogue uma partida!</p>":q.map((x,i)=>`<div class="ar" style="${x.id==SV.uid?"border:2px solid var(--ac)":""}"><b>${["🥇","🥈","🥉"][i]||(i+1)+"º"}</b><span>${/^[A-Z]{2}$/.test(x.f||"")?fl(x.f):"🙂"}</span><div><b>${esc(String(x.n||"?")).slice(0,16)}</b><br><small>${+x.w||0} vitórias · ${+x.g||0} partidas · 🏆 ${+x.a||0}</small></div></div>`).join("")))}
+catch(e){pn(`<h2>🌍 Ranking online</h2><p>${e===1?"O ranking ainda não foi configurado nesta cópia do jogo.":"Não foi possível carregar o ranking agora. Tente novamente em instantes."}</p>`)}}
 let TO=false,AO=false;
 function av(z){const a=SV.av||"",st=`width:${z}px;height:${z}px;border-radius:50%;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;background:var(--land);font-size:${z*.6}px;vertical-align:middle`;
 return a.startsWith("data:")?`<span style="${st}"><img src="${a}" style="width:100%;height:100%;object-fit:cover"></span>`:`<span style="${st}">${a.startsWith("f:")?fl(a.slice(2)):"🙂"}</span>`}
