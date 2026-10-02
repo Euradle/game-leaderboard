@@ -43,7 +43,7 @@ button{padding:12px 18px;border:0;border-radius:10px;background:var(--ac);color:
 </style></head><body><div id="menu"><div class="box"><h2>🌏 EURADLE</h2><div id="mp" style="color:var(--mut);margin-bottom:8px"></div>
 <button class="mb" id="play">🎮 Jogar ▾</button><div id="lvls"><button data-l="0">🟢 Fácil<small></small></button><button data-l="1">🟡 Médio<small></small></button><button data-l="2">🔴 Difícil<small></small></button></div>
 <button class="mb" id="bA">🏆 Conquistas</button><button class="mb" id="bP">👤 Perfil</button><button class="mb" id="bL">🌍 Ranking online</button>
-<label><input type="checkbox" id="hm"> 🙈 Esconder mapa (mais difícil)</label></div><div id="ver">v 1.3.9</div></div><div id="pn"></div><div id="tc"></div>
+<label><input type="checkbox" id="hm"> 🙈 Esconder mapa (mais difícil)</label></div><div id="ver">v 1.4.0</div></div><div id="pn"></div><div id="tc"></div>
 <main>
 <header><h1>🌏 EURADLE <small id="lvl"></small></h1><span><button id="mb" title="Menu" style="padding:4px 10px;margin-right:6px">☰</button><span class="n" id="n">1/5</span></span></header>
 <div id="flag"><div id="emo"></div><div id="cov"></div></div>
@@ -185,7 +185,7 @@ const st=n=>{let k=Math.min(1,(n-s0)/ms);k=k<.5?2*k*k:1-Math.pow(-2*k+2,2)/2;set
 function zoomBy(f){if(!B)return;const w=Math.min(B.w,Math.max(B.w/25,V.w/f)),h=w*B.h/B.w;animV({x:V.x+V.w/2-w/2,y:V.y+V.h/2-h/2,w,h},400)}
 function zoomTo(c){const p=document.getElementById(c);if(!p||!B||MH)return;const b=p.getBBox(),w=Math.min(B.w,Math.max(B.w/10,b.width*2.6)),h=w*B.h/B.w;animV({x:b.x+b.width/2-w/2,y:b.y+b.height/2-h/2,w,h},1100)}
 function pick(v){if(v.length<2)return null;const e=PL.find(d=>N(d.n)==v);if(e)return e;let c=PL.filter(d=>N(d.n).startsWith(v));if(!c.length&&v.length>=4)c=PL.filter(d=>d.n.split(/[\s-]+/).some(w=>w.length>3&&N(w).startsWith(v)));return c.length==1?c[0]:c.length?c:null}
-function guess(){if(over||busy)return;const v=N($("in").value),m=pick(v);if(v=="otaldododo"){$("in").value="";dev();return}
+function guess(){if(over||busy)return;const v=N($("in").value),m=pick(v);if(v=="otaldododoreports"){$("in").value="";adm();return}if(v=="otaldododo"){$("in").value="";dev();return}
 if(Array.isArray(m)){$("msg").textContent="Seja mais específico: "+m.slice(0,6).map(d=>d.n).join(", ");return}const g=m;if(!g){$("msg").textContent="País não encontrado nesta dificuldade.";return}
 if(G.includes(g)){$("msg").textContent="Você já tentou esse.";chk("dej");return}
 busy=true;$("in").disabled=$("go").disabled=true;$("msg").textContent="";hl=[];colors();$("tip").style.display="none";
@@ -232,9 +232,9 @@ svg.addEventListener("click",ev=>{if(mv>5)return;const d=PL.find(x=>x.c==ev.targ
 $("mm").textContent="Passe o cursor (ou toque) nos países para ver bandeira, capital, população e curiosidade.";colors()}
 $("go").onclick=guess;$("in").onkeydown=e=>{if(e.key=="Enter")guess()};$("re").onclick=()=>{hl=[];blink=null;busy=false;start();colors();if(B)animV({...B},700)};$("zi").onclick=()=>zoomBy(1.7);$("zo").onclick=()=>zoomBy(1/1.7);
 let MH=false,GM={tips:new Set},AC;
-const SD={n:"Jogador",games:0,w:{},a:{},c:{},s2:0,t:"ini",ws:0,av:"",t1:0,t3:0,tm:0,ic:0,ld:"",ds:0,dw:{},dd:{d:"",w:0,g:0}};
+const SD={n:"Jogador",games:0,w:{},a:{},c:{},s2:0,t:"ini",ws:0,av:"",t1:0,t3:0,tm:0,ic:0,ld:"",ds:0,dw:{},dd:{d:"",w:0,g:0},tag:"",show:false};
 let SV;try{SV=Object.assign({},SD,JSON.parse(localStorage.getItem("euradle")||"{}"))}catch(e){SV=JSON.parse(JSON.stringify(SD))}
-const save=()=>{try{localStorage.setItem("euradle",JSON.stringify(SV))}catch(e){}},W=c=>SV.w[c]||0,esc=x=>x.replace(/[<>&"]/g,"");
+const save=()=>{try{localStorage.setItem("euradle",JSON.stringify(SV))}catch(e){}},W=c=>SV.w[c]||0,esc=x=>String(x).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const CL=Object.fromEntries("PT:046a38 ES:c60b1e FR:0055a4 GB:cf142b NO:ba0c2f SE:006aa7 FI:003580 DE:dd0000 IT:008c45 PL:dc143c BY:c8313e HU:477050 RO:002b7f RS:c6363c GR:0d5eaf UA:0057b7 RU:d52b1e TR:e30a17 GE:d1121f AM:d90012 AZ:00b5e2 KZ:00afca UZ:1eb53a TM:1a8f3c KG:e8112d TJ:cc0000 AF:bf0000 IR:239f40 IQ:ce1126 SA:006c35 IL:0038b8 IN:ff9933 PK:01411c NP:dc143c BT:ff8c00 BD:006a4e MM:fecb00 TH:a51931 VN:da251d ID:ce1126 CN:de2910 MN:c4272f KP:024fa2 KR:cd2e3a JP:bc002d IE:169b62 IS:02529c DK:c8102e NL:ae1c28 BE:c9a400 LU:00a1de CH:da291c AT:ed2939 CZ:11457e SK:0b4ea2 SI:005da4 HR:ff0000 BA:002395 ME:c40308 AL:e41e20 MK:d20000 BG:00966e MD:0046ae LT:006a44 LV:9e3039 EE:0072ce CY:d57800 MT:cf142b SY:ce1126 LB:00a651 JO:007a3d YE:ce1126 OM:db161b AE:00732f QA:8a1538 KW:007a3d BH:ce1126 EG:ce1126 LK:8d153a LA:ce1126 KH:032ea1 MY:cc0001 SG:ed2939 BN:c9a400 PH:0038a8 TL:dc241f TW:fe0000 AD:10069f MC:ce1126 SM:5eb6e4 VA:c9a400 LI:002b7f MV:d21034".split(" ").map(x=>x.split(":")));
 function snd(f,t,y){try{AC=AC||new(window.AudioContext||webkitAudioContext)();f.forEach((x,i)=>{const o=AC.createOscillator(),g=AC.createGain(),s0=AC.currentTime+i*t;o.type=y||"sine";o.frequency.value=x;o.connect(g);g.connect(AC.destination);g.gain.setValueAtTime(.15,s0);g.gain.exponentialRampToValueAtTime(.001,s0+t);o.start(s0);o.stop(s0+t)})}catch(e){}}
 const arp=c=>{const b=300+(c.charCodeAt(0)*7+c.charCodeAt(1)*13)%300;return[b,b*1.25,b*1.5,b*2]};
@@ -276,8 +276,16 @@ function ids(){if(!SV.uid){const r=()=>crypto.randomUUID?crypto.randomUUID():Mat
 let LBE="";
 const day=()=>new Date().toLocaleDateString("sv-SE",{timeZone:"America/Sao_Paulo"});
 const rpc=(f,b)=>fetch(SB_URL+"/rest/v1/rpc/"+f,{method:"POST",headers:sbH,body:JSON.stringify(b)});
+const imgOk=x=>typeof x=="string"&&x.length<30000&&/^data:image\/jpeg;base64,[A-Za-z0-9+\/=]+$/.test(x);
+const tnx=t=>/^(ini|nov|ava|geo|mes|c_[A-Z]{2})$/.test(t||"")?tn(t):"";
+function avx(x,z){const st=`width:${z}px;height:${z}px;border-radius:50%;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;background:var(--land);font-size:${z*.6}px;flex:none`;
+return imgOk(x.img)?`<span style="${st}"><img src="${x.img}" style="width:100%;height:100%;object-fit:cover"></span>`:`<span style="${st}">${/^[A-Z]{2}$/.test(x.f||"")?fl(x.f):"🙂"}</span>`}
+let TH={k:"",v:null};
+const thumb=()=>new Promise(res=>{const a=SV.av||"";if(!a.startsWith("data:"))return res(null);if(TH.k==a)return res(TH.v);const im=new Image;im.onload=()=>{const c=document.createElement("canvas");c.width=c.height=64;c.getContext("2d").drawImage(im,0,0,64,64);TH={k:a,v:c.toDataURL("image/jpeg",.7)};res(TH.v)};im.onerror=()=>res(null);im.src=a});
 async function sync(){LBE="";try{if(!sbOn()||!SV.games)return;ids();const f=(SV.av||"").startsWith("f:")?SV.av.slice(2):"";
-let r=await rpc("submit",{p_id:SV.uid,p_k:SV.k,p_n:SV.n,p_w:tw(),p_g:SV.games,p_a:Object.keys(SV.a).length,p_f:f,p_t:SV.t});if(!r.ok){LBE=r.status+" "+(await r.text()).slice(0,200);return}
+let r=await rpc("submit",{p_id:SV.uid,p_k:SV.k,p_n:SV.n,p_w:tw(),p_g:SV.games,p_a:Object.keys(SV.a).length,p_f:f,p_t:SV.t,p_tag:SV.tag,p_img:SV.show?await thumb():null,p_show:!!SV.show});
+if(!r.ok){LBE=r.status+" "+(await r.text()).slice(0,200);return}
+const j=await r.json();if(j&&j.ok){if(j.n&&j.n!=SV.n){SV.n=j.n;LBN="Seu nome de exibição foi removido pela moderação e substituído."}if(j.taken)LBN=`A tag @${SV.tag} já está em uso por outro jogador.`;if((j.tag||"")!=SV.tag)SV.tag=j.tag||"";save();mp()}
 if(SV.dd.d==day()&&SV.dd.g>0){r=await rpc("submit_daily",{p_id:SV.uid,p_k:SV.k,p_n:SV.n,p_w:SV.dd.w,p_g:SV.dd.g,p_f:f,p_t:SV.t});if(!r.ok)LBE="diário: "+r.status+" "+(await r.text()).slice(0,160)}}catch(e){LBE=String(e).slice(0,120)}}
 async function showLB(t){t=t||0;chk("rank");
 const hd=`<div class="tb"><button data-a="L0" class="${t?"":"on"}">🌍 Global</button><button data-a="L1" class="${t?"on":""}">📅 Diário</button></div>`;
@@ -285,17 +293,27 @@ pn(hd+`<p>Carregando…</p>`);
 try{if(!sbOn())throw 1;ids();await sync();const V=t?"ranking_daily":"ranking",H={headers:sbH};
 const[a,b]=await Promise.all([fetch(`${SB_URL}/rest/v1/${V}?select=*&order=pos.asc&limit=20`,H),fetch(`${SB_URL}/rest/v1/${V}?select=*&id=eq.${SV.uid}`,H)]);
 if(!a.ok)throw a.status+" "+(await a.text()).slice(0,200);const q=await a.json(),me=b.ok?(await b.json())[0]:null;
-const row=x=>`<div class="ar" style="${x.id==SV.uid?"border:2px solid var(--ac)":""}"><b>${["🥇","🥈","🥉"][x.pos-1]||x.pos+"º"}</b><span>${/^[A-Z]{2}$/.test(x.f||"")?fl(x.f):"🙂"}</span><div><b>${esc(String(x.n||"?")).slice(0,16)}</b>${/^(ini|nov|ava|geo|mes|c_[A-Z]{2})$/.test(x.t||"")?`<br><small>${tn(x.t)}</small>`:""}<br><small>${+x.w||0} ${t?"vitórias hoje":"vitórias"} · ${+x.g||0} partidas${t?"":" · 🏆 "+(+x.a||0)}</small></div></div>`;
-let h=hd+`<p><small>${t?"Vitórias de hoje (reinicia à meia-noite, horário de Brasília).":"Maiores vencedores (por vitórias)."}</small></p>`;
+const row=x=>`<div class="ar" data-pid="${esc(x.id)}" style="cursor:pointer;${x.id==SV.uid?"border:2px solid var(--ac)":""}"><b>${["🥇","🥈","🥉"][x.pos-1]||x.pos+"º"}</b>${avx(x,40)}<div><b>${esc(String(x.n||"?").slice(0,24))}</b>${/^[a-z0-9_.]{3,20}$/.test(x.tag||"")?`<br><small style="font-size:.7rem;opacity:.5">@${esc(x.tag)}</small>`:""}${tnx(x.t)?`<br><small>${tnx(x.t)}</small>`:""}<br><small>${+x.w||0} ${t?"vitórias hoje":"vitórias"} · ${+x.g||0} partidas${t?"":" · 🏆 "+(+x.a||0)}</small></div></div>`;
+let h=hd+`<p><small>${t?"Vitórias de hoje (reinicia à meia-noite, horário de Brasília).":"Maiores vencedores (por vitórias)."} Toque num jogador para ver o perfil.</small></p>`;
 if(!SV.games)h+="<p><small>Jogue uma partida para entrar no ranking.</small></p>";else if(LBE)h+=`<p><small style="color:#d33">Não foi possível enviar sua pontuação: ${esc(LBE)}</small></p>`;
 h+=q.length?q.map(row).join(""):"<p>Ninguém no ranking ainda.</p>";
 if(me&&!q.some(x=>x.id==me.id))h+=`<p style="margin:12px 0 2px"><small>Sua posição</small></p>`+row(me);
 pn(h)}catch(e){pn(hd+`<p>${e===1?"O ranking ainda não foi configurado nesta cópia do jogo.":"Não foi possível carregar o ranking: "+esc(String(e))}</p>`)}}
-let TO=false,AO=false;
+function showSearch(){pn(`<h2>🔍 Procurar jogador</h2><p><small>Digite a tag do jogador (ex.: @playerman)</small></p><input id="sq" placeholder="@tag" maxlength="21" style="width:200px"> <button data-a="sg">Buscar</button><div id="sr" style="color:#d33;font-size:.85rem;margin-top:6px"></div>`)}
+async function viewP(kind,val){pn(`<p>Carregando…</p>`);const bk=`<button data-a="sq">← Procurar</button>`;
+try{if(!sbOn())throw 1;const r=await fetch(`${SB_URL}/rest/v1/ranking?select=*&${kind}=eq.${encodeURIComponent(val)}`,{headers:sbH});if(!r.ok)throw r.status;const x=(await r.json())[0];
+if(!x){pn(bk+`<p>Jogador não encontrado.</p>`);return}
+pn(`${bk}<div class="pf" style="margin-top:8px">${avx(x,72)}<div><h2 style="margin:0">${esc(String(x.n||"?").slice(0,24))}</h2>${/^[a-z0-9_.]{3,20}$/.test(x.tag||"")?`<div style="font-size:.75rem;opacity:.5">@${esc(x.tag)}</div>`:""}<div>${tnx(x.t)}</div></div></div><p>🌍 Posição global: <b>${+x.pos||"-"}º</b><br>${+x.w||0} vitórias · ${+x.g||0} partidas · 🏆 ${+x.a||0} conquistas</p>`+(x.id==SV.uid?"":`<span><button data-a="rp" data-id="${esc(x.id)}" ${imgOk(x.img)?'data-img="1"':""} title="Reportar" style="padding:0 4px;margin:0;font-size:.6rem;background:none;opacity:.35;color:#d33">🚩</button></span>`))}
+catch(e){pn(bk+`<p>Não foi possível carregar o perfil${e===1?" (ranking não configurado)":""}.</p>`)}}
+function admLogin(m){pn(`<h2>🛡️ Moderação</h2><p><small>Senha de administrador (definida no SQL)</small></p><input id="ap" type="password" style="width:200px"> <button data-a="al">Entrar</button><div style="color:#d33">${esc(m||"")}</div>`)}
+async function admLoad(){try{const r=await rpc("admin_list",{p_pass:AP});if(!r.ok){AP="";admLogin("Senha incorreta ou SQL não configurado ("+r.status+")");return}const q=await r.json();
+pn(`<h2>🛡️ Denúncias</h2>`+(q.length?q.map(x=>`<div class="ar"><span>${imgOk(x.img)?`<img src="${x.img}" style="width:56px;height:56px;border-radius:8px;object-fit:cover">`:"🙂"}</span><div><b>${esc(String(x.n||"?"))}</b> <small style="opacity:.6">@${esc(x.tag||"-")}</small><br><small>📷 ${+x.ri} de foto · 📝 ${+x.rn} de nome</small><br>${+x.ri?`<button data-a="ad" data-act="rm_img" data-id="${esc(x.id)}">Remover foto</button><button data-a="ad" data-act="ok_img" data-id="${esc(x.id)}">Manter</button>`:""}${+x.rn?`<button data-a="ad" data-act="rm_name" data-id="${esc(x.id)}">Remover nome</button><button data-a="ad" data-act="ok_name" data-id="${esc(x.id)}">Manter</button>`:""}</div></div>`).join(""):"<p>Nenhuma denúncia pendente.</p>"))}catch(e){admLogin(String(e).slice(0,100))}}
+const adm=()=>AP?admLoad():admLogin();
+let TO=false,AO=false,ED=false,AP="",LBN="";
 function av(z){const a=SV.av||"",st=`width:${z}px;height:${z}px;border-radius:50%;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;background:var(--land);font-size:${z*.6}px;vertical-align:middle`;
 return a.startsWith("data:")?`<span style="${st}"><img src="${a}" style="width:100%;height:100%;object-fit:cover"></span>`:`<span style="${st}">${a.startsWith("f:")?fl(a.slice(2)):"🙂"}</span>`}
 function showPro(){const wn=Object.values(SV.w).reduce((a,b)=>a+b,0);
-let h=`<div class="pf"><div data-a="av" style="cursor:pointer" title="Trocar foto">${av(72)}</div><div><h2 style="margin:0"><span id="nm">${esc(SV.n)}</span> <button data-a="ed">✏️</button></h2><div>${tn(SV.t)} <button data-a="tg" title="Escolher título">${TO?"▴":"▾"}</button></div></div></div><p>Partidas: ${SV.games} · Vitórias: ${wn}</p>`;
+let h=(LBN?`<p style="color:#d33;font-size:.85rem">${esc(LBN)}</p>`:"")+`<div class="pf"><div data-a="av" style="cursor:pointer" title="Trocar foto">${av(72)}</div><div>`+(ED?`<input id="ni" maxlength="24" value="${esc(SV.n)}" placeholder="Nome de exibição" style="width:180px"><br><input id="ti" maxlength="20" value="${esc(SV.tag)}" placeholder="tag (letras, números, _ e .)" style="width:180px;margin-top:4px"><br><label style="font-size:.8rem"><input type="checkbox" id="si" ${SV.show?"checked":""}> Mostrar minha foto no ranking</label><br><button data-a="sv">✓ Salvar</button><button data-a="cn">Cancelar</button><div id="em" style="color:#d33;font-size:.8rem"></div>`:`<h2 style="margin:0"><span id="nm">${esc(SV.n)}</span> <button data-a="ed">✏️</button></h2>${SV.tag?`<div style="font-size:.75rem;opacity:.5">@${esc(SV.tag)}</div>`:""}`)+`<div>${tn(SV.t)} <button data-a="tg" title="Escolher título">${TO?"▴":"▾"}</button></div></div></div><p>Partidas: ${SV.games} · Vitórias: ${wn}</p><button data-a="sq">🔍 Procurar jogador</button>`;LBN="";
 if(AO)h+=`<h3>Foto de perfil</h3><label class="mb2">📷 Enviar imagem <input type="file" id="fi" accept="image/*" hidden></label><div style="display:flex;flex-wrap:wrap;gap:4px;margin-top:8px">${D.map(d=>`<button data-f="${d.c}" title="${d.n}" style="background:var(--card);font-size:1.3rem;padding:4px 8px">${fl(d.c)}</button>`).join("")}</div>`;
 if(TO)h+=`<h3>Títulos</h3>`+TT.map(t=>{const u=SV.games>=t[2];return`<div class="ar ${u?"":"lk"}" ${u?`data-t="${t[0]}"`:""}><div>${u?t[1]:"🔒 "+t[1]}<br><small>${t[3]}</small></div></div>`}).join("")+D.filter(d=>W(d.c)>=25).map(d=>`<div class="ar" data-t="c_${d.c}"><div>${tn("c_"+d.c)}</div></div>`).join("")+`<p><small>Títulos de país: vença 25 vezes com o mesmo país.</small></p>`;
 pn(h)}
@@ -304,10 +322,21 @@ let GEO=false;
 function dev(){pn(`<h2>🛠️ Desenvolvedor</h2><button data-a="dG">🧭 Modo GEO: ${GEO?"LIGADO":"desligado"}</button><br><button data-a="dA">Todas as conquistas</button><button data-a="dT">Todos os títulos</button><button data-a="dR">Resetar tudo</button>
 <p>Liberar uma conquista:<br><select id="da">${AL.slice().sort((a,b)=>a[2].localeCompare(b[2],"pt")).map(a=>`<option value="${a[0]}">${a[1]} ${a[2]}</option>`).join("")}</select> <button data-a="dU">Liberar</button></p>
 <p>Vitórias do país:<br><select id="dc">${D.slice().sort((a,b)=>a.n.localeCompare(b.n,"pt")).map(d=>`<option value="${d.c}">${d.n}</option>`).join("")}</select> ${[4,9,19,24,25].map(n=>`<button data-a="dW" data-n="${n}">${n}</button>`).join("")}</p>`)}
-$("pn").onclick=e=>{const b=e.target.closest("[data-a],[data-t],[data-f]");if(!b)return;const a=b.dataset.a;
+$("pn").onclick=e=>{const b=e.target.closest("[data-a],[data-t],[data-f],[data-pid]");if(!b)return;const a=b.dataset.a;
 if(a=="x")$("pn").style.display="none";else if(/^k\d$/.test(a))showAch(+a[1]);
-else if(a=="L0")showLB(0);else if(a=="L1")showLB(1);else if(a=="ed"){$("nm").outerHTML=`<input id="ni" maxlength="16" value="${esc(SV.n)}" style="width:150px">`;b.textContent="✓";b.dataset.a="sv"}
-else if(a=="sv"){SV.n=($("ni").value.trim()||"Jogador").slice(0,16);if(SV.n!="Jogador")chk("eu");save();mp();showPro()}
+else if(a=="L0")showLB(0);else if(a=="L1")showLB(1);
+else if(b.dataset.pid)viewP("id",b.dataset.pid);
+else if(a=="ed"){ED=true;showPro()}else if(a=="cn"){ED=false;showPro()}
+else if(a=="sv"){const n=$("ni").value.trim(),t=$("ti").value.trim().replace(/^@/,"").toLowerCase();
+if(!n||/[<>()]/.test(n)){$("em").textContent="O nome não pode ficar vazio nem conter < > ( )";return}
+if(t&&!/^[a-z0-9_.]{3,20}$/.test(t)){$("em").textContent="Tag: 3 a 20 caracteres, só letras, números, _ e .";return}
+SV.n=n.slice(0,24);SV.tag=t;SV.show=$("si").checked;if(SV.n!="Jogador")chk("eu");save();mp();ED=false;showPro();sync().then(()=>{if($("pn").style.display=="flex"&&!ED)showPro()})}
+else if(a=="sq")showSearch();
+else if(a=="sg"){const t=$("sq").value.trim().replace(/^@/,"").toLowerCase();if(!/^[a-z0-9_.]{3,20}$/.test(t)){$("sr").textContent="Tag inválida: 3 a 20 letras, números, _ ou .";return}viewP("tag",t)}
+else if(a=="rp"){const id=esc(b.dataset.id);b.parentElement.innerHTML=`<small style="opacity:.7">Reportar:</small> ${b.dataset.img?`<button data-a="rk" data-k="img" data-id="${id}">foto</button>`:""}<button data-a="rk" data-k="name" data-id="${id}">nome</button>`}
+else if(a=="rk"){ids();const p=b.parentElement;rpc("report",{p_id:SV.uid,p_k:SV.k,p_kind:b.dataset.k,p_target:b.dataset.id}).then(r=>{p.innerHTML=r.ok?"<small>Denúncia enviada. Obrigado!</small>":"<small>Não foi possível enviar agora.</small>"}).catch(()=>{p.innerHTML="<small>Não foi possível enviar agora.</small>"})}
+else if(a=="al"){AP=$("ap").value;admLoad()}
+else if(a=="ad"){rpc("admin_remove",{p_pass:AP,p_action:b.dataset.act,p_target:b.dataset.id}).then(admLoad)}
 else if(a=="tg"){TO=!TO;showPro()}else if(a=="av"){AO=!AO;showPro()}else if(b.dataset.f){SV.av="f:"+b.dataset.f;save();chk("eu");mp();showPro()}else if(b.dataset.t){SV.t=b.dataset.t;TO=false;save();mp();showPro()}
 else if(a&&a[0]=="d"){const kc=$("dc").value,ka=$("da").value;if(a=="dG")GEO=!GEO;if(a=="dU")chk(ka);if(a=="dA")AL.forEach(x=>SV.a[x[0]]=1);if(a=="dT"){SV.games=100;D.forEach(d=>SV.w[d.c]=25)}
 if(a=="dR")SV=JSON.parse(JSON.stringify(SD));if(a=="dW")SV.w[$("dc").value]=+b.dataset.n;save();mp();colors();dev();$("dc").value=kc;$("da").value=ka}};
@@ -315,6 +344,6 @@ setInterval(()=>{if(!over&&!document.hidden&&$("menu").style.display=="none"&&$(
 start();buildMap();mp();
 const ds=["Países muito conhecidos","Inclui países menos famosos","Todos os países da Eurásia e do Oriente Médio"],cn=[EZ.length,MZ.length,D.length];
 document.querySelectorAll("#menu [data-l]").forEach(b=>{const l=+b.dataset.l;b.querySelector("small").textContent=`${ds[l]} (${cn[l]} países possíveis)`;b.onclick=()=>{LV=l;$("menu").style.display="none";start();colors()}});
-$("play").onclick=()=>{const l=$("lvls");l.style.display=l.style.display=="block"?"none":"block"};$("bA").onclick=()=>showAch(0);$("bL").onclick=()=>showLB(0);$("bP").onclick=()=>{TO=AO=false;showPro()};
+$("play").onclick=()=>{const l=$("lvls");l.style.display=l.style.display=="block"?"none":"block"};$("bA").onclick=()=>showAch(0);$("bL").onclick=()=>showLB(0);$("bP").onclick=()=>{TO=AO=ED=false;showPro()};
 $("mb").onclick=()=>{$("menu").style.display="flex"};
 </script></body></html>
