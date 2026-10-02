@@ -256,7 +256,7 @@ if(t<3){const L=AL.filter(a=>CAT["hec"[t]].includes(a[0]));h+=`<p>${L.filter(a=>
 else h+=`<p><small>✨ 5 vitórias: pisca dourado · 🔊 10: som exclusivo · 💜 20: mapa roxo · 👑 25: título</small></p>`+D.slice().sort((a,b)=>W(b.c)-W(a.c)||a.n.localeCompare(b.n)).map(d=>{const w=W(d.c);return`<div class="ar ${w?"":"lk"}"><span>${fl(d.c)}</span><div><b>${d.n}</b> ${MT.map(m=>`<span class="${w>=m[0]?"":"dm"}">${m[1]}</span>`).join("")}${bar(w,25)}</div></div>`}).join("");
 pn(h)}
 /* ===== RANKING ONLINE (Supabase): preencha as duas linhas abaixo ===== */
-const SB_URL="https://fzfjipjgyaixpgltngkx.supabase.co/rest/v1/",SB_KEY="sb_publishable_vnhkADIvdN-wn2fqJQ3fNg_ASFERuCA";
+const SB_URL="https://fzfjipjgyaixpgltngkx.supabase.co/rest/v1/",SB_KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ6ZmppcGpneWFpeHBnbHRuZ2t4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTA5NTQyMjYsImV4cCI6MjEwNjUzMDIyNn0.jYVbNcv5N1-Scyh1UZn51a8LSMdEXO_kEAwoKT5B9zYA";
 const sbOn=()=>!!(SB_URL&&SB_KEY),sbH={apikey:SB_KEY,...(SB_KEY.startsWith("eyJ")?{Authorization:"Bearer "+SB_KEY}:{}),"Content-Type":"application/json"};
 function ids(){if(!SV.uid){const r=()=>crypto.randomUUID?crypto.randomUUID():Math.random().toString(36).slice(2)+Date.now().toString(36);SV.uid=r();SV.k=r();save()}}
 async function sync(){try{if(!sbOn()||!SV.games)return;ids();await fetch(SB_URL+"/rest/v1/rpc/submit",{method:"POST",headers:sbH,body:JSON.stringify({p_id:SV.uid,p_k:SV.k,p_n:SV.n,p_w:tw(),p_g:SV.games,p_a:Object.keys(SV.a).length,p_f:(SV.av||"").startsWith("f:")?SV.av.slice(2):""})})}catch(e){}}
