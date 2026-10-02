@@ -43,7 +43,7 @@ button{padding:12px 18px;border:0;border-radius:10px;background:var(--ac);color:
 </style></head><body><div id="menu"><div class="box"><h2>🌏 EURADLE</h2><div id="mp" style="color:var(--mut);margin-bottom:8px"></div>
 <button class="mb" id="play">🎮 Jogar ▾</button><div id="lvls"><button data-l="0">🟢 Fácil<small></small></button><button data-l="1">🟡 Médio<small></small></button><button data-l="2">🔴 Difícil<small></small></button></div>
 <button class="mb" id="bA">🏆 Conquistas</button><button class="mb" id="bP">👤 Perfil</button><button class="mb" id="bL">🌍 Ranking online</button>
-<label><input type="checkbox" id="hm"> 🙈 Esconder mapa (mais difícil)</label></div><div id="ver">v 1.3.8</div></div><div id="pn"></div><div id="tc"></div>
+<label><input type="checkbox" id="hm"> 🙈 Esconder mapa (mais difícil)</label></div><div id="ver">v 1.3.9</div></div><div id="pn"></div><div id="tc"></div>
 <main>
 <header><h1>🌏 EURADLE <small id="lvl"></small></h1><span><button id="mb" title="Menu" style="padding:4px 10px;margin-right:6px">☰</button><span class="n" id="n">1/5</span></span></header>
 <div id="flag"><div id="emo"></div><div id="cov"></div></div>
@@ -184,8 +184,9 @@ function animV(t,ms){cancelAnimationFrame(raf);const a={...V},s0=performance.now
 const st=n=>{let k=Math.min(1,(n-s0)/ms);k=k<.5?2*k*k:1-Math.pow(-2*k+2,2)/2;setV({x:a.x+(t.x-a.x)*k,y:a.y+(t.y-a.y)*k,w:a.w+(t.w-a.w)*k,h:a.h+(t.h-a.h)*k});if(k<1)raf=requestAnimationFrame(st)};raf=requestAnimationFrame(st)}
 function zoomBy(f){if(!B)return;const w=Math.min(B.w,Math.max(B.w/25,V.w/f)),h=w*B.h/B.w;animV({x:V.x+V.w/2-w/2,y:V.y+V.h/2-h/2,w,h},400)}
 function zoomTo(c){const p=document.getElementById(c);if(!p||!B||MH)return;const b=p.getBBox(),w=Math.min(B.w,Math.max(B.w/10,b.width*2.6)),h=w*B.h/B.w;animV({x:b.x+b.width/2-w/2,y:b.y+b.height/2-h/2,w,h},1100)}
-function guess(){if(over||busy)return;const v=N($("in").value),g=PL.find(d=>N(d.n)==v);if(v=="otaldododo"){$("in").value="";dev();return}
-if(!g){$("msg").textContent="País não encontrado nesta dificuldade.";return}
+function pick(v){if(v.length<2)return null;const e=PL.find(d=>N(d.n)==v);if(e)return e;let c=PL.filter(d=>N(d.n).startsWith(v));if(!c.length&&v.length>=4)c=PL.filter(d=>d.n.split(/[\s-]+/).some(w=>w.length>3&&N(w).startsWith(v)));return c.length==1?c[0]:c.length?c:null}
+function guess(){if(over||busy)return;const v=N($("in").value),m=pick(v);if(v=="otaldododo"){$("in").value="";dev();return}
+if(Array.isArray(m)){$("msg").textContent="Seja mais específico: "+m.slice(0,6).map(d=>d.n).join(", ");return}const g=m;if(!g){$("msg").textContent="País não encontrado nesta dificuldade.";return}
 if(G.includes(g)){$("msg").textContent="Você já tentou esse.";chk("dej");return}
 busy=true;$("in").disabled=$("go").disabled=true;$("msg").textContent="";hl=[];colors();$("tip").style.display="none";
 const id=gid;zoomTo(g.c);$("ov").innerHTML=`<span>${fl(g.c)}</span>${g.n}`;if(!MH)$("ov").style.display="block";snd(W(g.c)>=10?arp(g.c):[440],.12);
@@ -231,7 +232,7 @@ svg.addEventListener("click",ev=>{if(mv>5)return;const d=PL.find(x=>x.c==ev.targ
 $("mm").textContent="Passe o cursor (ou toque) nos países para ver bandeira, capital, população e curiosidade.";colors()}
 $("go").onclick=guess;$("in").onkeydown=e=>{if(e.key=="Enter")guess()};$("re").onclick=()=>{hl=[];blink=null;busy=false;start();colors();if(B)animV({...B},700)};$("zi").onclick=()=>zoomBy(1.7);$("zo").onclick=()=>zoomBy(1/1.7);
 let MH=false,GM={tips:new Set},AC;
-const SD={n:"Jogador",games:0,w:{},a:{},c:{},s2:0,t:"ini",ws:0,av:"",t1:0,t3:0,tm:0,ic:0,ld:"",ds:0,dw:{}};
+const SD={n:"Jogador",games:0,w:{},a:{},c:{},s2:0,t:"ini",ws:0,av:"",t1:0,t3:0,tm:0,ic:0,ld:"",ds:0,dw:{},dd:{d:"",w:0,g:0}};
 let SV;try{SV=Object.assign({},SD,JSON.parse(localStorage.getItem("euradle")||"{}"))}catch(e){SV=JSON.parse(JSON.stringify(SD))}
 const save=()=>{try{localStorage.setItem("euradle",JSON.stringify(SV))}catch(e){}},W=c=>SV.w[c]||0,esc=x=>x.replace(/[<>&"]/g,"");
 const CL=Object.fromEntries("PT:046a38 ES:c60b1e FR:0055a4 GB:cf142b NO:ba0c2f SE:006aa7 FI:003580 DE:dd0000 IT:008c45 PL:dc143c BY:c8313e HU:477050 RO:002b7f RS:c6363c GR:0d5eaf UA:0057b7 RU:d52b1e TR:e30a17 GE:d1121f AM:d90012 AZ:00b5e2 KZ:00afca UZ:1eb53a TM:1a8f3c KG:e8112d TJ:cc0000 AF:bf0000 IR:239f40 IQ:ce1126 SA:006c35 IL:0038b8 IN:ff9933 PK:01411c NP:dc143c BT:ff8c00 BD:006a4e MM:fecb00 TH:a51931 VN:da251d ID:ce1126 CN:de2910 MN:c4272f KP:024fa2 KR:cd2e3a JP:bc002d IE:169b62 IS:02529c DK:c8102e NL:ae1c28 BE:c9a400 LU:00a1de CH:da291c AT:ed2939 CZ:11457e SK:0b4ea2 SI:005da4 HR:ff0000 BA:002395 ME:c40308 AL:e41e20 MK:d20000 BG:00966e MD:0046ae LT:006a44 LV:9e3039 EE:0072ce CY:d57800 MT:cf142b SY:ce1126 LB:00a651 JO:007a3d YE:ce1126 OM:db161b AE:00732f QA:8a1538 KW:007a3d BH:ce1126 EG:ce1126 LK:8d153a LA:ce1126 KH:032ea1 MY:cc0001 SG:ed2939 BN:c9a400 PH:0038a8 TL:dc241f TW:fe0000 AD:10069f MC:ce1126 SM:5eb6e4 VA:c9a400 LI:002b7f MV:d21034".split(" ").map(x=>x.split(":")));
@@ -247,7 +248,7 @@ const PR={ma5:()=>[SV.ws,5],im10:()=>[SV.ws,10],tri:()=>[SV.t3,5],v3:()=>[SV.t1,
 function chk(id){if(SV.a[id])return;SV.a[id]=1;const a=AL.find(x=>x[0]==id);toast(a[1],a[2],a[3]);save()}
 function cons(){const n=nC();if(n>=15)chk("con");if(n>=30)chk("moc");if(cnt(Q)>=Q.length)chk("qin");if(cnt(OT)>=OT.length)chk("otm");if(cnt(RM)>=RM.length)chk("imp");if(SV.ic>=50)chk("ic1");if(SV.ic>=200)chk("ic2");if(SV.ic>=500)chk("ic3");if(cnt(D.map(d=>d.c))>=D.length)chk("atl");save()}
 const MT=[[5,"✨","Brilho dourado"],[10,"🔊","Som exclusivo"],[20,"💜","Mapa roxo"],[25,"👑","Título do país"]];
-function finish(w,full,fr){const n=G.length,og=SV.games;SV.games++;const d0=new Date().toDateString();if(SV.ld!=d0){const y=new Date(Date.now()-864e5).toDateString();SV.ds=SV.ld==y?SV.ds+1:1;SV.ld=d0}if(SV.ds>=3)chk("fiel");if(SV.ds>=7)chk("sema");
+function finish(w,full,fr){const n=G.length,og=SV.games;SV.games++;const dy=day();if(SV.dd.d!=dy)SV.dd={d:dy,w:0,g:0};SV.dd.g++;if(w)SV.dd.w++;const d0=new Date().toDateString();if(SV.ld!=d0){const y=new Date(Date.now()-864e5).toDateString();SV.ds=SV.ld==y?SV.ds+1:1;SV.ld=d0}if(SV.ds>=3)chk("fiel");if(SV.ds>=7)chk("sema");
 if(w){const c=S.c,o=W(c);SV.w[c]=o+1;const has=f=>[...GM.tips].some(f);
 if(n==1){chk("vid");SV.t1++;if(SV.t1>=3)chk("v3")}if(n==3){SV.t3++;if(SV.t3>=5)chk("tri")}if(fr==0&&n>=3)chk("faro");if(n==5)chk("min");if(MH)chk("rei");if(fr<=.2)chk("ban");
 if(has(t=>t[1]=="_"&&t[0]=="E"))chk("esp");if(has(t=>["PO","AR","PE","TU","SL"].includes(t)||/^L_/.test(t)))chk("pol");
@@ -258,7 +259,7 @@ SV.ws=w?SV.ws+1:0;if(SV.ws>=3)chk("seq");if(SV.ws>=5)chk("ma5");if(SV.ws>=10)chk
 SV.s2=w&&n==2?SV.s2+1:0;if(SV.s2>=3)chk("mos");
 if(!w&&full)chk("prop");if(!w&&!full&&fr>=.8)chk("triz");if(GM.stan)chk("stan");if(GM.bird)chk("bird");
 [[5,"Novato"],[25,"Avançado"],[50,"Geógrafo"],[100,"Mestre"]].forEach(([k,t])=>{if(og<k&&SV.games>=k)toast("🎖️","Novo título",t)});save();sync()}
-$("in").addEventListener("input",()=>{if(G.length==4&&!over&&hl.some(d=>d!=S&&N(d.n)==N($("in").value)))GM.mirou=true});
+$("in").addEventListener("input",()=>{const m=pick(N($("in").value));if(G.length==4&&!over&&m&&!Array.isArray(m)&&m!=S&&hl.includes(m))GM.mirou=true});
 const TT=[["ini","Iniciante",0,"Grátis"],["nov","Novato",5,"Jogue 5 partidas"],["ava","Avançado",25,"Jogue 25 partidas"],["geo","Geógrafo",50,"Jogue 50 partidas"],["mes","Mestre",100,"Jogue 100 partidas"]];
 function tn(id){if(id.startsWith("c_")){const d=D.find(x=>x.c==id.slice(2));if(d)return`<span style="color:#${CL[d.c]||"b8862b"}">${fl(d.c)} ${d.n}: ${d.cu}</span>`}return(TT.find(x=>x[0]==id)||TT[0])[1]}
 function mp(){$("mp").innerHTML=av(30)+" "+esc(SV.n)+" · "+tn(SV.t)}
@@ -273,12 +274,23 @@ const SB_URL="https://fzfjipjgyaixpgltngkx.supabase.co",SB_KEY="sb_publishable_v
 const sbOn=()=>!!(SB_URL&&SB_KEY),sbH={apikey:SB_KEY,...(SB_KEY.startsWith("eyJ")?{Authorization:"Bearer "+SB_KEY}:{}),"Content-Type":"application/json"};
 function ids(){if(!SV.uid){const r=()=>crypto.randomUUID?crypto.randomUUID():Math.random().toString(36).slice(2)+Date.now().toString(36);SV.uid=r();SV.k=r();save()}}
 let LBE="";
-async function sync(){LBE="";try{if(!sbOn()||!SV.games)return;ids();const r=await fetch(SB_URL+"/rest/v1/rpc/submit",{method:"POST",headers:sbH,body:JSON.stringify({p_id:SV.uid,p_k:SV.k,p_n:SV.n,p_w:tw(),p_g:SV.games,p_a:Object.keys(SV.a).length,p_f:(SV.av||"").startsWith("f:")?SV.av.slice(2):""})});if(!r.ok)LBE=r.status+" "+(await r.text()).slice(0,200)}catch(e){LBE=String(e).slice(0,120)}}
-async function showLB(){chk("rank");pn(`<h2>🌍 Ranking online</h2><p>Carregando…</p>`);
-try{if(!sbOn())throw 1;ids();await sync();const r=await fetch(SB_URL+"/rest/v1/ranking?select=*&order=w.desc&limit=20",{headers:sbH});if(!r.ok)throw r.status+" "+(await r.text()).slice(0,200);const q=await r.json();
-const w=!SV.games?"<p><small>Jogue uma partida para entrar no ranking.</small></p>":LBE?`<p><small style="color:#d33">Não foi possível enviar sua pontuação: ${esc(LBE)}</small></p>`:"";
-pn(`<h2>🌍 Ranking online</h2><p><small>Maiores vencedores (por vitórias). Sua pontuação é enviada ao fim de cada partida.</small></p>`+w+(!q.length?"<p>Ninguém no ranking ainda.</p>":q.map((x,i)=>`<div class="ar" style="${x.id==SV.uid?"border:2px solid var(--ac)":""}"><b>${["🥇","🥈","🥉"][i]||(i+1)+"º"}</b><span>${/^[A-Z]{2}$/.test(x.f||"")?fl(x.f):"🙂"}</span><div><b>${esc(String(x.n||"?")).slice(0,16)}</b><br><small>${+x.w||0} vitórias · ${+x.g||0} partidas · 🏆 ${+x.a||0}</small></div></div>`).join("")))}
-catch(e){pn(`<h2>🌍 Ranking online</h2><p>${e===1?"O ranking ainda não foi configurado nesta cópia do jogo.":"Não foi possível carregar o ranking: "+esc(String(e))}</p>`)}}
+const day=()=>new Date().toLocaleDateString("sv-SE",{timeZone:"America/Sao_Paulo"});
+const rpc=(f,b)=>fetch(SB_URL+"/rest/v1/rpc/"+f,{method:"POST",headers:sbH,body:JSON.stringify(b)});
+async function sync(){LBE="";try{if(!sbOn()||!SV.games)return;ids();const f=(SV.av||"").startsWith("f:")?SV.av.slice(2):"";
+let r=await rpc("submit",{p_id:SV.uid,p_k:SV.k,p_n:SV.n,p_w:tw(),p_g:SV.games,p_a:Object.keys(SV.a).length,p_f:f,p_t:SV.t});if(!r.ok){LBE=r.status+" "+(await r.text()).slice(0,200);return}
+if(SV.dd.d==day()&&SV.dd.g>0){r=await rpc("submit_daily",{p_id:SV.uid,p_k:SV.k,p_n:SV.n,p_w:SV.dd.w,p_g:SV.dd.g,p_f:f,p_t:SV.t});if(!r.ok)LBE="diário: "+r.status+" "+(await r.text()).slice(0,160)}}catch(e){LBE=String(e).slice(0,120)}}
+async function showLB(t){t=t||0;chk("rank");
+const hd=`<div class="tb"><button data-a="L0" class="${t?"":"on"}">🌍 Global</button><button data-a="L1" class="${t?"on":""}">📅 Diário</button></div>`;
+pn(hd+`<p>Carregando…</p>`);
+try{if(!sbOn())throw 1;ids();await sync();const V=t?"ranking_daily":"ranking",H={headers:sbH};
+const[a,b]=await Promise.all([fetch(`${SB_URL}/rest/v1/${V}?select=*&order=pos.asc&limit=20`,H),fetch(`${SB_URL}/rest/v1/${V}?select=*&id=eq.${SV.uid}`,H)]);
+if(!a.ok)throw a.status+" "+(await a.text()).slice(0,200);const q=await a.json(),me=b.ok?(await b.json())[0]:null;
+const row=x=>`<div class="ar" style="${x.id==SV.uid?"border:2px solid var(--ac)":""}"><b>${["🥇","🥈","🥉"][x.pos-1]||x.pos+"º"}</b><span>${/^[A-Z]{2}$/.test(x.f||"")?fl(x.f):"🙂"}</span><div><b>${esc(String(x.n||"?")).slice(0,16)}</b>${/^(ini|nov|ava|geo|mes|c_[A-Z]{2})$/.test(x.t||"")?`<br><small>${tn(x.t)}</small>`:""}<br><small>${+x.w||0} ${t?"vitórias hoje":"vitórias"} · ${+x.g||0} partidas${t?"":" · 🏆 "+(+x.a||0)}</small></div></div>`;
+let h=hd+`<p><small>${t?"Vitórias de hoje (reinicia à meia-noite, horário de Brasília).":"Maiores vencedores (por vitórias)."}</small></p>`;
+if(!SV.games)h+="<p><small>Jogue uma partida para entrar no ranking.</small></p>";else if(LBE)h+=`<p><small style="color:#d33">Não foi possível enviar sua pontuação: ${esc(LBE)}</small></p>`;
+h+=q.length?q.map(row).join(""):"<p>Ninguém no ranking ainda.</p>";
+if(me&&!q.some(x=>x.id==me.id))h+=`<p style="margin:12px 0 2px"><small>Sua posição</small></p>`+row(me);
+pn(h)}catch(e){pn(hd+`<p>${e===1?"O ranking ainda não foi configurado nesta cópia do jogo.":"Não foi possível carregar o ranking: "+esc(String(e))}</p>`)}}
 let TO=false,AO=false;
 function av(z){const a=SV.av||"",st=`width:${z}px;height:${z}px;border-radius:50%;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;background:var(--land);font-size:${z*.6}px;vertical-align:middle`;
 return a.startsWith("data:")?`<span style="${st}"><img src="${a}" style="width:100%;height:100%;object-fit:cover"></span>`:`<span style="${st}">${a.startsWith("f:")?fl(a.slice(2)):"🙂"}</span>`}
@@ -294,7 +306,7 @@ function dev(){pn(`<h2>🛠️ Desenvolvedor</h2><button data-a="dG">🧭 Modo G
 <p>Vitórias do país:<br><select id="dc">${D.slice().sort((a,b)=>a.n.localeCompare(b.n,"pt")).map(d=>`<option value="${d.c}">${d.n}</option>`).join("")}</select> ${[4,9,19,24,25].map(n=>`<button data-a="dW" data-n="${n}">${n}</button>`).join("")}</p>`)}
 $("pn").onclick=e=>{const b=e.target.closest("[data-a],[data-t],[data-f]");if(!b)return;const a=b.dataset.a;
 if(a=="x")$("pn").style.display="none";else if(/^k\d$/.test(a))showAch(+a[1]);
-else if(a=="ed"){$("nm").outerHTML=`<input id="ni" maxlength="16" value="${esc(SV.n)}" style="width:150px">`;b.textContent="✓";b.dataset.a="sv"}
+else if(a=="L0")showLB(0);else if(a=="L1")showLB(1);else if(a=="ed"){$("nm").outerHTML=`<input id="ni" maxlength="16" value="${esc(SV.n)}" style="width:150px">`;b.textContent="✓";b.dataset.a="sv"}
 else if(a=="sv"){SV.n=($("ni").value.trim()||"Jogador").slice(0,16);if(SV.n!="Jogador")chk("eu");save();mp();showPro()}
 else if(a=="tg"){TO=!TO;showPro()}else if(a=="av"){AO=!AO;showPro()}else if(b.dataset.f){SV.av="f:"+b.dataset.f;save();chk("eu");mp();showPro()}else if(b.dataset.t){SV.t=b.dataset.t;TO=false;save();mp();showPro()}
 else if(a&&a[0]=="d"){const kc=$("dc").value,ka=$("da").value;if(a=="dG")GEO=!GEO;if(a=="dU")chk(ka);if(a=="dA")AL.forEach(x=>SV.a[x[0]]=1);if(a=="dT"){SV.games=100;D.forEach(d=>SV.w[d.c]=25)}
@@ -303,6 +315,6 @@ setInterval(()=>{if(!over&&!document.hidden&&$("menu").style.display=="none"&&$(
 start();buildMap();mp();
 const ds=["Países muito conhecidos","Inclui países menos famosos","Todos os países da Eurásia e do Oriente Médio"],cn=[EZ.length,MZ.length,D.length];
 document.querySelectorAll("#menu [data-l]").forEach(b=>{const l=+b.dataset.l;b.querySelector("small").textContent=`${ds[l]} (${cn[l]} países possíveis)`;b.onclick=()=>{LV=l;$("menu").style.display="none";start();colors()}});
-$("play").onclick=()=>{const l=$("lvls");l.style.display=l.style.display=="block"?"none":"block"};$("bA").onclick=()=>showAch(0);$("bL").onclick=showLB;$("bP").onclick=()=>{TO=AO=false;showPro()};
+$("play").onclick=()=>{const l=$("lvls");l.style.display=l.style.display=="block"?"none":"block"};$("bA").onclick=()=>showAch(0);$("bL").onclick=()=>showLB(0);$("bP").onclick=()=>{TO=AO=false;showPro()};
 $("mb").onclick=()=>{$("menu").style.display="flex"};
 </script></body></html>
