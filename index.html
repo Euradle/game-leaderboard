@@ -311,8 +311,14 @@ try{if(!sbOn())throw 1;const r=await fetch(`${SB_URL}/rest/v1/ranking?select=*&$
 if(!x){pn(bk+`<p>Jogador não encontrado.</p>`);return}
 pn(`${bk}<div class="pf" style="margin-top:8px">${avx(x,72)}<div><h2 style="margin:0">${esc(String(x.n||"?").slice(0,24))}</h2>${/^[a-z0-9_.]{3,20}$/.test(x.tag||"")?`<div style="font-size:.75rem;opacity:.5">@${esc(x.tag)}</div>`:""}<div>${tnx(x.t)}</div></div></div><p>🌍 Posição global: <b>${+x.pos||"-"}º</b><br>${+x.w||0} vitórias · ${+x.g||0} partidas · 🏆 ${+x.a||0} conquistas</p>`+(x.id==SV.uid?"":`<span><button data-a="rp" data-id="${esc(x.id)}" ${imgOk(x.img)?'data-img="1"':""} title="Reportar" style="padding:0 4px;margin:0;font-size:.6rem;background:none;opacity:.35;color:#d33">🚩</button></span>`))}
 catch(e){pn(bk+`<p>Não foi possível carregar o perfil${e===1?" (ranking não configurado)":""}.</p>`)}}
-function admLogin(m){pn(`<h2>🛡️ Moderação</h2><p><small>Senha de administrador (definida no SQL)</small></p><input id="ap" type="password" style="width:200px"> <button data-a="al">Entrar</button><div style="color:#d33">${esc(m||"")}</div>`)}
-async function admLoad(){try{const r=await rpc("admin_list",{p_pass:AP});if(!r.ok){AP="";admLogin("Senha incorreta ou SQL não configurado ("+r.status+")");return}const q=await r.json();
+const AK="euradle_adm";
+const admS=()=>{try{return JSON.parse(localStorage.getItem(AK)||"{}")}catch(e){return{}}},admW=o=>{try{localStorage.setItem(AK,JSON.stringify(o))}catch(e){}};
+const admLock=()=>{const o=admS();return o.u&&Date.now()<o.u?o.u-Date.now():0};
+function admFail(){const o=admS();if(admLock())return;o.f=(o.f||0)+1;if(o.f>=5){o.u=Date.now()+864e5;o.f=0}admW(o)}
+function admLogin(m){const L=admLock(),f=admS().f||0;pn(`<h2>🛡️ Moderação</h2>`+(L?`<p style="color:#d33">Acesso bloqueado neste aparelho por mais ${Math.ceil(L/36e5)} h.</p>`:`<p><small>Senha de administrador</small></p><input id="ap" type="password" autocomplete="off" style="width:200px"> <button data-a="al">Entrar</button><div style="color:#d33;font-size:.85rem;margin-top:6px">${esc(m||"")}${!m&&f?`Tentativas erradas: ${f}/5`:""}</div>`))}
+async function admLoad(){try{ids();const r=await rpc("admin_list",{p_pass:AP,p_dev:SV.uid});if(!r.ok){AP="";admLogin("Não foi possível entrar ("+r.status+"). Rode o SQL novo no Supabase.");return}const j=await r.json();
+if(!j.ok){AP="";if(j.err=="bloqueado"){admW({u:Date.now()+864e5,f:0});admLogin();return}admFail();admLogin(admLock()?"":"Senha incorreta ("+(admS().f||0)+"/5).");return}
+admW({});const q=j.data;
 pn(`<h2>🛡️ Denúncias</h2>`+(q.length?q.map(x=>`<div class="ar"><span>${imgOk(x.img)?`<img src="${x.img}" style="width:56px;height:56px;border-radius:8px;object-fit:cover">`:"🙂"}</span><div><b>${esc(String(x.n||"?"))}</b> <small style="opacity:.6">@${esc(x.tag||"-")}</small><br><small>📷 ${+x.ri} de foto · 📝 ${+x.rn} de nome</small><br>${+x.ri?`<button data-a="ad" data-act="rm_img" data-id="${esc(x.id)}">Remover foto</button><button data-a="ad" data-act="ok_img" data-id="${esc(x.id)}">Manter</button>`:""}${+x.rn?`<button data-a="ad" data-act="rm_name" data-id="${esc(x.id)}">Remover nome</button><button data-a="ad" data-act="ok_name" data-id="${esc(x.id)}">Manter</button>`:""}</div></div>`).join(""):"<p>Nenhuma denúncia pendente.</p>"))}catch(e){admLogin(String(e).slice(0,100))}}
 const adm=()=>AP?admLoad():admLogin();
 let TO=false,AO=false,ED=false,AP="",LBN="";
@@ -341,8 +347,8 @@ else if(a=="sq")showSearch();
 else if(a=="sg"){const t=$("sq").value.trim().replace(/^@/,"").toLowerCase();if(!/^[a-z0-9_.]{3,20}$/.test(t)){$("sr").textContent="Tag inválida: 3 a 20 letras, números, _ ou .";return}viewP("tag",t)}
 else if(a=="rp"){const id=esc(b.dataset.id);b.parentElement.innerHTML=`<small style="opacity:.7">Reportar:</small> ${b.dataset.img?`<button data-a="rk" data-k="img" data-id="${id}">foto</button>`:""}<button data-a="rk" data-k="name" data-id="${id}">nome</button>`}
 else if(a=="rk"){ids();const p=b.parentElement;rpc("report",{p_id:SV.uid,p_k:SV.k,p_kind:b.dataset.k,p_target:b.dataset.id}).then(r=>{p.innerHTML=r.ok?"<small>Denúncia enviada. Obrigado!</small>":"<small>Não foi possível enviar agora.</small>"}).catch(()=>{p.innerHTML="<small>Não foi possível enviar agora.</small>"})}
-else if(a=="al"){AP=$("ap").value;admLoad()}
-else if(a=="ad"){rpc("admin_remove",{p_pass:AP,p_action:b.dataset.act,p_target:b.dataset.id}).then(admLoad)}
+else if(a=="al"){if(admLock()){admLogin();return}AP=$("ap").value;admLoad()}
+else if(a=="ad"){rpc("admin_remove",{p_pass:AP,p_dev:SV.uid,p_action:b.dataset.act,p_target:b.dataset.id}).then(admLoad)}
 else if(a=="tg"){TO=!TO;showPro()}else if(a=="av"){AO=!AO;showPro()}else if(b.dataset.f){SV.av="f:"+b.dataset.f;save();chk("eu");mp();showPro()}else if(b.dataset.t){SV.t=b.dataset.t;TO=false;save();mp();showPro()}
 else if(a&&a[0]=="d"){const kc=$("dc").value,ka=$("da").value;if(a=="dG")GEO=!GEO;if(a=="dU")chk(ka);if(a=="dA")AL.forEach(x=>SV.a[x[0]]=1);if(a=="dT"){SV.games=100;D.forEach(d=>SV.w[d.c]=25)}
 if(a=="dR")SV=JSON.parse(JSON.stringify(SD));if(a=="dW")SV.w[$("dc").value]=+b.dataset.n;save();mp();colors();dev();$("dc").value=kc;$("da").value=ka}};
