@@ -70,7 +70,7 @@ input[type=checkbox]{accent-color:var(--ac);width:18px;height:18px}
 #mgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:12px 0}
 .tile{display:flex;flex-direction:column;align-items:center;gap:4px;padding:14px 6px;background:var(--card);color:var(--fg);border:1px solid var(--line);box-shadow:var(--sh);font-size:.82rem}.tile b{font-size:1.5rem;line-height:1.1}
 label.chk{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:12px;color:var(--mut);font-size:.9rem;cursor:pointer}
-#ver{position:absolute;right:12px;bottom:calc(8px + env(safe-area-inset-bottom,0px));font-size:.7rem;color:var(--mut);opacity:.55;pointer-events:none}
+#ver{text-align:right;margin-top:10px;padding-bottom:env(safe-area-inset-bottom,0px);font-size:.7rem;color:var(--mut);opacity:.55;pointer-events:none}
 #pn{position:fixed;inset:0;background:rgba(5,10,20,.6);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;z-index:30;padding:12px}
 .pb{background:var(--bg);border:1px solid var(--line);border-radius:24px;max-width:540px;width:100%;max-height:90vh;overflow:auto;padding:20px;position:relative;box-shadow:0 30px 80px rgba(0,0,0,.5);animation:up .3s}
 .pb h2{margin:0 0 10px;font-size:1.3rem}.pb h3{margin:14px 0 6px}
@@ -144,12 +144,84 @@ body.hasPwa #menu,body.hasPwa main{padding-top:calc(54px + env(safe-area-inset-t
 .code{font-size:1.8rem;font-weight:800;letter-spacing:.2em;text-align:center;padding:14px;margin:10px 0;border-radius:16px;background:var(--card);border:2px dashed var(--ac);color:var(--ac)}.err{color:#e5484d;font-size:.82rem;min-height:1.2em}
 .bkh{padding-right:44px}
 #tip{max-width:310px}#tip .xi{margin-top:3px;font-size:.78rem;color:var(--mut)}#tip .xi b{color:var(--fg)}.ar.lk{opacity:.72}
+
+.pb.wide{max-width:940px}.wal span[style*="16a39a"] .ic{color:#16a39a}
+.hz{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x proximity;padding:4px 2px 10px;-webkit-overflow-scrolling:touch}
+.hz>*{flex:none;scroll-snap-align:start}
+.mgr{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px;margin:8px 0}
+.mc{display:flex;flex-direction:column;gap:6px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px}
+.mc b{font-size:.9rem;line-height:1.25}.mc button{margin-top:auto;padding:8px 10px;font-size:.85rem}.mc.lk{opacity:.6}
+.shr{position:relative;display:flex;gap:10px;align-items:stretch;overflow-x:auto;padding:6px 2px 12px;-webkit-overflow-scrolling:touch}
+.shr>:first-child{margin-left:auto}.shr>:last-child{margin-right:auto}
+.sc{flex:none;width:126px;display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:10px 8px}
+.sc .pv{height:58px;display:flex;align-items:center;justify-content:center;width:100%;overflow:hidden}
+.sc b{font-size:.78rem;line-height:1.15}.sc small{font-size:.68rem;font-weight:700}
+.sc button{width:100%;margin:auto 0 0;padding:6px 4px;font-size:.8rem;display:flex;align-items:center;justify-content:center;gap:4px}
+.sc .bpv{width:100%}.sc.own{opacity:.6}
+.sc.gm{width:160px;border-color:#5fd6d0;box-shadow:0 0 0 3px rgba(95,214,208,.16),0 10px 26px rgba(60,190,210,.22)}
+.sc.gm button{background:linear-gradient(180deg,#7ae8e0,#16988f);color:#04302d}
+.sc.nogm{opacity:.55;border-style:dashed;justify-content:center;width:160px}
+.shh{display:flex;align-items:baseline;justify-content:space-between;gap:8px;margin:10px 0 0}.shh h3{margin:0}
+.bpt{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x proximity;padding:6px 2px 12px;position:relative;-webkit-overflow-scrolling:touch}
+.bc{flex:none;width:130px;scroll-snap-align:start;display:flex;flex-direction:column;align-items:center;gap:6px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:10px 8px;text-align:center}
+.bc.lk{opacity:.62}.bc.fin{width:152px;border-color:var(--ac);box-shadow:0 0 0 3px color-mix(in srgb,var(--ac) 18%,transparent)}
+.bc .bv{height:62px;width:100%;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.bc .bpv{width:100%;height:46px}.bc .rw{display:flex;gap:10px;font-size:.78rem;font-weight:700;align-items:center;justify-content:center;min-height:18px;flex-wrap:wrap}
+.bc .rw span{display:inline-flex;align-items:center;gap:3px}.bc .rw .gm2{color:#16a39a}.bc .rw .ic{color:var(--ac)}.bc .rw .gm2 .ic{color:#16a39a}
+.bc button{width:100%;margin:auto 0 0;padding:6px 4px;font-size:.8rem}
+.cimg,.gimg{width:54px;height:54px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center}
+.cimg{background:linear-gradient(180deg,var(--ac2),var(--ac));color:#2a1b00}.gimg{background:linear-gradient(180deg,#7ae8e0,#16988f);color:#04302d}
+.bpn{display:flex;align-items:center;gap:8px}.bpn button{padding:6px 10px;margin:0}.bpn .grow{flex:1}
+.ic.fl{transform:scaleX(-1)}
+.ttg{border:1px solid var(--line);border-radius:14px;background:var(--card);margin:8px 0;overflow:hidden}
+.ttg>.gh{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 12px;cursor:pointer;font-weight:700}
+.ttg>.gh small{font-weight:400;color:var(--mut)}.ttg>.gh button{padding:2px 8px;background:transparent;color:var(--fg);box-shadow:none}
+.ttg .ar{margin:6px 10px}
+.opts{display:flex;gap:8px;margin:10px 0 4px}
+.opts label{flex:1;display:flex;align-items:center;gap:8px;padding:11px 12px;background:var(--card);color:var(--fg);border:1px solid var(--line);border-left:5px solid var(--ac);border-radius:14px;box-shadow:var(--sh);font-size:.85rem;font-weight:600;cursor:pointer}
+.opts input{accent-color:var(--ac);width:17px;height:17px;flex:none;margin:0}
+.opts label:has(input:checked){border-color:var(--ac);background:color-mix(in srgb,var(--ac) 14%,var(--card))}
+.opts .ic{color:var(--ac);flex:none}
+.mtab{display:flex;gap:4px;padding:4px;background:var(--card);border-radius:14px;border:1px solid var(--line);margin:0 44px 10px 0}
+.mtab button{flex:1;margin:0;background:transparent;color:var(--mut);box-shadow:none;padding:8px;font-size:.82rem}
+.mtab .on{background:linear-gradient(180deg,var(--ac2),var(--ac));color:#2a1b00}
+
+.igr{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin:6px 0 12px}
+.ic2{position:relative;display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px 8px}
+.ic2.on{border-color:var(--ac);box-shadow:0 0 0 2px color-mix(in srgb,var(--ac) 25%,transparent)}
+.ic2 .pvw{min-height:54px;width:100%;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.ic2 .bpv{width:100%;height:42px}.ic2 b{font-size:.8rem;line-height:1.2}.ic2 small{font-size:.68rem}
+.ic2 .ib{display:flex;flex-direction:column;gap:5px;width:100%;margin-top:auto}.ic2 .ib button{padding:6px 6px;font-size:.78rem;margin:0}
+.ic2 .alt,.sc .gb{background:var(--card2);color:var(--fg);box-shadow:none;border:1px solid var(--line)}
+.sc .gb{color:#16a39a}
+.xn{position:absolute;top:6px;right:8px;font-size:.72rem;font-weight:800;background:var(--card2);border-radius:99px;padding:1px 7px;border:1px solid var(--line)}
+.emb{display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:14px;background:var(--card2);border:1px solid var(--line)}
+.phv{font-style:italic;font-size:.82rem}
+.rh{display:flex;align-items:baseline;gap:8px;margin:12px 0 0;font-size:.95rem}.rh small{color:var(--mut);font-weight:400}
+.tn.gmi{background:linear-gradient(180deg,#7ae8e0,#16988f);color:#04302d}
+.ttg summary{cursor:pointer;padding:10px 12px;font-weight:700}
+.sc.bx .pv{color:var(--ac)}
+
+.bkt{display:flex;gap:6px;margin:8px 0}.bkt button{flex:1;padding:7px;background:#e3d2a8;color:#3a2a14;box-shadow:none;border:1px solid #c9b27c}.bkt .on{background:linear-gradient(180deg,#f1b93c,#c7871a)}
+input.abq,.book input.abq{width:100%;background:#fbf3de !important;border:1px solid #c9b27c !important;color:#3a2a14 !important;border-radius:10px;padding:9px 12px;outline:none}.abq::placeholder{color:#9a8660}.abq:focus{border-color:#c7871a;box-shadow:0 0 0 3px rgba(199,135,26,.25)}
+.abr{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}.abr button{padding:5px 10px;font-size:.8rem;background:#e3d2a8;color:#3a2a14;box-shadow:none;border:1px solid #c9b27c;display:inline-flex;gap:6px;align-items:center}
+.pgc{text-align:center;padding:6px 0}.pgf .fi{width:150px;height:105px;border-radius:6px;box-shadow:0 4px 14px rgba(0,0,0,.3)}.pgc h2{margin:8px 0 0;color:#3a2a14}
+.pgs{display:flex;gap:14px;align-items:center;justify-content:center;flex-wrap:wrap;margin:10px 0}.pgk{display:flex;gap:14px}.pgk div{display:flex;flex-direction:column}.pgk b{font-size:1.15rem}
+.cur{font-style:italic;color:#5a4a2a;margin:8px 0}
+.stp{width:104px;padding:8px 6px 6px;background:#fffaf0;border:3px dotted var(--sc);border-radius:6px;text-align:center;box-shadow:0 2px 6px rgba(0,0,0,.18);cursor:pointer;color:#3a2a14;transform:rotate(-1.5deg)}
+.stp.big{width:120px;cursor:default;transform:rotate(2deg)}.stp .fi{width:100%;height:auto;aspect-ratio:4/3}.stp b{display:block;font-size:.72rem;margin-top:4px}.stp small{font-size:.62rem;color:var(--sc);font-weight:800}
+.stp.lk{filter:grayscale(1);opacity:.55}
+.stg2{display:grid;grid-template-columns:repeat(auto-fill,minmax(104px,1fr));gap:12px;justify-items:center;margin:10px 0}
+
+.ccs{display:inline-block;width:46px;height:46px;border-radius:50%;border:2px solid rgba(255,255,255,.4);box-shadow:0 2px 8px rgba(0,0,0,.3)}
+.ccb{display:inline-flex;align-items:center;gap:6px;padding:5px 10px;font-size:.78rem;background:#e3d2a8;color:#3a2a14;box-shadow:none;border:1px solid #c9b27c;margin:3px 3px 0 0}.ccb .ccs{width:18px;height:18px;border-width:1px}
+.sc.bx.nb{opacity:.55}
 </style></head><body><div id="pwa" style="display:none"><span>Instale o Euradle na tela inicial</span><button id="pwaB">Instalar</button><button id="pwaX" aria-label="Fechar" data-ic="close"></button></div>
 <div id="menu"><div class="box"><img id="logo" alt="Euradle"><h2>EURADLE</h2><p class="tag">Descubra o país da Eurásia em 5 tentativas</p><div id="mp"></div>
 <button class="primary" id="play"><span>Jogar</span><i data-ic="chev"></i></button>
-<div id="lvls"><button id="bDaily"><span class="lvi"><i data-ic="calendar"></i></span><div><b>Desafio diário</b><small id="dcs"></small></div></button><button data-l="0"><span class="dot" style="background:#3ecf6a"></span><div><b>Fácil</b><small></small></div></button><button data-l="1"><span class="dot" style="background:#f6c85a"></span><div><b>Médio</b><small></small></div></button><button data-l="2"><span class="dot" style="background:#e5484d"></span><div><b>Difícil</b><small></small></div></button><button data-l="3" class="sec" style="display:none"><span class="lvi"><i data-ic="moon"></i></span><div><b>Otomano</b><small></small></div></button><button data-l="4" class="sec" style="display:none"><span class="lvi"><i data-ic="temple"></i></span><div><b>Romano</b><small></small></div></button><button data-l="5" class="sec" style="display:none"><span class="lvi"><i data-ic="flame"></i></span><div><b>Qing</b><small></small></div></button></div>
-<div id="mgrid"><button class="tile" id="bMs"><i data-ic="calendar"></i>Missões</button><button class="tile" id="bSh"><i data-ic="bag"></i>Loja</button><button class="tile" id="bBp"><i data-ic="ticket"></i>Passe</button><button class="tile" id="bL"><i data-ic="trophy"></i>Ranking</button><button class="tile" id="bFr"><i data-ic="users"></i>Amigos</button><button class="tile" id="bDu"><i data-ic="swords"></i>Duelo</button><button class="tile" id="bA"><i data-ic="medal"></i>Conquistas</button><button class="tile" id="bP"><i data-ic="user"></i>Perfil</button><button class="tile" id="bLg"><i data-ic="globe"></i>Idioma</button><div class="tile split"><button id="bAl"><i data-ic="book"></i>Álbum</button><button id="bSt"><i data-ic="chart"></i>Estatísticas</button></div></div>
-<label class="chk"><input type="checkbox" id="hm"><span>Esconder mapa (mais difícil)</span></label></div><div id="ver">v 2.0.0</div></div><script>document.getElementById("logo").src=document.querySelector("link[rel=icon]").href</script><div id="pn"></div><div id="tc"></div><div id="sr"></div>
+<div id="lvls"><button id="bDaily"><span class="lvi"><i data-ic="calendar"></i></span><div><b>Desafio diário</b><small id="dcs"></small></div></button><button data-l="0"><span class="dot" style="background:#3ecf6a"></span><div><b>Fácil</b><small></small></div></button><button data-l="1"><span class="dot" style="background:#f6c85a"></span><div><b>Médio</b><small></small></div></button><button data-l="2"><span class="dot" style="background:#e5484d"></span><div><b>Difícil</b><small></small></div></button><button data-l="3" class="sec" style="display:none"><span class="lvi"><i data-ic="moon"></i></span><div><b>Otomano</b><small></small></div></button><button data-l="4" class="sec" style="display:none"><span class="lvi"><i data-ic="temple"></i></span><div><b>Romano</b><small></small></div></button><button data-l="5" class="sec" style="display:none"><span class="lvi"><i data-ic="flame"></i></span><div><b>Qing</b><small></small></div></button><div class="opts"><label><input type="checkbox" id="hm"><i data-ic="eyeoff"></i><span>Esconder mapa</span></label><label><input type="checkbox" id="hf"><i data-ic="eyeoff"></i><span>Esconder bandeira</span></label></div></div>
+<div id="mgrid"><button class="tile" id="bMs"><i data-ic="calendar"></i>Missões</button><button class="tile" id="bSh"><i data-ic="bag"></i>Loja</button><button class="tile" id="bBp"><i data-ic="ticket"></i>Passe</button><button class="tile" id="bL"><i data-ic="trophy"></i>Ranking</button><button class="tile" id="bFr"><i data-ic="users"></i>Amigos</button><button class="tile" id="bDu"><i data-ic="swords"></i>Duelo</button><button class="tile" id="bA"><i data-ic="medal"></i>Conquistas</button><button class="tile" id="bP"><i data-ic="user"></i>Perfil</button><button class="tile" id="bInv"><i data-ic="folder"></i>Inventário</button><div class="tile split"><button id="bAl"><i data-ic="book"></i>Álbum</button><button id="bSt"><i data-ic="chart"></i>Estatísticas</button></div></div>
+<div id="ver">v 2.2.1</div></div></div><script>document.getElementById("logo").src=document.querySelector("link[rel=icon]").href</script><div id="pn"></div><div id="tc"></div><div id="sr"></div>
 <main>
 <header><div class="brand"><img id="hl" alt=""><h1>EURADLE</h1><small id="lvl"></small></div><div class="hr"><div id="pips"></div><span class="n" id="n">1/5</span><button id="mb" title="Menu" data-ic="menu"></button></div></header>
 <script>document.getElementById("hl").src=document.querySelector("link[rel=icon]").href</script>
@@ -280,10 +352,10 @@ const EZ="FR GB RU DE IT ES PT GR TR UA PL NL SE NO CH CN JP IN KR EG SA IL IR T
 MZ=EZ.concat("IS IE DK FI AT BE CZ HU RO HR RS BG BY KZ PK ID VN MY SG PH AF IQ SY LB JO AE QA KW MN KP TW NP BD LK MM AM GE AZ".split(" "));
 const $=i=>document.getElementById(i),N=s=>s.normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z]/gi,"").toLowerCase();
 /* ===== v2.0 núcleo: bandeiras reais, ícones, selos ===== */
-const LG=(()=>{try{return localStorage.getItem("eu_lang")||"pt"}catch(e){return"pt"}})();
 const FLB="https://cdn.jsdelivr.net/npm/flag-icons@7.2.3/flags/4x3/",fu=c=>FLB+String(c).toLowerCase()+".svg";
 const fe=c=>`onerror="this.outerHTML='<b class=fb>${c}</b>'"`;
-const fl=c=>`<img class="fi" alt="" loading="lazy" src="${fu(c)}" ${fe(c)}>`,flc=c=>`<img class="fc" alt="" src="${fu(c)}" ${fe(c)}>`;
+const HF={};
+const fl=c=>HF[c]?`<svg class="fi" viewBox="0 0 30 20" preserveAspectRatio="none">${HF[c]}</svg>`:`<img class="fi" alt="" loading="lazy" src="${fu(c)}" ${fe(c)}>`,flc=c=>HF[c]?`<svg class="fc" viewBox="0 0 30 20" preserveAspectRatio="none">${HF[c]}</svg>`:`<img class="fc" alt="" src="${fu(c)}" ${fe(c)}>`;
 const IP={
 globe:'<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/>',
 trophy:'<path d="M8 4h8v5a4 4 0 0 1-8 0zM8 6H5a3 3 0 0 0 3 4M16 6h3a3 3 0 0 1-3 4M12 13v4M8 21h8M10 17h4"/>',
@@ -314,6 +386,11 @@ sun:'<circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l
 temple:'<path d="M3 9l9-5 9 5zM5 9v9M10 9v9M14 9v9M19 9v9M3 21h18"/>',
 medal:'<circle cx="12" cy="14" r="6"/><path d="M8.5 9L6 3h4l2 4M15.5 9L18 3h-4l-2 4"/>',
 gem:'<path d="M6 4h12l4 6-10 11L2 10zM2 10h20M9 4l-2 6 5 11 5-11-2-6"/>',
+food:'<path d="M6 3v7a2 2 0 0 0 2 2v9M10 3v7M6 7h4M17 3c-2 2-3 5-3 8h3v10"/>',
+note:'<path d="M9 18V6l10-2v12"/><circle cx="6" cy="18" r="3"/><circle cx="16" cy="16" r="3"/>',
+eyeoff:'<path d="M3 3l18 18"/><path d="M10.6 6.1A9.8 9.8 0 0 1 12 6c6 0 10 6 10 6a16 16 0 0 1-3.2 3.7M6.6 7.6A16 16 0 0 0 2 12s4 7 10 7a9.5 9.5 0 0 0 3.4-.7"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/>',
+chr:'<path d="M9 5l7 7-7 7"/>',
+
 eye:'<path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/>',
 hourglass:'<path d="M6 3h12M6 21h12M7 3c0 5 5 6 5 9s-5 4-5 9M17 3c0 5-5 6-5 9s5 4 5 9"/>',
 question:'<circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.6 2.6 0 1 1 4 2.2c-1 .6-1.5 1.1-1.5 2.3M12 17.3v.4"/>',
@@ -342,7 +419,7 @@ copy:'<rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 
 heart:'<path d="M12 20s-8-5-8-11a4.5 4.5 0 0 1 8-2.5A4.5 4.5 0 0 1 20 9c0 6-8 11-8 11z"/>'};
 const ic=(n,z=18)=>`<svg class="ic" width="${z}" height="${z}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${IP[n]||IP.star}</svg>`;
 const medal=p=>p<4?`<span class="md m${p}">${p}</span>`:p+"º";
-const ACI={lock:"lock",vid:"eye",mos:"target",rei:"crown",ban:"flag",min:"hourglass",con:"compass",moc:"backpack",qin:"flame",otm:"moon",imp:"temple",sem:"globe",esp:"ball",pol:"speech",geo:"mountain",pas:"hammer",prop:"question",mir:"target",stan:"sun",bird:"bird",fed:"medal",gan:"trophy",ens:"book",per:"repeat",vet:"medal",col:"folder",seq:"flame",dif:"skull",ouro:"star",rox:"gem",eu:"image",ma5:"bolt",im10:"rocket",tri:"target",faro:"search",v3:"eye",t30:"hourglass",t2h:"clock",t10h:"clock",ic1:"search",ic2:"search",ic3:"search",atl:"map",mun:"globe",v50:"trophy",v100:"trophy",tres:"shield",sang:"crown",ilha:"sun",semar:"mountain",petro:"flame",olim:"medal",coruja:"moon",triz:"hourglass",dej:"repeat",rank:"chart",fiel:"calendar",sema:"calendar",sot:"moon",sro:"temple",sqi:"flame",dc1:"calendar",dc7:"calendar",dcs:"flame",ms1:"check",ms7:"shield",shp:"bag",bp10:"ticket",bp30:"crown",du1:"swords",du5:"swords",amg:"users",nuv:"cloud",alb:"book",shr:"share",lng:"globe",top:"trophy"};
+const ACI={gul:"food",mus:"note",bvd:"eyeoff",lock:"lock",vid:"eye",mos:"target",rei:"crown",ban:"flag",min:"hourglass",con:"compass",moc:"backpack",qin:"flame",otm:"moon",imp:"temple",sem:"globe",esp:"ball",pol:"speech",geo:"mountain",pas:"hammer",prop:"question",mir:"target",stan:"sun",bird:"bird",fed:"medal",gan:"trophy",ens:"book",per:"repeat",vet:"medal",col:"folder",seq:"flame",dif:"skull",ouro:"star",rox:"gem",eu:"image",ma5:"bolt",im10:"rocket",tri:"target",faro:"search",v3:"eye",t30:"hourglass",t2h:"clock",t10h:"clock",ic1:"search",ic2:"search",ic3:"search",atl:"map",mun:"globe",v50:"trophy",v100:"trophy",tres:"shield",sang:"crown",ilha:"sun",semar:"mountain",petro:"flame",olim:"medal",coruja:"moon",triz:"hourglass",dej:"repeat",rank:"chart",fiel:"calendar",sema:"calendar",sot:"moon",sro:"temple",sqi:"flame",dc1:"calendar",dc7:"calendar",dcs:"flame",ms1:"check",ms7:"shield",shp:"bag",bp10:"ticket",bp30:"crown",du1:"swords",du5:"swords",amg:"users",nuv:"cloud",alb:"book",shr:"share",lng:"globe",top:"trophy"};
 let BCN=0;function badge(id,z=44,lock=false){const gid="g"+id+"_"+(++BCN),k=ACI[id]||"star",gk=typeof CAT!="undefined"?Object.keys(CAT).find(q=>CAT[q].includes(id)):"x",cols=({h:["#f6c85a","#d98a14"],s:["#ff9a5a","#d9531a"],e:["#5ec2e6","#2f6fcf"],c:["#7be3a0","#1f9a5d"],d:["#f08acb","#a02a8f"],o:["#8ab4ff","#3a56d4"],x:["#c58bff","#7b2fd6"]})[gk]||["#9aa7b8","#5d6b86"];
 return`<svg class="bdg${lock?" lk":""}" width="${z}" height="${z}" viewBox="0 0 48 48"><defs><linearGradient id="${gid}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${cols[0]}"/><stop offset="1" stop-color="${cols[1]}"/></linearGradient></defs><path d="M24 2l18 7v14c0 11-8 19-18 23C14 42 6 34 6 23V9z" fill="url(#${gid})" stroke="rgba(0,0,0,.25)"/><path d="M24 7l13.5 5.3V23c0 8-5.6 14-13.5 17.6C16.1 37 10.5 31 10.5 23V12.3z" fill="rgba(0,0,0,.28)"/><g transform="translate(12 12)" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${IP[k]||IP.star}</g></svg>`}
 const hs=s=>{let h=2166136261;for(let i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619)}return h>>>0};
@@ -350,10 +427,107 @@ const rng=sd=>{let a=sd>>>0;return()=>{a=(a+0x6D2B79F5)>>>0;let t=a;t=Math.imul(
 const ROM=n=>{let r="";for(const[v,s]of[[10,"X"],[9,"IX"],[5,"V"],[4,"IV"],[1,"I"]])while(n>=v){r+=s;n-=v}return r};
 const WORLD="DZ:Argélia,AO:Angola,BJ:Benim,BW:Botsuana,BF:Burquina Faso,BI:Burundi,CV:Cabo Verde,CM:Camarões,CF:República Centro-Africana,TD:Chade,KM:Comores,CG:Congo,CD:RD Congo,CI:Costa do Marfim,DJ:Djibuti,GQ:Guiné Equatorial,ER:Eritreia,SZ:Essuatíni,ET:Etiópia,GA:Gabão,GM:Gâmbia,GH:Gana,GN:Guiné,GW:Guiné-Bissau,KE:Quênia,LS:Lesoto,LR:Libéria,LY:Líbia,MG:Madagascar,MW:Malaui,ML:Mali,MR:Mauritânia,MU:Maurício,MA:Marrocos,MZ:Moçambique,NA:Namíbia,NE:Níger,NG:Nigéria,RW:Ruanda,ST:São Tomé e Príncipe,SN:Senegal,SC:Seicheles,SL:Serra Leoa,SO:Somália,ZA:África do Sul,SS:Sudão do Sul,SD:Sudão,TZ:Tanzânia,TG:Togo,TN:Tunísia,UG:Uganda,ZM:Zâmbia,ZW:Zimbábue,AG:Antígua e Barbuda,AR:Argentina,BS:Bahamas,BB:Barbados,BZ:Belize,BO:Bolívia,BR:Brasil,CA:Canadá,CL:Chile,CO:Colômbia,CR:Costa Rica,CU:Cuba,DM:Dominica,DO:República Dominicana,EC:Equador,SV:El Salvador,GD:Granada,GT:Guatemala,GY:Guiana,HT:Haiti,HN:Honduras,JM:Jamaica,MX:México,NI:Nicarágua,PA:Panamá,PY:Paraguai,PE:Peru,KN:São Cristóvão e Névis,LC:Santa Lúcia,VC:São Vicente e Granadinas,SR:Suriname,TT:Trinidad e Tobago,US:Estados Unidos,UY:Uruguai,VE:Venezuela,AU:Austrália,FJ:Fiji,KI:Quiribáti,MH:Ilhas Marshall,FM:Micronésia,NR:Nauru,NZ:Nova Zelândia,PW:Palau,PG:Papua-Nova Guiné,WS:Samoa,SB:Ilhas Salomão,TO:Tonga,TV:Tuvalu,VU:Vanuatu,PS:Palestina".split(",").map(x=>x.split(":"));
 
+(()=>{const FM=`PT|F_PEIX F_VINH F_DOCE|M_FADO M_EURO M_FOLK
+ES|F_PEIX F_VINH F_ARRO|M_FADO M_EURO M_FOLK
+FR|F_LATI F_VINH F_PAO|M_EURO M_ELET M_CLAS
+GB|F_CHA F_CERV F_BATA|M_ROCK M_POP M_EURO
+NO|F_PEIX F_LATI|M_ROCK M_EURO M_CLAS
+SE|F_PEIX F_BATA F_CAFE|M_POP M_ROCK M_ELET M_EURO
+FI|F_PEIX F_CAFE|M_ROCK M_CLAS M_EURO
+DE|F_BATA F_CERV F_PAO|M_CLAS M_ELET M_ROCK M_EURO
+IT|F_MASS F_VINH F_CAFE F_LATI|M_CLAS M_EURO
+PL|F_RECH F_BATA F_SOPA|M_CLAS M_FOLK M_EURO
+BY|F_BATA F_SOPA|M_FOLK M_EURO
+HU|F_SOPA F_VINH F_TEMP|M_CLAS M_FOLK M_EURO
+RO|F_SOPA F_VINH F_RECH|M_FOLK M_CORO M_EURO
+RS|F_CARN F_SOPA|M_FOLK M_EURO
+GR|F_PEIX F_LATI F_DOCE F_VINH|M_FADO M_CORD M_EURO
+UA|F_SOPA F_RECH F_BATA|M_FOLK M_CORO M_EURO
+RU|F_SOPA F_RECH F_CHA|M_CLAS M_FOLK M_EURO
+TR|F_CARN F_CHA F_CAFE F_DOCE F_RECH|M_CORD M_SUFI M_FADO M_EURO
+GE|F_VINH F_RECH F_LATI F_PAO|M_CORO M_FOLK M_EURO
+AM|F_VINH F_CARN F_PAO|M_CORD M_CORO M_EURO
+AZ|F_CARN F_CHA F_DOCE|M_CORD M_EURO M_SUFI
+KZ|F_CARN F_RECH F_CHA|M_CORD M_GARG M_FOLK
+UZ|F_ARRO F_PAO F_CHA F_RECH|M_CORD M_FOLK M_PERC
+TM|F_CARN F_PAO F_CHA|M_CORD M_FOLK
+KG|F_CARN F_LATI F_CHA|M_GARG M_CORD M_FOLK
+TJ|F_ARRO F_PAO F_CHA|M_CORD M_FOLK
+AF|F_ARRO F_CARN F_PAO F_RECH F_CHA|M_CORD M_PERC M_SUFI
+IR|F_ARRO F_CARN F_DOCE F_CHA F_PAO|M_CORD M_SUFI M_FOLK
+IQ|F_ARRO F_CARN F_PAO F_CHA|M_CORD M_SUFI
+SA|F_ARRO F_CARN F_CAFE F_TEMP|M_CORD M_PERC
+IL|F_PAO F_TEMP F_DOCE|M_ELET M_POP M_EURO M_FOLK
+IN|F_ARRO F_TEMP F_CHA F_PAO F_LATI|M_CORD M_CINE M_PERC M_SUFI
+PK|F_ARRO F_CARN F_TEMP F_CHA F_PAO|M_CORD M_SUFI M_FOLK
+NP|F_ARRO F_TEMP F_RECH F_CHA|M_CORD M_FOLK M_PERC
+BT|F_ARRO F_TEMP F_LATI F_CHA|M_FOLK M_PERC
+BD|F_ARRO F_PEIX F_TEMP F_CHA F_DOCE|M_FOLK M_CORD M_PERC
+MM|F_ARRO F_PEIX F_SOPA F_CHA|M_PERC M_FOLK
+TH|F_ARRO F_TEMP F_PEIX F_SOPA|M_POP M_FOLK M_PERC
+VN|F_ARRO F_SOPA F_PEIX F_CAFE F_RECH|M_POP M_FOLK
+ID|F_ARRO F_TEMP F_PEIX F_CAFE|M_PERC M_FOLK M_POP
+CN|F_ARRO F_RECH F_CHA F_SOPA F_MASS|M_PERC M_CORD M_FOLK
+MN|F_CARN F_LATI F_RECH F_CHA|M_GARG M_CORD M_FOLK
+KP|F_ARRO F_SOPA F_RECH|M_CORO M_FOLK M_PERC
+KR|F_ARRO F_SOPA F_PEIX F_RECH F_CARN|M_POP M_PERC
+JP|F_ARRO F_PEIX F_SOPA F_MASS F_RECH F_CHA|M_POP M_PERC M_ELET
+IE|F_BATA F_CERV F_LATI F_SOPA|M_FOLK M_ROCK M_EURO M_POP
+IS|F_PEIX F_LATI F_SOPA|M_POP M_ROCK M_ELET M_EURO
+DK|F_PEIX F_PAO F_CERV F_BATA|M_POP M_ELET M_ROCK M_EURO
+NL|F_LATI F_BATA F_CERV F_PAO|M_ELET M_ROCK M_POP M_EURO
+BE|F_BATA F_CERV F_DOCE F_PEIX|M_ELET M_POP M_EURO
+LU|F_BATA F_CERV F_VINH|M_FOLK M_EURO
+CH|F_LATI F_BATA F_DOCE|M_FOLK M_ELET M_EURO
+AT|F_DOCE F_CAFE F_BATA F_CERV|M_CLAS M_FOLK M_EURO
+CZ|F_CERV F_SOPA F_BATA F_PAO|M_CLAS M_FOLK M_EURO
+SK|F_SOPA F_BATA F_LATI F_CERV|M_FOLK M_CLAS
+SI|F_VINH F_SOPA F_PAO|M_FOLK M_EURO M_ELET
+HR|F_PEIX F_VINH F_SOPA|M_CORO M_FOLK M_EURO
+BA|F_CARN F_CAFE F_PAO F_DOCE|M_CORO M_FOLK M_EURO
+ME|F_PEIX F_LATI F_CARN|M_FOLK M_EURO M_CORO
+AL|F_CARN F_LATI F_PAO|M_CORO M_FOLK M_EURO
+MK|F_PAO F_LATI F_VINH|M_FOLK M_EURO M_PERC
+BG|F_LATI F_SOPA F_VINH|M_CORO M_FOLK M_EURO
+MD|F_VINH F_SOPA F_RECH|M_FOLK M_EURO
+LT|F_BATA F_SOPA F_CERV F_RECH|M_CORO M_FOLK M_EURO
+LV|F_BATA F_SOPA F_CERV|M_CORO M_FOLK M_EURO
+EE|F_BATA F_SOPA F_CERV|M_CORO M_ELET M_EURO
+CY|F_PEIX F_LATI F_DOCE F_VINH|M_FOLK M_EURO M_CORD
+MT|F_PEIX F_PAO F_DOCE|M_FOLK M_EURO
+SY|F_CARN F_DOCE F_PAO F_CAFE|M_CORD M_SUFI
+LB|F_PAO F_DOCE F_CARN F_VINH|M_CORD M_POP M_FOLK
+JO|F_CARN F_PAO F_CAFE F_CHA|M_CORD M_FOLK
+YE|F_PAO F_CAFE F_CARN|M_CORD M_PERC
+OM|F_ARRO F_CARN F_CAFE|M_PERC M_FOLK
+AE|F_ARRO F_CARN F_CAFE|M_PERC M_FOLK
+QA|F_ARRO F_CARN F_CAFE|M_PERC M_FOLK
+KW|F_ARRO F_PEIX F_CAFE|M_PERC M_CORD
+BH|F_ARRO F_PEIX F_CAFE|M_PERC M_CORD
+EG|F_ARRO F_PAO F_CHA F_DOCE|M_CORD M_CINE M_POP M_SUFI
+LK|F_ARRO F_TEMP F_CHA F_PEIX|M_PERC M_FOLK
+LA|F_ARRO F_TEMP F_SOPA|M_FOLK M_CORD M_PERC
+KH|F_ARRO F_PEIX F_SOPA|M_FOLK M_PERC M_CORD
+MY|F_ARRO F_TEMP F_PEIX F_CAFE|M_FOLK M_PERC M_POP
+SG|F_ARRO F_PEIX F_TEMP F_CAFE|M_POP M_FOLK
+BN|F_ARRO F_PEIX|M_PERC M_FOLK
+PH|F_ARRO F_PEIX F_CARN|M_POP M_FOLK M_CORO
+TL|F_ARRO F_PEIX F_CAFE|M_FOLK M_PERC
+TW|F_ARRO F_CHA F_RECH F_SOPA|M_POP M_FOLK
+AD|F_LATI F_CARN F_VINH|M_FOLK M_CORO
+MC|F_PEIX F_MASS|M_CLAS M_EURO
+SM|F_MASS F_VINH|M_FOLK M_EURO
+VA|F_PAO F_VINH|M_CORO M_CLAS
+LI|F_LATI F_VINH F_BATA|M_FOLK
+MV|F_PEIX F_ARRO F_CHA|M_PERC M_FOLK
+XK|F_CARN F_PAO F_LATI|M_FOLK M_CORO M_POP`;
+Object.assign(T,{F_MASS:"têm a massa como base de pratos tradicionais",F_ARRO:"têm o arroz como base da culinária",F_PEIX:"têm peixe e frutos do mar entre os pratos típicos",F_CARN:"são famosos pelas carnes grelhadas e espetinhos",F_LATI:"são famosos pelos queijos e laticínios",F_BATA:"têm a batata como ingrediente central da cozinha",F_TEMP:"usam muita especiaria nos pratos tradicionais",F_DOCE:"são famosos por doces de massa folhada e mel",F_SOPA:"têm sopas e cozidos como pratos nacionais",F_VINH:"têm longa tradição na produção de vinho",F_CHA:"têm o chá como bebida nacional",F_CAFE:"têm uma forte cultura do café",F_CERV:"têm forte tradição cervejeira",F_PAO:"comem pão e massas assadas em quase toda refeição",F_RECH:"têm pastéis ou dumplings recheados como prato típico",
+M_CLAS:"são berço de grandes compositores clássicos",M_FOLK:"têm danças e música folclórica muito vivas",M_CORD:"têm instrumentos de cordas tradicionais, como o saz, o oud ou o sitar",M_POP:"exportam música pop que domina as paradas",M_ROCK:"são terra de grandes bandas de rock e metal",M_ELET:"têm cenas fortes de música eletrônica",M_CORO:"têm forte tradição de canto coral e polifônico",M_PERC:"têm tradição de tambores e percussão",M_GARG:"têm canto gutural e música das estepes",M_EURO:"já participaram do Festival Eurovisão",M_CINE:"têm uma grande indústria de cinema musical",M_SUFI:"têm música sufi e canto religioso tradicional",M_FADO:"têm gêneros de canto nostálgico com guitarra"});
+FM.split("\n").forEach(l=>{const[c,f,m]=l.split("|"),d=D.find(x=>x.c==c);if(d)d.t.push(...f.split(" "),...m.split(" "))})})();
 const freq={};D.forEach(d=>d.t.forEach(t=>freq[t]=(freq[t]||0)+1));
 let S,G,F,O,used,over;
 D.forEach(d=>{const o=document.createElement("option");o.value=d.n;$("dl").appendChild(o)});
-function start(){gid++;clearTimeout(bt);PL=LV==2||LV>=6?D:LV>2?D.filter(d=>[OT,RM,Q][LV-3].includes(d.c)):D.filter(d=>(LV?MZ:EZ).includes(d.c));S=FS?D.find(d=>d.c==FS):PL[Math.random()*PL.length|0];$("dl").innerHTML=PL.map(d=>`<option value="${ln(d)}">`).join("");blink=null;busy=false;hl=[];$("ov").style.display="none";if(B)animV({...B},500);$("lvl").textContent=LVN[LV];MH=$("hm").checked;$("mw").style.display=$("mm").style.display=MH?"none":"";GM={tips:new Set,off:Math.random()*8|0,t0:Date.now()};G=[];F=new Set;used=new Set;over=false;const L=N(S.n).length;
+function start(){gid++;clearTimeout(bt);PL=LV==2||LV>=6?D:LV>2?D.filter(d=>[OT,RM,Q][LV-3].includes(d.c)):D.filter(d=>(LV?MZ:EZ).includes(d.c));S=FS?D.find(d=>d.c==FS):PL[Math.random()*PL.length|0];$("dl").innerHTML=PL.map(d=>`<option value="${ln(d)}">`).join("");blink=null;busy=false;hl=[];$("ov").style.display="none";if(B)animV({...B},500);$("lvl").textContent=LVN[LV];MH=$("hm").checked;FH=$("hf").checked;$("fw").style.display=FH?"none":"";$("mw").style.display=$("mm").style.display=MH?"none":"";GM={tips:new Set,off:Math.random()*10|0,t0:Date.now()};G=[];F=new Set;used=new Set;over=false;const L=N(S.n).length;
 O=[...Array(L).keys()].sort(()=>Math.random()-.5);$("emo").innerHTML=flc(S.c);
 $("cov").innerHTML="<i></i>".repeat(L);$("hist").innerHTML="";$("msg").textContent="";$("in").value="";$("in").disabled=$("go").disabled=false;$("re").style.display="none";$("shg").style.display="none";
 $("hint").textContent=`O país secreto tem ${L} letras no nome (sem acentos e espaços). A bandeira começa em preto e branco e só ganha cor nas 2 últimas tentativas.`;upd();paint()}
@@ -361,8 +535,8 @@ function match(g){const s=N(S.n),x=N(g),sp=new Set,gu=new Set;
 for(let i=0;i<x.length&&i<s.length;i++)if(x[i]==s[i]){sp.add(i);gu.add(i)}
 for(let i=0;i<x.length;i++){if(gu.has(i))continue;for(let j=0;j<s.length;j++)if(!sp.has(j)&&s[j]==x[i]){sp.add(j);gu.add(i);break}}
 return sp}
-function clue(g,n){const sh=g.t.filter(t=>S.t.includes(t)&&!used.has(t)&&T[t]);if(NB(g.c,S.c)&&!used.has("B_DIR"))sh.push("B_DIR");const C="HEACLNGB",cat=t=>/^[HEACLNB]_/.test(t)?t[0]:"G";let pool=[];
-for(let i=0;i<8&&!pool.length;i++){const c=C[(n-1+GM.off+i)%8];pool=sh.filter(t=>cat(t)==c)}
+function clue(g,n){const sh=g.t.filter(t=>S.t.includes(t)&&!used.has(t)&&T[t]);if(NB(g.c,S.c)&&!used.has("B_DIR"))sh.push("B_DIR");const C="HEACLNGBFM",cat=t=>/^[HEACLNBFM]_/.test(t)?t[0]:"G";let pool=[];
+for(let i=0;i<10&&!pool.length;i++){const c=C[(n-1+GM.off+i)%10];pool=sh.filter(t=>cat(t)==c)}
 if(!pool.length)return`O país secreto tem ${S.pv>g.pv?"mais":"menos"} habitantes que ${g.n}.`;
 pool.sort((a,b)=>freq[b]-freq[a]);const t=n==1?pool[0]:n==2?pool[(pool.length-1)>>1]:pool[pool.length-1];used.add(t);GM.tips.add(t);return`Os dois países ${T[t]}.`}
 function paint(){const L=O.length,p=F.size/L;$("fb").style.width=(p*100)+"%";$("ft").textContent=Math.round(p*100)+"% da bandeira revelada";$("emo").style.filter=`blur(${Math.max(0,20*(1-p)*(1-G.length*.1)).toFixed(1)}px) ${G.length<3?"grayscale(1)":"grayscale(0)"}`;
@@ -384,7 +558,7 @@ setTimeout(()=>{q.classList.add("open");snd([330,220],.08,"square")},1300);
 setTimeout(()=>{q.classList.add("fl","rv");snd([660,880,1175,1568],.12,"triangle")},2100);
 t=setTimeout(secNext,6500);sr.onclick=()=>{if(q.classList.contains("rv")){clearTimeout(t);secNext()}}}
 const SEC=new Set(),SW={otomano:3,romano:4,qing:5};function secUI(){document.querySelectorAll("#lvls .sec").forEach(b=>b.style.display=SEC.has(+b.dataset.l)?"":"none")}
-const NA=d=>[N(d.n)].concat(((window.ALT||{})[d.c]||[]).map(N)),ln=d=>LG=="pt"?d.n:(((window.ALT||{})[d.c]||[])[LG=="en"?0:1]||d.n);
+const NA=d=>[N(d.n)].concat(((window.ALT||{})[d.c]||[]).map(N)),ln=d=>d.n;
 function pick(v){if(v.length<2)return null;const e=PL.find(d=>NA(d).includes(v));if(e)return e;let c=PL.filter(d=>NA(d).some(x=>x.startsWith(v)));if(!c.length&&v.length>=4)c=PL.filter(d=>[d.n].concat((window.ALT||{})[d.c]||[]).join(" ").split(/[\s-]+/).some(w=>w.length>3&&N(w).startsWith(v)));return c.length==1?c[0]:c.length?c:null}
 function guess(){if(over||busy)return;const v=N($("in").value),m=pick(v);if(Object.prototype.hasOwnProperty.call(SW,v)){SEC.add(SW[v]);secUI();$("in").value="";$("msg").textContent=" Modo secreto desbloqueado! Abra o menu e aperte Jogar (vale só até recarregar a página).";snd([523,659,784,1047],.1,"triangle");return}if(v=="otaldododoreports"){$("in").value="";adm();return}if(v=="otaldododo"){$("in").value="";devGate();return}
 if(Array.isArray(m)){$("msg").textContent="Seja mais específico: "+m.slice(0,6).map(d=>d.n).join(", ");return}const g=m;if(!g){$("msg").textContent="País não encontrado nesta dificuldade.";return}
@@ -405,11 +579,11 @@ $("in").disabled=$("go").disabled=false;$("in").focus();
 if(G.length==4){const o=PL.filter(d=>d!=S&&!G.includes(d)).map(d=>({d,s:d.t.filter(t=>S.t.includes(t)).length+Math.random()})).sort((a,b)=>b.s-a.s).slice(0,3).map(x=>x.d);
 o.push(S);hl=o;$("msg").textContent=MH?" Última chance! Um destes é o secreto: "+o.map(d=>d.n).sort(()=>Math.random()-.5).join(", "):" Última chance! 4 países destacados no mapa — um é o secreto."}
 colors()}
-function end(w){const full=F.size==O.length,fr=F.size/O.length;over=true;busy=false;finish(w,full,fr);upd();$("in").disabled=$("go").disabled=true;F=new Set([...Array(O.length).keys()]);paint();$("emo").style.filter="none";
+function end(w){const full=F.size==O.length,fr=F.size/O.length;over=true;busy=false;finish(w,full,fr);upd();$("in").disabled=$("go").disabled=true;F=new Set([...Array(O.length).keys()]);paint();$("emo").style.filter="none";$("fw").style.display="";
 $("msg").innerHTML=w?`Vitória! Era ${S.n} (${S.cap}).`:`Fim de jogo. Era ${fl(S.c)} ${S.n}.`;
 hl=[];colors();$("re").style.display="block";$("shg").style.display="block";$("shg").innerHTML=ic("share",16)+" Compartilhar";$("shg").onclick=()=>shareFlow({t:LV==6?"daily":"game",n:dcN(),w,att:G.length,code:S.c,mode:LVN[LV]});if(!w)setTimeout(()=>zoomTo(S.c),1500)}
-function colors(){document.querySelectorAll("#map :is(path,circle)").forEach(p=>{const d=D.find(x=>x.c==p.id);if(!d)return;if(!PL.includes(d)){p.setAttribute("class","");return}let c="g";
-if(G.includes(d))c+=" t";if(d.c==blink)c="g bl";if(hl.includes(d))c+=" op";if(GEO&&!over&&d==S)c="g gz";if(over&&d==S)c="g "+(G[G.length-1]==S?"w"+(W(d.c)>=5?" gd":""):"l");if(c=="g"&&W(d.c)>=20)c+=" pu";p.setAttribute("class",c)})}
+function colors(){ccDefs();document.querySelectorAll("#map :is(path,circle)").forEach(p=>{const d=D.find(x=>x.c==p.id);if(!d)return;if(!PL.includes(d)){p.setAttribute("class","");ccApply(p,d.c,"");return}let c="g";
+if(G.includes(d))c+=" t";if(d.c==blink)c="g bl";if(hl.includes(d))c+=" op";if(GEO&&!over&&d==S)c="g gz";if(over&&d==S)c="g "+(G[G.length-1]==S?"w"+(W(d.c)>=5?" gd":""):"l");if(c=="g"&&W(d.c)>=20)c+=" pu";p.setAttribute("class",c);ccApply(p,d.c,c)})}
 function tipShow(d,e){const t=$("tip");t.style.borderColor=t.style.color=W(d.c)>=20?"#8e44ad":"";t.innerHTML=`<h3>${G.length>=4&&!over?"":fl(d.c)+" "}${d.n}</h3><b>Capital:</b> ${d.cap}<br><b>População:</b> ${d.p} mi<br><b>Curiosidade:</b> ${d.cu}${extraInfo(d)}`;
 t.style.display="block";const x=Math.min(e.clientX+12,innerWidth-270);t.style.left=x+"px";t.style.top=Math.min(e.clientY+12,innerHeight-330)+"px"}
 function buildMap(){const M=(jsVectorMap.maps||{}).world;const svg=$("map");
@@ -432,8 +606,8 @@ svg.addEventListener("pointerleave",()=>$("tip").style.display="none");
 svg.addEventListener("click",ev=>{if(mv>5)return;const d=PL.find(x=>x.c==ev.target.id);if(d){tipShow(d,ev);SV.ic++;SV.c[d.c]=1;mEv("cs",d.c);cons()}else $("tip").style.display="none"});
 $("mm").textContent="Passe o cursor (ou toque) nos países para ver bandeira, capital, população e curiosidade.";colors()}
 $("go").onclick=guess;$("in").onkeydown=e=>{if(e.key=="Enter")guess()};$("re").onclick=()=>{if(LV>=6||GM.duel){GM.duel=null;LV=2;$("menu").style.display="flex";return}hl=[];blink=null;busy=false;start();colors();if(B)animV({...B},700)};$("zi").onclick=()=>zoomBy(1.7);$("zo").onclick=()=>zoomBy(1/1.7);
-let MH=false,GM={tips:new Set},AC;
-const SD={n:"Jogador",games:0,w:{},a:{},c:{},s2:0,t:"ini",ws:0,av:"",t1:0,t3:0,tm:0,ic:0,ld:"",ds:0,dw:{},dd:{d:"",w:0,g:0},tag:"",show:false,cz:{},coins:0,inv:{},ms:{d:"",p:{},cl:{}},md:0,dcr:{},dcs:0,dct:0,dcl:"",st:{g:0,w:0,l:0,dist:[0,0,0,0,0],cur:0,best:0,att:0,lv:{},c:{},r:{},sec:0,fr:0,rec:[],cl:{}},bp:{act:0,xp:0,cl:{}},sw:{},hs:false,du:0,sc:"",wk:{k:"",w:0,g:0},fcl:0,lang:"pt"};
+let MH=false,FH=false,GM={tips:new Set},AC;
+const SD={n:"Jogador",games:0,w:{},a:{},c:{},s2:0,t:"ini",ws:0,av:"",t1:0,t3:0,tm:0,ic:0,ld:"",ds:0,dw:{},dd:{d:"",w:0,g:0},tag:"",show:false,cz:{},coins:0,inv:{},ms:{d:"",p:{},cl:{}},md:0,dcr:{},dcs:0,dct:0,dcl:"",st:{g:0,w:0,l:0,dist:[0,0,0,0,0],cur:0,best:0,att:0,lv:{},c:{},r:{},sec:0,fr:0,rec:[],cl:{}},bp:{act:0,xp:0,cl:{},gv:1},cc:{},bx:{c:0,r:0,e:0,l:0},bxb:"",fw:{},cmc:{},cmp:{},gems:0,mw:{k:"",p:{},cl:{}},mwd:0,ma:{a:-1,p:{},cl:{}},mad:0,sw:{},hs:false,du:0,sc:"",wk:{k:"",w:0,g:0},fcl:0,lang:"pt"};
 let SV;try{SV=Object.assign(JSON.parse(JSON.stringify(SD)),JSON.parse(localStorage.getItem("euradle")||"{}"))}catch(e){SV=JSON.parse(JSON.stringify(SD))}
 const save=()=>{try{localStorage.setItem("euradle",JSON.stringify(SV))}catch(e){}},W=c=>SV.w[c]||0,esc=x=>String(x).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const CL=Object.fromEntries("PT:046a38 ES:c60b1e FR:0055a4 GB:cf142b NO:ba0c2f SE:006aa7 FI:003580 DE:dd0000 IT:008c45 PL:dc143c BY:c8313e HU:477050 RO:002b7f RS:c6363c GR:0d5eaf UA:0057b7 RU:d52b1e TR:e30a17 GE:d1121f AM:d90012 AZ:00b5e2 KZ:00afca UZ:1eb53a TM:1a8f3c KG:e8112d TJ:cc0000 AF:bf0000 IR:239f40 IQ:ce1126 SA:006c35 IL:0038b8 IN:ff9933 PK:01411c NP:dc143c BT:ff8c00 BD:006a4e MM:fecb00 TH:a51931 VN:da251d ID:ce1126 CN:de2910 MN:c4272f KP:024fa2 KR:cd2e3a JP:bc002d IE:169b62 IS:02529c DK:c8102e NL:ae1c28 BE:c9a400 LU:00a1de CH:da291c AT:ed2939 CZ:11457e SK:0b4ea2 SI:005da4 HR:ff0000 BA:002395 ME:c40308 AL:e41e20 MK:d20000 BG:00966e MD:0046ae LT:006a44 LV:9e3039 EE:0072ce CY:d57800 MT:cf142b SY:ce1126 LB:00a651 JO:007a3d YE:ce1126 OM:db161b AE:00732f QA:8a1538 KW:007a3d BH:ce1126 EG:ce1126 LK:8d153a LA:ce1126 KH:032ea1 MY:cc0001 SG:ed2939 BN:c9a400 PH:0038a8 TL:dc241f TW:fe0000 AD:10069f MC:ce1126 SM:5eb6e4 VA:c9a400 LI:002b7f MV:d21034 XK:244aa5".split(" ").map(x=>x.split(":")));
@@ -442,8 +616,8 @@ const arp=c=>{const b=300+(c.charCodeAt(0)*7+c.charCodeAt(1)*13)%300;return[b,b*
 const TQ=[];function toast(e,t,d){if($("tc").children.length>=3){TQ.push([e,t,d]);return}const x=document.createElement("div");x.className="ts";x.innerHTML=`<span>${e||ic("star",28)}</span><div><b>${t}</b><br><small>${d}</small></div>`;$("tc").appendChild(x);snd([660,880,1175,1568],.12,"triangle");setTimeout(()=>{x.remove();const q=TQ.shift();if(q)toast(...q)},4200)}
 const Q="CN MN TW KR VN MM NP KZ KG TJ".split(" "),OT=X.H_OT.split(" ").concat("CY"),RM="PT ES FR GB BE NL LU DE CH AT IT SI HR BA RS ME AL MK GR BG RO HU TR SY LB IL JO CY MT GE AM".split(" ");
 const cnt=L=>L.filter(c=>SV.c[c]).length,nC=()=>Object.keys(SV.c).length,nW=()=>Object.keys(SV.w).filter(k=>SV.w[k]>0).length;
-const AL=[["vid","","Vidente","Acerte o país na 1ª tentativa"],["mos","","Na mosca","Acerte o país na 2ª tentativa 3 vezes seguidas"],["rei","","Rei da Eurásia","Ganhe com o mapa fechado"],["ban","","Bandeirologista","Ganhe com no máximo 20% da bandeira revelada"],["min","","90 minutos","Ganhe na 5ª tentativa"],["con","","Consultor","Consulte 15 países no mapa"],["moc","","Mochilão","Consulte 30 países no mapa"],["qin","","Qing","Consulte todos os países da Dinastia Qing"],["otm","","Otomano","Consulte todos os países do Império Otomano"],["imp","","Imperador","Consulte todos os países da Eurásia do Império Romano"],["sem","","Sem Fronteiras","Ganhe jogando com 20 países diferentes"],["esp","","Esportista","Ganhe após receber uma dica esportiva"],["pol","","Poliglota","Ganhe após uma dica sobre a mesma língua entre dois países"],["geo","","Geógrafo","Ganhe usando uma pista geográfica"],["pas","","Do Passado","Ganhe após uma dica sobre uma república que os dois países integravam"],["prop","","Foi de Propósito?","Com 100% da bandeira revelada, perca"],["mir","","Mirou pra um, chutou pro outro","Na última tentativa, escreva outro país destacado, apague e escreva o correto"],["stan","","-stão por aí","Chute um país terminado em -stão errado (vale no fim da partida)"],["bird","","Pássaro errado","Chute Montenegro sendo Albânia ou vice-versa (vale no fim da partida)"],["fed","","Mestre Federativo","Complete a Maestria de um país"],["gan","","Primeira Vitória","Vença sua primeira partida"],["ens","","Errar Também Ensina","Perca uma partida e aprenda algo novo"],["per","","Persistente","Jogue 10 partidas"],["vet","","Veterano","Jogue 50 partidas"],["col","","Colecionador","Ganhe com 10 países diferentes"],["seq","","Em Chamas","Ganhe 3 partidas seguidas"],["dif","","Sem Piedade","Ganhe uma partida no modo Difícil"],["ouro","","Brilho Dourado","Ganhe 5 vezes com o mesmo país"],["rox","","Realeza Roxa","Ganhe 20 vezes com o mesmo país"],["eu","","Minha Cara","Personalize o perfil com nome ou foto"],["ma5","","Embalado","Ganhe 5 partidas seguidas"],["im10","","Imparável","Ganhe 10 partidas seguidas"],["tri","","Trio de Ouro","Ganhe na 3ª tentativa 5 vezes"],["faro","","Faro Aguçado","Ganhe a partir da 3ª tentativa sem ter achado nenhuma letra"],["v3","","Sexto Sentido","Acerte na 1ª tentativa 3 vezes"],["t30","","Meia Hora de Mapa","Jogue por 30 minutos no total"],["t2h","","Maratona Geográfica","Jogue por 2 horas no total"],["t10h","","Cartógrafo Eterno","Jogue por 10 horas no total"],["ic1","","Curioso","Inspecione países 50 vezes"],["ic2","","Cartógrafo","Inspecione países 200 vezes"],["ic3","","Explorador Nato","Inspecione países 500 vezes"],["atl","","Atlas Vivo","Consulte todos os países do jogo"],["mun","","Cidadão do Mundo","Ganhe com 50 países diferentes"],["v50","","Cinquentão","Some 50 vitórias"],["v100","","Centenário","Some 100 vitórias"],["tres","","Três Mundos","Ganhe nas 3 dificuldades"],["sang","","Sangue Azul","Ganhe com um país que é monarquia"],["ilha","","Ilhéu","Ganhe com um país insular"],["semar","","Sem Mar","Ganhe com um país sem acesso ao mar"],["petro","","Petroleiro","Ganhe com um membro da OPEP"],["olim","","Olímpico","Ganhe com um país que já sediou Olimpíadas de Verão"],["coruja","","Coruja","Ganhe entre 0h e 5h da manhã"],["triz","","Por um Triz","Perca com 80% a 99% da bandeira revelada"],["dej","","Déjà Vu","Tente chutar um país que você já tinha tentado"],["rank","","Competidor","Abra o ranking online"],["fiel","","Fiel","Jogue 3 dias seguidos"],["sema","","Semana Perfeita","Jogue 7 dias seguidos"],["sot","","Sultão Secreto","Ganhe uma partida no modo secreto Otomano"],["sro","","Salve, César!","Ganhe uma partida no modo secreto Romano"],["sqi","","Mandato do Céu","Ganhe uma partida no modo secreto Qing"],["dc1","","Primeiro Desafio","Complete um desafio diário"],["dc7","","Sete Desafios","Complete 7 desafios diários"],["dcs","","Fogo Diário","Complete desafios diários por 7 dias seguidos"],["ms1","","Dia de Missões","Cumpra as 3 missões de um dia"],["ms7","","Disciplina","Cumpra todas as missões em 7 dias"],["shp","","Primeira Compra","Compre um item na loja"],["bp10","","Passe Nível 10","Alcance o nível 10 no passe de batalha"],["bp30","","Passe Completo","Complete o passe de um Ato"],["du1","","Primeiro Duelo","Vença um duelo com um amigo"],["du5","","Duelista Nato","Vença 5 duelos"],["amg","","Amigo","Adicione um amigo"],["nuv","","Na Nuvem","Salve sua conta na nuvem"],["alb","","Páginas Cheias","Tenha 10 países com 5 vitórias ou mais"],["shr","","Show de Bola","Compartilhe um resultado"],["top","","Elite Semanal","Entre no top 100 de uma semana"],["lng","","Poliglota Digital","Troque o idioma do jogo"]];
-const CAT={h:"vid mos ban min faro v3 tri rei dif gan".split(" "),s:"seq ma5 im10 fiel sema per vet t30 t2h t10h".split(" "),e:"con moc qin otm imp atl ic1 ic2 ic3".split(" "),c:"sem col mun ouro rox fed v50 v100 tres alb".split(" "),d:"esp pol geo pas sang ilha semar petro olim".split(" "),o:"dc1 dc7 dcs ms1 ms7 shp bp10 bp30 du1 du5 amg nuv shr top lng eu rank".split(" "),x:"dej coruja mir stan bird prop triz ens sot sro sqi".split(" ")};
+const AL=[["vid","","Vidente","Acerte o país na 1ª tentativa"],["mos","","Na mosca","Acerte o país na 2ª tentativa 3 vezes seguidas"],["rei","","Rei da Eurásia","Ganhe com o mapa fechado"],["bvd","","Olhos Vendados","Ganhe com a bandeira escondida"],["gul","","Paladar Apurado","Ganhe uma partida tendo recebido uma dica de culinária"],["mus","","Ouvido Absoluto","Ganhe uma partida tendo recebido uma dica de música"],["ban","","Bandeirologista","Ganhe com no máximo 20% da bandeira revelada"],["min","","90 minutos","Ganhe na 5ª tentativa"],["con","","Consultor","Consulte 15 países no mapa"],["moc","","Mochilão","Consulte 30 países no mapa"],["qin","","Qing","Consulte todos os países da Dinastia Qing"],["otm","","Otomano","Consulte todos os países do Império Otomano"],["imp","","Imperador","Consulte todos os países da Eurásia do Império Romano"],["sem","","Sem Fronteiras","Ganhe jogando com 20 países diferentes"],["esp","","Esportista","Ganhe após receber uma dica esportiva"],["pol","","Poliglota","Ganhe após uma dica sobre a mesma língua entre dois países"],["geo","","Geógrafo","Ganhe usando uma pista geográfica"],["pas","","Do Passado","Ganhe após uma dica sobre uma república que os dois países integravam"],["prop","","Foi de Propósito?","Com 100% da bandeira revelada, perca"],["mir","","Mirou pra um, chutou pro outro","Na última tentativa, escreva outro país destacado, apague e escreva o correto"],["stan","","-stão por aí","Chute um país terminado em -stão errado (vale no fim da partida)"],["bird","","Pássaro errado","Chute Montenegro sendo Albânia ou vice-versa (vale no fim da partida)"],["fed","","Mestre Federativo","Complete a Maestria de um país"],["gan","","Primeira Vitória","Vença sua primeira partida"],["ens","","Errar Também Ensina","Perca uma partida e aprenda algo novo"],["per","","Persistente","Jogue 10 partidas"],["vet","","Veterano","Jogue 50 partidas"],["col","","Colecionador","Ganhe com 10 países diferentes"],["seq","","Em Chamas","Ganhe 3 partidas seguidas"],["dif","","Sem Piedade","Ganhe uma partida no modo Difícil"],["ouro","","Brilho Dourado","Ganhe 5 vezes com o mesmo país"],["rox","","Realeza Roxa","Ganhe 20 vezes com o mesmo país"],["eu","","Minha Cara","Personalize o perfil com nome ou foto"],["ma5","","Embalado","Ganhe 5 partidas seguidas"],["im10","","Imparável","Ganhe 10 partidas seguidas"],["tri","","Trio de Ouro","Ganhe na 3ª tentativa 5 vezes"],["faro","","Faro Aguçado","Ganhe a partir da 3ª tentativa sem ter achado nenhuma letra"],["v3","","Sexto Sentido","Acerte na 1ª tentativa 3 vezes"],["t30","","Meia Hora de Mapa","Jogue por 30 minutos no total"],["t2h","","Maratona Geográfica","Jogue por 2 horas no total"],["t10h","","Cartógrafo Eterno","Jogue por 10 horas no total"],["ic1","","Curioso","Inspecione países 50 vezes"],["ic2","","Cartógrafo","Inspecione países 200 vezes"],["ic3","","Explorador Nato","Inspecione países 500 vezes"],["atl","","Atlas Vivo","Consulte todos os países do jogo"],["mun","","Cidadão do Mundo","Ganhe com 50 países diferentes"],["v50","","Cinquentão","Some 50 vitórias"],["v100","","Centenário","Some 100 vitórias"],["tres","","Três Mundos","Ganhe nas 3 dificuldades"],["sang","","Sangue Azul","Ganhe com um país que é monarquia"],["ilha","","Ilhéu","Ganhe com um país insular"],["semar","","Sem Mar","Ganhe com um país sem acesso ao mar"],["petro","","Petroleiro","Ganhe com um membro da OPEP"],["olim","","Olímpico","Ganhe com um país que já sediou Olimpíadas de Verão"],["coruja","","Coruja","Ganhe entre 0h e 5h da manhã"],["triz","","Por um Triz","Perca com 80% a 99% da bandeira revelada"],["dej","","Déjà Vu","Tente chutar um país que você já tinha tentado"],["rank","","Competidor","Abra o ranking online"],["fiel","","Fiel","Jogue 3 dias seguidos"],["sema","","Semana Perfeita","Jogue 7 dias seguidos"],["sot","","Sultão Secreto","Ganhe uma partida no modo secreto Otomano"],["sro","","Salve, César!","Ganhe uma partida no modo secreto Romano"],["sqi","","Mandato do Céu","Ganhe uma partida no modo secreto Qing"],["dc1","","Primeiro Desafio","Complete um desafio diário"],["dc7","","Sete Desafios","Complete 7 desafios diários"],["dcs","","Fogo Diário","Complete desafios diários por 7 dias seguidos"],["ms1","","Dia de Missões","Cumpra as 3 missões de um dia"],["ms7","","Disciplina","Cumpra todas as missões em 7 dias"],["shp","","Primeira Compra","Compre um item na loja"],["bp10","","Passe Nível 10","Alcance o nível 10 no passe de batalha"],["bp30","","Passe Completo","Complete o passe de um Ato"],["du1","","Primeiro Duelo","Vença um duelo com um amigo"],["du5","","Duelista Nato","Vença 5 duelos"],["amg","","Amigo","Adicione um amigo"],["nuv","","Na Nuvem","Salve sua conta na nuvem"],["alb","","Páginas Cheias","Tenha 10 países com 5 vitórias ou mais"],["shr","","Show de Bola","Compartilhe um resultado"],["top","","Elite Semanal","Entre no top 100 de uma semana"],["lng","","Poliglota Digital","Troque o idioma do jogo"]];
+const CAT={h:"vid mos ban min faro v3 tri rei bvd dif gan".split(" "),s:"seq ma5 im10 fiel sema per vet t30 t2h t10h".split(" "),e:"con moc qin otm imp atl ic1 ic2 ic3".split(" "),c:"sem col mun ouro rox fed v50 v100 tres alb".split(" "),d:"esp pol geo pas sang ilha semar petro olim gul mus".split(" "),o:"dc1 dc7 dcs ms1 ms7 shp bp10 bp30 du1 du5 amg nuv shr top eu rank".split(" "),x:"dej coruja mir stan bird prop triz ens sot sro sqi".split(" ")};
 const SECA=new Set("dej coruja mir stan bird prop triz sot sro sqi".split(" "));
 const tw=()=>Object.values(SV.w).reduce((a,b)=>a+b,0),mn=()=>Math.floor(SV.tm/60);
 const MISS={qin:()=>Q,otm:()=>OT,imp:()=>RM,atl:()=>D.map(d=>d.c)};
@@ -455,9 +629,9 @@ function chk(id){if(SV.a[id])return;SV.a[id]=1;const a=AL.find(x=>x[0]==id);SECA
 function cons(){const n=nC();if(n>=15)chk("con");if(n>=30)chk("moc");if(cnt(Q)>=Q.length)chk("qin");if(cnt(OT)>=OT.length)chk("otm");if(cnt(RM)>=RM.length)chk("imp");if(SV.ic>=50)chk("ic1");if(SV.ic>=200)chk("ic2");if(SV.ic>=500)chk("ic3");if(cnt(D.map(d=>d.c))>=D.length)chk("atl");save()}
 const MT=[[5,"star","Brilho dourado"],[10,"speaker","Som exclusivo"],[20,"gem","Mapa roxo"],[25,"crown","Título do país"]];
 function finish(w,full,fr){const n=G.length,og=SV.games;SV.games++;const dy=day();if(SV.dd.d!=dy)SV.dd={d:dy,w:0,g:0};SV.dd.g++;if(w)SV.dd.w++;const d0=new Date().toDateString();if(SV.ld!=d0){const y=new Date(Date.now()-864e5).toDateString();SV.ds=SV.ld==y?SV.ds+1:1;SV.ld=d0}if(SV.ds>=3)chk("fiel");if(SV.ds>=7)chk("sema");
-if(w){const c=S.c,o=W(c);SV.w[c]=o+1;const has=f=>[...GM.tips].some(f);
-if(n==1){chk("vid");SV.t1++;if(SV.t1>=3)chk("v3")}if(n==3){SV.t3++;if(SV.t3>=5)chk("tri")}if(fr==0&&n>=3)chk("faro");if(n==5)chk("min");if(MH)chk("rei");if(fr<=.2)chk("ban");
-if(has(t=>t[1]=="_"&&t[0]=="E"))chk("esp");if(has(t=>["PO","AR","PE","TU","SL"].includes(t)||/^L_/.test(t)))chk("pol");
+if(w){const c=S.c,o=W(c);SV.w[c]=o+1;if(!SV.fw[c])SV.fw[c]=day();const has=f=>[...GM.tips].some(f);
+if(n==1){chk("vid");SV.t1++;if(SV.t1>=3)chk("v3")}if(n==3){SV.t3++;if(SV.t3>=5)chk("tri")}if(fr==0&&n>=3)chk("faro");if(n==5)chk("min");if(MH)chk("rei");if(FH)chk("bvd");if(fr<=.2)chk("ban");
+if(has(t=>t[1]=="_"&&t[0]=="E"))chk("esp");if(has(t=>/^F_/.test(t)))chk("gul");if(has(t=>/^M_/.test(t)))chk("mus");if(has(t=>["PO","AR","PE","TU","SL"].includes(t)||/^L_/.test(t)))chk("pol");
 if(has(t=>["LL","IS"].includes(t)||/^r[A-Z]/.test(t)||/^[NB]_/.test(t)))chk("geo");if(has(t=>t=="SU"||t=="H_YU"||t=="H_CS"))chk("pas");
 if(GM.mirou)chk("mir");if(nW()>=20)chk("sem");
 MT.forEach(([k,e,t])=>{if(o<k&&o+1>=k)toast(ic(e,26),`Maestria: ${t}`,`${S.n} — ${k} vitórias`)});if(o+1>=25)chk("fed");chk("gan");if(LV>2&&LV<6)chk(["sot","sro","sqi"][LV-3]);if(tw()>=50)chk("v50");if(tw()>=100)chk("v100");if(nW()>=50)chk("mun");if(LV<3){SV.dw[LV]=1;if(Object.keys(SV.dw).length>=3)chk("tres")}if(S.t.includes("MO"))chk("sang");if(S.t.includes("IS"))chk("ilha");if(S.t.includes("LL"))chk("semar");if(S.t.includes("OP"))chk("petro");if(S.t.includes("E_OL"))chk("olim");if(new Date().getHours()<5)chk("coruja");if(LV==2)chk("dif");if(nW()>=10)chk("col");if(o+1>=5)chk("ouro");if(o+1>=20)chk("rox")}
@@ -483,18 +657,17 @@ const czp=v=>{const a=String(v||"").split("."),p=(k,L,d)=>L.some(o=>o[0]==k)?k:d
 const cz=()=>{const o=SV.cz||{};return czp([o.bn,o.fr,o.nc,o.bd,o.fv,o.ph].join("."))};
 const czs=()=>{const c=cz();return[c.bn,c.fr,c.nc,c.bd,c.fv,c.ph].join(".")};
 const bnS=id=>{const o=BN.find(x=>x[0]==id)||BN[0];return o[2]?"background:"+o[2]:"background:var(--card2)"};
-const ncS=id=>{const o=NC.find(x=>x[0]==id);return!o||!o[2]?"":o[2].startsWith("linear")?`background:${o[2]};-webkit-background-clip:text;background-clip:text;color:transparent`:`color:${o[2]}`};
+const ncS=id=>{const o=NC.find(x=>x[0]==id);return!o||!o[2]?"":(o[2].startsWith("linear")?`background:${o[2]};-webkit-background-clip:text;background-clip:text;color:transparent`:`color:${o[2]}`)+";"+(o[5]||"")};
 const frm=(h,id)=>{const o=FR.find(x=>x[0]==id);return!o||!o[2]?h:`<span class="frm" style="background:${o[2]}">${h}</span>`};
-const bdg=id=>{const o=BD.find(x=>x[0]==id);return!o||id=="b0"?"":`<span>${ic(o[1],16)}</span>`};
+const bdg=id=>{const o=BD.find(x=>x[0]==id);return!o||id=="b0"?"":`<span style="${o[7]?"color:"+o[7]:""}">${ic(o[1],16)}</span>`};
 const chp=(ph,fv)=>ph||fv?`<div class="chips">${ph?`<span>${ic("speech",14)} ${esc(ph[1])}</span>`:""}${fv?`<span>${ic("star",14)} ${fl(fv.c)} ${fv.n}</span>`:""}</div>`:"";
 function tn(id){if(id.startsWith("c_")){const d=D.find(x=>x.c==id.slice(2));if(d)return`<span style="color:#${CL[d.c]||"b8862b"}">${fl(d.c)} ${d.n}: ${d.cu}</span>`}const t=dynT(id)||TT.find(x=>x[0]==id)||TT[0],rc=RAR[t[5]];return rc&&t[5]!="c"?`<span style="color:${rc[2]}">${esc(t[1])}</span>`:esc(t[1])}
-function mp(){try{dcLabel()}catch(e){}const c=cz();$("mp").innerHTML=frm(av(30),c.fr)+` <span style="${ncS(c.nc)}">${esc(SV.n)}</span> ${bdg(c.bd)} · `+tn(SV.t)+`<span class="cn">${ic("coin",15)} ${SV.coins}</span>`}
-function pn(h){$("pn").innerHTML=`<div class="pb"><button class="x" data-a="x" aria-label="Fechar">${ic("close",16)}</button>${h}</div>`;$("pn").style.display="flex"}
+function mp(){try{dcLabel()}catch(e){}const c=cz();$("mp").innerHTML=frm(av(30),c.fr)+` <span style="${ncS(c.nc)}">${esc(SV.n)}</span> ${bdg(c.bd)} · `+tn(SV.t)+`<span class="cn">${ic("coin",15)} ${SV.coins}</span><span class="cn" style="color:#16a39a">${ic("gem",15)} ${SV.gems||0}</span>`}
+function pn(h,w){$("pn").innerHTML=`<div class="pb${w?" wide":""}"><button class="x" data-a="x" aria-label="Fechar">${ic("close",16)}</button>${h}</div>`;$("pn").style.display="flex"}
 const bar=(c,m)=>`<div class="br"><i style="width:${Math.min(100,c/m*100)}%"></i></div><small>${Math.min(c,m)}/${m}</small>`;
 let AT=0;const GN={h:"Habilidade",s:"Rotina",e:"Mapa",c:"Coleção",d:"Dicas",o:"Desafios",x:"Segredos"};
-function showAch(t){t=t||0;AT=t;const ks=Object.keys(GN);let h=`<div class="tb">`+ks.map((k,i)=>`<button data-a="k${i}" class="${i==t?"on":""}">${GN[k]}</button>`).join("")+`<button data-a="k${ks.length}" class="${t==ks.length?"on":""}">Maestria</button></div><label class="chk2"><input type="checkbox" id="hsx" ${SV.hs?"checked":""}> Ocultar conquistas secretas ainda bloqueadas</label>`;
-if(t<ks.length){let L=AL.filter(a=>CAT[ks[t]].includes(a[0]));if(SV.hs)L=L.filter(a=>!SECA.has(a[0])||SV.a[a[0]]);h+=`<p>${L.filter(a=>SV.a[a[0]]).length}/${L.length} conquistas</p>`+L.map(a=>{const p=PR[a[0]],u=!!SV.a[a[0]],sc=SECA.has(a[0])&&!u;return`<div class="ar ${u?"":"lk"}"><span>${sc?badge("lock",46,1):badge(a[0],46,!u)}</span><div><b>${sc?"Conquista secreta":esc(a[2])}</b><br><small>${sc?"???":esc(a[3])}</small>${p?bar(...p()):""}${sc?"":missHTML(a[0])}</div></div>`}).join("")}
-else h+=`<p><small class="mut">${MT.map(m=>ic(m[1],14)+" "+m[0]+": "+m[2]).join(" · ")}</small></p>`+D.slice().sort((a,b)=>W(b.c)-W(a.c)||a.n.localeCompare(b.n)).map(d=>{const w=W(d.c);return`<div class="ar ${w?"":"lk"}"><span>${fl(d.c)}</span><div><b>${d.n}</b> ${MT.map(m=>`<span class="${w>=m[0]?"":"dm"}">${ic(m[1],14)}</span>`).join(" ")}${bar(w,25)}</div></div>`}).join("");
+function showAch(t){t=Math.min(t||0,Object.keys(GN).length-1);AT=t;const ks=Object.keys(GN);let h=`<div class="tb">`+ks.map((k,i)=>`<button data-a="k${i}" class="${i==t?"on":""}">${GN[k]}</button>`).join("")+`</div>`;
+if(t<ks.length){let L=AL.filter(a=>CAT[ks[t]].includes(a[0]));L=L.filter(a=>!SECA.has(a[0])||SV.a[a[0]]);h+=`<p>${L.filter(a=>SV.a[a[0]]).length}/${L.length} conquistas</p>`+L.map(a=>{const p=PR[a[0]],u=!!SV.a[a[0]],sc=SECA.has(a[0])&&!u;return`<div class="ar ${u?"":"lk"}"><span>${sc?badge("lock",46,1):badge(a[0],46,!u)}</span><div><b>${sc?"Conquista secreta":esc(a[2])}</b><br><small>${sc?"???":esc(a[3])}</small>${p?bar(...p()):""}${sc?"":missHTML(a[0])}</div></div>`}).join("")}
 pn(h)}
 const SB_URL="https://fzfjipjgyaixpgltngkx.supabase.co",SB_KEY="sb_publishable_vnhkADIvdN-wn2fqJQ3fNg_ASFERuCA";
 const sbOn=()=>!!(SB_URL&&SB_KEY),sbH={apikey:SB_KEY,...(SB_KEY.startsWith("eyJ")?{Authorization:"Bearer "+SB_KEY}:{}),"Content-Type":"application/json"};
@@ -508,7 +681,7 @@ function avx(x,z){const st=`width:${z}px;height:${z}px;border-radius:50%;overflo
 return imgOk(x.img)?`<span style="${st}"><img src="${x.img}" style="width:100%;height:100%;object-fit:cover"></span>`:`<span style="${st}">${/^[A-Z]{2}$/.test(x.f||"")?flc(x.f):ic("user",z*.55)}</span>`}
 let TH={k:"",v:null};
 const thumb=()=>new Promise(res=>{const a=SV.av||"";if(!a.startsWith("data:"))return res(null);if(TH.k==a)return res(TH.v);const im=new Image;im.onload=()=>{const c=document.createElement("canvas");c.width=c.height=64;c.getContext("2d").drawImage(im,0,0,64,64);TH={k:a,v:c.toDataURL("image/jpeg",.7)};res(TH.v)};im.onerror=()=>res(null);im.src=a});
-async function sync(){LBE="";try{if(!sbOn()||!SV.games)return;ids();const f=(SV.av||"").startsWith("f:")?SV.av.slice(2):"";
+async function sync(){LBE="";try{if(!sbOn()||!SV.games)return;ids();const f=/^f:[A-Z]{2}$/.test(SV.av||"")?SV.av.slice(2):"";
 let r=await rpc("submit",{p_id:SV.uid,p_k:SV.k,p_n:SV.n,p_w:tw(),p_g:SV.games,p_a:Object.keys(SV.a).length,p_f:f,p_t:SV.t,p_tag:SV.tag,p_img:SV.show?await thumb():null,p_show:!!SV.show});
 if(!r.ok){LBE=r.status+" "+(await r.text()).slice(0,200);return}try{await rpc("submit_cz",{p_id:SV.uid,p_k:SV.k,p_cz:czs()})}catch(e){}
 const j=await r.json();if(j&&j.ok){if(j.n&&j.n!=SV.n){SV.n=j.n;LBN="Seu nome de exibição foi removido pela moderação e substituído."}if(j.taken)LBN=`A tag @${SV.tag} já está em uso por outro jogador.`;if((j.tag||"")!=SV.tag)SV.tag=j.tag||"";save();mp()}
@@ -544,22 +717,31 @@ pn(`<h2> Denúncias</h2>`+(q.length?q.map(x=>`<div class="ar"><span>${imgOk(x.im
 const adm=()=>{ADN=null;AP?admLoad():admLogin()};
 let TO=false,AO=false,ED=false,CO=false,AP="",LBN="";
 function av(z){const a=SV.av||"",st=`width:${z}px;height:${z}px;border-radius:50%;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;background:var(--land);font-size:${z*.6}px;vertical-align:middle`;
-return a.startsWith("data:")?`<span style="${st}"><img src="${a}" style="width:100%;height:100%;object-fit:cover"></span>`:`<span style="${st}">${a.startsWith("f:")?flc(a.slice(2)):ic("user",z*.55)}</span>`}
-function czHTML(){const c=cz(),b=(k,L,cur,st,lab)=>L.map(o=>{const u=o[3]();return`<button class="sw ${cur==o[0]?"on":""} ${u?"":"lk"}" data-cz="${k}" data-v="${o[0]}" ${u?"":"disabled"} style="${st(o)}">${u?lab(o):ic("lock",13)+" "+o[4]}</button>`}).join(""),flat="background:var(--card2);color:var(--fg);text-shadow:none;";
-return`<h3> Personalização</h3><small>Banner</small><div>${b("bn",BN,c.bn,o=>o[2]?"background:"+o[2]:flat,o=>o[1])}</div><small>Moldura da foto</small><div>${b("fr",FR,c.fr,o=>o[2]?"background:"+o[2]:flat,o=>o[1])}</div><small>Cor do nome</small><div>${b("nc",NC,c.nc,o=>flat+ncS(o[0]),o=>o[1])}</div><small>Emblema</small><div>${b("bd",BD,c.bd,o=>flat+"font-size:1.1rem",o=>o[1])}</div>
-<small>País favorito</small><br><select data-cz="fv"><option value="">—</option>${D.slice().sort((a,b)=>a.n.localeCompare(b.n,"pt")).map(d=>`<option value="${d.c}" ${c.fv==d.c?"selected":""}>${fl(d.c)} ${d.n}</option>`).join("")}</select><br><small>Frase do perfil</small><br><select data-cz="ph"><option value="">—</option>${PHR.map(p=>`<option value="${p[0]}" ${c.ph==p[0]?"selected":""}>${esc(p[1])}</option>`).join("")}</select>`}
+if(a.startsWith("g:")&&AVG.some(x=>x[0]==a.slice(2)))return gav(a.slice(2),z);return a.startsWith("data:")?`<span style="${st}"><img src="${a}" style="width:100%;height:100%;object-fit:cover"></span>`:`<span style="${st}">${a.startsWith("f:")?flc(a.slice(2)):ic("user",z*.55)}</span>`}
+function czHTML(){const c=cz();return`<h3>País favorito</h3><select data-cz="fv"><option value="">—</option>${D.slice().sort((a,b)=>a.n.localeCompare(b.n,"pt")).map(d=>`<option value="${d.c}" ${c.fv==d.c?"selected":""}>${d.n}</option>`).join("")}</select>`}
 function csv(k,v){const c=cz();c[k]=v;SV.cz=c;save();mp();chk("eu");showPro();sync()}
 function showPro(){const wn=tw(),c=cz(),fv=D.find(d=>d.c==c.fv),ph=PHR.find(p=>p[0]==c.ph);
-let h=(LBN?`<p style="color:#d33;font-size:.85rem">${esc(LBN)}</p>`:"")+`<div class="pcard"><div class="bn" style="${bnS(c.bn)}"></div><div class="pf2"><div data-a="av" style="cursor:pointer" title="Trocar foto">${frm(av(72),c.fr)}</div><div class="pn2">`+(ED?`<input id="ni" maxlength="24" value="${esc(SV.n)}" placeholder="Nome de exibição" style="width:180px"><br><input id="ti" maxlength="20" value="${esc(SV.tag)}" placeholder="tag (letras, números, _ e .)" style="width:180px;margin-top:4px"><br><label style="font-size:.8rem"><input type="checkbox" id="si" ${SV.show?"checked":""}> Mostrar minha foto no ranking</label><br><button data-a="sv">${ic("check",15)} Salvar</button><button data-a="cn">Cancelar</button><div id="em" style="color:#d33;font-size:.8rem"></div>`:`<h2 style="margin:0"><span id="nm" style="${ncS(c.nc)}">${esc(SV.n)}</span> ${bdg(c.bd)} <button data-a="ed">${ic("pencil",15)}</button></h2>${SV.tag?`<div style="font-size:.75rem;opacity:.5">@${esc(SV.tag)}</div>`:""}`)+`<div>${tn(SV.t)} <button data-a="tg" title="Escolher título">${TO?"▴":"▾"}</button></div></div></div>${chp(ph,fv)}</div><p>Partidas: ${SV.games} · Vitórias: ${wn}</p><button data-a="sq">Procurar jogador</button><button data-a="syn">Conta e nuvem</button> <button data-a="cz"> Personalizar ${CO?"▴":"▾"}</button>`;LBN="";
+let h=(LBN?`<p style="color:#d33;font-size:.85rem">${esc(LBN)}</p>`:"")+`<div class="pcard"><div class="bn" style="${bnS(c.bn)}"></div><div class="pf2"><div data-a="av" style="cursor:pointer" title="Trocar foto">${frm(av(72),c.fr)}</div><div class="pn2">`+(ED?`<input id="ni" maxlength="24" value="${esc(SV.n)}" placeholder="Nome de exibição" style="width:180px"><br><input id="ti" maxlength="20" value="${esc(SV.tag)}" placeholder="tag (letras, números, _ e .)" style="width:180px;margin-top:4px"><br><label style="font-size:.8rem"><input type="checkbox" id="si" ${SV.show?"checked":""}> Mostrar minha foto no ranking</label><br><button data-a="sv">${ic("check",15)} Salvar</button><button data-a="cn">Cancelar</button><div id="em" style="color:#d33;font-size:.8rem"></div>`:`<h2 style="margin:0"><span id="nm" style="${ncS(c.nc)}">${esc(SV.n)}</span> ${bdg(c.bd)} <button data-a="ed">${ic("pencil",15)}</button></h2>${SV.tag?`<div style="font-size:.75rem;opacity:.5">@${esc(SV.tag)}</div>`:""}`)+`<div>${tn(SV.t)} <button data-a="tg" title="Escolher título">${TO?"▴":"▾"}</button></div></div></div>${chp(ph,fv)}</div><p>Partidas: ${SV.games} · Vitórias: ${wn}</p><button data-a="sq">Procurar jogador</button><button data-a="syn">Conta e nuvem</button> <button data-a="inv">Inventário</button> <button data-a="cz">País favorito</button>`;LBN="";
 if(CO)h+=czHTML();
-if(AO)h+=`<h3>Foto de perfil</h3><label class="mb2"> Enviar imagem <input type="file" id="fi" accept="image/*" hidden></label><div style="display:flex;flex-wrap:wrap;gap:4px;margin-top:8px">${D.map(d=>`<button data-f="${d.c}" title="${d.n}" style="background:var(--card);font-size:1.3rem;padding:4px 8px">${fl(d.c)}</button>`).join("")}${WORLD.filter(w=>hasI("w:"+w[0])).map(w=>`<button data-f="${w[0]}" title="${w[1]}" style="background:var(--card);font-size:1.3rem;padding:4px 8px">${fl(w[0])}</button>`).join("")}</div>`;
-if(TO)h+=`<h3>Títulos (${TTX().filter(t=>t[3]()).length}/${TTX().length})</h3>`+TTX().map(t=>{const u=t[3]();return`<div class="ar ${u?"":"lk"}" ${u?`data-t="${t[0]}"`:""}><div>${u?`<span style="color:${(RAR[t[5]]||[0,0,"inherit"])[2]}">${esc(t[1])}</span>`+(SV.t==t[0]?" "+ic("check",14):""):ic("lock",13)+" "+(t[4]?"Título secreto":t[1])}<br><small>${u||!t[4]?t[2]:"???"}</small></div></div>`}).join("")+D.filter(d=>W(d.c)>=25).map(d=>`<div class="ar" data-t="c_${d.c}"><div>${tn("c_"+d.c)}${SV.t=="c_"+d.c?" "+ic("check",14):""}</div></div>`).join("")+`<p><small>Títulos de país: vença 25 vezes com o mesmo país.</small></p>`;
+if(AO)h+=`<h3>Foto de perfil</h3><label class="mb2"> Enviar imagem <input type="file" id="fi" accept="image/*" hidden></label><div style="display:flex;flex-wrap:wrap;gap:4px;margin-top:8px">${D.map(d=>`<button data-f="${d.c}" title="${d.n}" style="background:var(--card);font-size:1.3rem;padding:4px 8px">${fl(d.c)}</button>`).join("")}${AVG.filter(x=>hasI("a:"+x[0])).map(x=>`<button data-a="gav" data-g="${x[0]}" title="${x[1]}" style="background:var(--card);padding:4px 8px">${gav(x[0],28)}</button>`).join("")}${WORLD.filter(w=>hasI("w:"+w[0])).map(w=>`<button data-f="${w[0]}" title="${w[1]}" style="background:var(--card);font-size:1.3rem;padding:4px 8px">${fl(w[0])}</button>`).join("")}</div>`;
 pn(h)}
 $("pn").onchange=e=>{if(e.target.id=="hsx"){SV.hs=e.target.checked;save();showAch(AT);return}if(e.target.dataset&&e.target.dataset.cz){csv(e.target.dataset.cz,e.target.value);return}if(e.target.id!="fi")return;const f=e.target.files[0];if(!f)return;const r=new FileReader;r.onload=()=>{const im=new Image;im.onload=()=>{const c=document.createElement("canvas");c.width=c.height=96;const m=Math.min(im.width,im.height);c.getContext("2d").drawImage(im,(im.width-m)/2,(im.height-m)/2,m,m,0,0,96,96);SV.av=c.toDataURL("image/jpeg",.8);save();chk("eu");mp();showPro()};im.src=r.result};r.readAsDataURL(f)};
+const TG0=new Set("ini nov ava geo mes mar bat inc via cen cid exp car imb etn dom tre oc4 oc6".split(" ")),TG2=new Set("dc3 dc10 dc30 dc60 ms7 ms30 ms100 du1 du10 du25 am3 am10 dcv sm4 ma1".split(" "));
+const TGN=["Partidas e vitórias","Conquistas","Duelos, amigos e desafios"];let TBO=[false,false,false,false];
+function tgrp(t){if(TG0.has(t[0]))return 0;if(TG2.has(t[0]))return 2;if(["Disponível na loja","Passe de Batalha","Temporada","Loja de gemas"].includes(t[2]))return 3;return 1}
+function ttRow(t){const u=t[3]();return`<div class="ar ${u?"":"lk"}" ${u?`data-t="${t[0]}"`:""}><div>${u?`<span style="color:${(RAR[t[5]]||[0,0,"inherit"])[2]}">${esc(t[1])}</span>`+(SV.t==t[0]?" "+ic("check",14):""):ic("lock",13)+" "+(t[4]?"Título secreto":t[1])}<br><small>${u||!t[4]?t[2]:"???"}</small></div></div>`}
+function titleTabs(){const all=TTX();let h=`<h3>Títulos</h3>`;
+for(let g=0;g<4;g++){let L=all.filter(t=>tgrp(t)==g);if(g==3)L=L.filter(t=>t[3]());const cn=D.filter(d=>W(d.c)>=25);const n=L.filter(t=>t[3]()).length+(g==3?cn.length:0),tot=L.length+(g==3?cn.length:0);if(g==3&&!tot)continue;
+h+=`<div class="ttg"><div class="gh" data-a="tgp" data-i="${g}"><span>${g==3?"Especiais (loja, passe, temporada, países)":TGN[g]} <small>${n}/${tot}</small></span><button data-a="tgp" data-i="${g}" aria-label="Abrir"><span style="display:inline-flex;transform:rotate(${TBO[g]?180:0}deg)">${ic("chev",16)}</span></button></div>`;
+if(TBO[g])h+=L.map(ttRow).join("")+(g==3?cn.map(d=>`<div class="ar" data-t="c_${d.c}"><div>${tn("c_"+d.c)}${SV.t=="c_"+d.c?" "+ic("check",14):""}</div></div>`).join(""):"");
+h+=`</div>`}
+return h+`<p><small class="mut">Títulos de país: vença 25 vezes com o mesmo país.</small></p>`}
 let GEO=false;
-function dev(){pn(`<h2> Desenvolvedor</h2><button data-a="dAct">Iniciar próximo Ato</button><button data-a="dCo">+1000 moedas</button><button data-a="dXp">+600 XP do passe</button><br><button data-a="dG"> Modo GEO: ${GEO?"LIGADO":"desligado"}</button><br><button data-a="dA">Todas as conquistas</button><button data-a="dT">Todos os títulos</button><button data-a="dR">Resetar tudo</button>
+function dev(){pn(`<h2> Desenvolvedor</h2><button data-a="dAct">Iniciar próximo Ato</button><button data-a="dCo">+1000 moedas</button><button data-a="dXp">+600 XP do passe</button><button data-a="dGm">+100 gemas</button><button data-a="dIt">Itens da atualização</button><br><button data-a="dG"> Modo GEO: ${GEO?"LIGADO":"desligado"}</button><br><button data-a="dA">Todas as conquistas</button><button data-a="dT">Todos os títulos</button><button data-a="dR">Resetar tudo</button>
 <p>Liberar uma conquista:<br><select id="da">${AL.slice().sort((a,b)=>a[2].localeCompare(b[2],"pt")).map(a=>`<option value="${a[0]}">${a[1]} ${a[2]}</option>`).join("")}</select> <button data-a="dU">Liberar</button></p>
-<p>Vitórias do país:<br><select id="dc">${D.slice().sort((a,b)=>a.n.localeCompare(b.n,"pt")).map(d=>`<option value="${d.c}">${d.n}</option>`).join("")}</select> ${[4,9,19,24,25].map(n=>`<button data-a="dW" data-n="${n}">${n}</button>`).join("")}</p>`)}
+<p>Vitórias do país:<br><select id="dc">${D.slice().sort((a,b)=>a.n.localeCompare(b.n,"pt")).map(d=>`<option value="${d.c}">${d.n}</option>`).join("")}</select> ${[4,9,19,24,25].map(n=>`<button data-a="dW" data-n="${n}">${n}</button>`).join("")}</p>${devExtra()}`)}
+function devExtra(){const its=Object.values(ITM).filter(i=>i.kind!="w"&&i.src!="pass").sort((a,b)=>a.n.localeCompare(b.n,"pt"));
+return`<h3>Missão da comunidade</h3><p class="mut">${CM&&CM.id?esc(CM.title)+": "+CM.prog+"/"+CM.goal:"Nenhuma ativa"}</p><div class="row2"><input id="dct" placeholder="Título da missão" maxlength="60"></div><div class="row2"><select id="dck">${Object.entries(CMK).map(([k,v])=>`<option value="${k}">${v}</option>`).join("")}</select><input id="dcg" type="number" min="1" value="1000" placeholder="Meta"></div><div class="row2"><select id="dcr"><option value="coins">Moedas</option><option value="gems">Gemas</option><option value="item">Item</option></select><input id="dca" type="number" min="1" value="300" placeholder="Quantidade"></div><div class="row2"><select id="dci">${its.map(i=>`<option value="${i.k}">${esc(i.n)} (${KN[i.kind]}, ${RAR[i.r][0]})</option>`).join("")}</select></div><button data-a="dCm">Publicar missão</button><button data-a="dCe">Encerrar missão</button>`}
 $("pn").onclick=e=>{const b=e.target.closest("[data-a],[data-t],[data-f],[data-pid],[data-cz]");if(!b)return;const a=b.dataset.a;if(ACT2[a]){ACT2[a](b,e);return}
 if(a=="x")$("pn").style.display="none";else if(/^k\d$/.test(a))showAch(+a[1]);
 else if(a=="L0")showLB(0);else if(a=="L1")showLB(1);
@@ -576,12 +758,12 @@ else if(a=="rk"){ids();const p=b.parentElement;rpc("report",{p_id:SV.uid,p_k:SV.
 else if(a=="al"){if(admLock()){admLogin();return}AP=$("ap").value;ADN?devPing():admLoad()}
 else if(a=="ad"){rpc("admin_remove",{p_pass:AP,p_dev:SV.uid,p_action:b.dataset.act,p_target:b.dataset.id}).then(admLoad)}
 else if(a=="tg"){TO=!TO;showPro()}else if(a=="av"){AO=!AO;showPro()}else if(b.dataset.f){SV.av="f:"+b.dataset.f;save();chk("eu");mp();showPro()}else if(b.dataset.t){SV.t=b.dataset.t;TO=false;save();mp();showPro()}
-else if(a&&a[0]=="d"){const kc=$("dc").value,ka=$("da").value;if(a=="dG")GEO=!GEO;if(a=="dU")chk(ka);if(a=="dA")AL.forEach(x=>SV.a[x[0]]=1);if(a=="dT"){SV.games=100;SV.tm=7200;SV.ic=500;D.forEach(d=>{SV.w[d.c]=25;SV.c[d.c]=1});AL.forEach(x=>SV.a[x[0]]=1);TT.forEach(t=>t[3]()&&TKN.add(t[0]))}
+else if(a&&a[0]=="d"){const kc=$("dc").value,ka=$("da").value;if(a=="dG")GEO=!GEO;if(a=="dGm")SV.gems=gemBal()+100;if(a=="dU")chk(ka);if(a=="dA")AL.forEach(x=>SV.a[x[0]]=1);if(a=="dT"){SV.games=100;SV.tm=7200;SV.ic=500;D.forEach(d=>{SV.w[d.c]=25;SV.c[d.c]=1});AL.forEach(x=>SV.a[x[0]]=1);TT.forEach(t=>t[3]()&&TKN.add(t[0]))}
 if(a=="dR")SV=JSON.parse(JSON.stringify(SD));if(a=="dW")SV.w[$("dc").value]=+b.dataset.n;save();mp();colors();dev();$("dc").value=kc;$("da").value=ka}};
 /* ===== v2 dados: títulos, banners, molduras, catálogo ===== */
 const RAR={c:["Comum",150,"#9aa7b8"],r:["Raro",400,"#4f86cc"],e:["Épico",900,"#a855f7"],l:["Lendário",2000,"#e5a61f"]};
 const hasI=k=>!!SV.inv[k];
-const cnd=c=>{const[a,b]=c.split(":"),n=+b;return a=="g"?()=>SV.games>=n:a=="w"?()=>tw()>=n:a=="n"?()=>nA()>=n:a=="c"?()=>nW()>=n:a=="d"?()=>SV.dct>=n:a=="m"?()=>SV.md>=n:a=="u"?()=>SV.du>=n:a=="f"?()=>(SV.fcl||0)>=n:a=="a"?()=>!!SV.a[b]:()=>0};
+const cnd=c=>{const[a,b]=c.split(":"),n=+b;return a=="g"?()=>SV.games>=n:a=="w"?()=>tw()>=n:a=="n"?()=>nA()>=n:a=="c"?()=>nW()>=n:a=="d"?()=>SV.dct>=n:a=="m"?()=>SV.md>=n:a=="u"?()=>SV.du>=n:a=="f"?()=>(SV.fcl||0)>=n:a=="a"?()=>!!SV.a[b]:a=="k"?()=>(SV.mwd||0)>=n:a=="x"?()=>(SV.mad||0)>=n:()=>0};
 `bat|Batalhador|Jogue 150 partidas|g:150|r
 inc|Incansável|Jogue 500 partidas|g:500|e
 imb|Imbatível|Some 250 vitórias|w:250|e
@@ -607,7 +789,14 @@ moc|Mochileiro|Conquista Mochilão|a:moc|r
 rsa|Realeza|Conquista Realeza Roxa|a:rox|e
 dcv|Pontualidade Inglesa|Conquista Sequência Diária|a:dcs|r
 top|Elite Semanal|Entre no top 100 semanal|a:top|e
-sht|Showman|Compartilhe um resultado|a:shr|c`.split("\n").forEach(l=>{const[i,n,d,c,r]=l.split("|");TT.push([i,n,d,cnd(c),0,r])});
+sht|Showman|Compartilhe um resultado|a:shr|c
+vnd|Vendado|Conquista Olhos Vendados|a:bvd|r
+du25|Campeão de Arena|Vença 25 duelos|u:25|e
+am10|Anfitrião|Tenha 10 amigos|f:10|r
+dc60|Maratona Diária|Complete 60 desafios diários|d:60|l
+ms100|Veterano de Missões|Cumpra todas as missões em 100 dias|m:100|l
+sm4|Semana Cheia|Complete 4 semanas de missões semanais|k:4|r
+ma1|Missionário do Ato|Complete todas as missões de um Ato|x:1|e`.split("\n").forEach(l=>{const[i,n,d,c,r]=l.split("|");TT.push([i,n,d,cnd(c),0,r])});
 `nav|Navegador|r
 peg|Peregrino|c
 avt|Aventureiro|c
@@ -729,8 +918,8 @@ TT.filter(t=>t[2]=="Disponível na loja").forEach(t=>CT.push({k:"t:"+t[0],id:t[0
 BN.filter(t=>t[4]=="Loja").forEach(t=>CT.push({k:"b:"+t[0],id:t[0],n:t[1],r:t[5],kind:"b"}));
 FR.filter(t=>t[4]=="Loja").forEach(t=>CT.push({k:"f:"+t[0],id:t[0],n:t[1],r:t[5],kind:"f"}));
 WORLD.forEach(([c,n])=>CT.push({k:"w:"+c,id:c,n,r:"c",kind:"w"}));
-const price=i=>i.kind=="w"?200:RAR[i.r][1];
-const dynT=id=>{let m;if(m=/^bpa(\d+)$/.exec(id))return[id,"Veterano do Ato "+ROM(+m[1]),"Passe de Batalha",()=>1,0,"l"];if(m=/^w(\d+)\.(\d+)\.(\d+)$/.exec(id))return[id,`TOP ${m[3]} GLOBAL · SEMANA ${m[2]} · ATO ${ROM(+m[1])}`,"Temporada",()=>1,0,+m[3]<=10?"l":"e"];return null};
+const price=i=>(prc(i)||{}).pc||0;
+const dynT=id=>{let m;if(m=/^bpa(\d+)$/.exec(id))return[id,actTitle(+m[1]),"Passe de Batalha",()=>1,0,"x"];if(m=/^w(\d+)\.(\d+)\.(\d+)$/.exec(id))return[id,`TOP ${m[3]} GLOBAL · SEMANA ${m[2]} · ATO ${ROM(+m[1])}`,"Temporada",()=>1,0,"x"];return null};
 const TTX=()=>{const o=[];Object.keys(SV.inv).forEach(k=>{if(/^t:bpa\d+$/.test(k))o.push(dynT(k.slice(2)))});Object.keys(SV.sw).forEach(k=>{const[a,w]=k.split("-");o.push(dynT(`w${a}.${w}.${SV.sw[k]}`))});return TT.concat(o)};
 
 /* ===== v2 economia: moedas, loja, missões, passe, desafio diário ===== */
@@ -742,35 +931,387 @@ const spNow=()=>new Date(new Date().toLocaleString("en-US",{timeZone:"America/Sa
 const toMid=()=>{const n=spNow(),m=new Date(n);m.setHours(24,0,0,0);return m-n};
 const toMon=()=>{const n=spNow(),dw=(n.getDay()+6)%7,m=new Date(n);m.setHours(0,0,0,0);m.setDate(m.getDate()+7-dw);return m-n};
 const fmtD=ms=>{const h=Math.floor(ms/36e5),m=Math.floor(ms%36e5/6e4);return h>=24?Math.floor(h/24)+"d "+h%24+"h":h+"h "+m+"min"};
-function giveItem(k){if(SV.inv[k])return;SV.inv[k]=1;save();tchk()}
+function giveItem(k){SV.inv[k]=(SV.inv[k]||0)+1;save();tchk()}
 function coinT(c,x){toast(ic("coin",26),`+${c} moedas`,x?`+${x} XP do passe`:"")}
 function earn(c,x){SV.coins+=c;if(x)addXP(x);save();mp()}
 function addXP(n){bpSync();SV.bp.xp+=n}
-function bpSync(){if(SS&&SS.act>0&&SV.bp.act!=SS.act){if(SV.bp.act==0)SV.bp.act=SS.act;else SV.bp={act:SS.act,xp:0,cl:{}}}}
+function bpSync(){if(SS&&SS.act>0&&SV.bp.act!=SS.act){if(SV.bp.act==0)SV.bp.act=SS.act;else SV.bp={act:SS.act,xp:0,cl:{},gv:1}}}
+ACT2.gav=b=>{if(!hasI("a:"+b.dataset.g))return;SV.av="g:"+b.dataset.g;save();chk("eu");mp();showPro()};
+/* itens v2.2: raridades, catálogo e novos itens */
+RAR.x=["Limitado",0,"#ff5fa2"];
+const RK=["x","l","e","r","c"],KN={t:"Título",b:"Banner",f:"Moldura",n:"Cor de nome",m:"Emblema",p:"Frase",w:"Bandeira",a:"Foto de perfil",k:"Cor de país"};
+const ITM={},NEWV=[],GEM=[],AVG=[],CCD={};let CURV="2.2.0";
+function rangeP(i){const h=hs("it"+i.k);if(i.r=="c")return{pc:100+10*(h%21)};if(i.r=="r")return{pc:300+10*(h%21)};if(i.r=="e")return{pc:750+50*(h%16),pg:3+h%3};if(i.r=="l")return{pg:10+h%11};return{}}
+const prc=i=>{if(!i.pp){const p=rangeP(i);if(i.src=="gem"||i.r=="l")delete p.pc;i.pp=p}return i.pp};
+const gpr=i=>prc(i).pg||0;
+const hx=(h,s,l)=>{s/=100;l/=100;const a=s*Math.min(l,1-l),f=n=>{const k=(n+h/30)%12,c=l-a*Math.max(-1,Math.min(k-3,9-k,1));return Math.round(255*c).toString(16).padStart(2,"0")};return"#"+f(0)+f(8)+f(4)};
+const padN=n=>String(n).padStart(2,"0");
+function addI(kind,id,n,r,src,x,act){const k=kind+":"+id,i={k,id,n,r,kind,src,v:CURV};if(act)i.act=act;
+if(kind=="t")TT.push([id,n,src=="gem"?"Loja de gemas":src=="pass"?"Passe de Batalha":"Disponível na loja",()=>hasI(k),0,r]);
+else if(kind=="b")BN.push([id,n,cg(x),()=>hasI(k),src=="pass"?"Passe":"Loja",r]);
+else if(kind=="f")FR.push([id,n,cg(x),()=>hasI(k),src=="pass"?"Passe":"Loja",r]);
+else if(kind=="n")NC.push([id,n,x[0],()=>hasI(k),"Loja",x[1]||"",r]);
+else if(kind=="m")BD.push([id,x[0],"",()=>hasI(k),"Loja",n,r,x[1]||""]);
+else if(kind=="p")PHR.push([id,n,k,r]);
+else if(kind=="w"){HF[id]=x;WORLD.push([id,n])}
+else if(kind=="a")AVG.push([id,n,x[0],x[1].split(","),r]);
+else if(kind=="k")CCD[id]={n,r,...x};
+ITM[k]=i;NEWV.push(i);if(src=="coin")CT.push(i);else if(src=="gem")GEM.push(i);return i}
+/* títulos */
+`Andarilho|c
+Curioso do Mapa|c
+Mochileiro de Fim de Semana|c
+Viajante Frequente|c
+Cartógrafo Aprendiz|c
+Explorador Urbano|c
+Colecionador de Selos|c
+Leitor de Mapas|c
+Turista Atento|c
+Bússola Calibrada|c
+Passageiro de Trem|c
+Aprendiz de Navegador|c
+Capitão de Rotas|r
+Guia de Montanha|r
+Mestre dos Atlas|r
+Desbravador de Estepes|r
+Rastreador de Fronteiras|r
+Poeta das Capitais|r
+Contador de Países|r
+Sentinela do Norte|r
+Cronista Viajante|r
+Navegante do Mar Egeu|r
+Arquiteto de Rotas|e
+Senhor das Monções|e
+Guardião da Seda|e
+Oráculo das Capitais|e
+Mestre de Cerimônias|e
+Estrategista Geográfico|e
+Rei das Estepes|e
+Lorde dos Mapas|e`.split("\n").forEach((l,q)=>{const[n,r]=l.split("|");addI("t","ct"+padN(q+1),n,r,"coin")});
+`Alma Nômade|e
+Sábio do Deserto|e
+Farol do Norte|e
+Eco das Montanhas|e
+Cronista Imperial|e
+Tecelão de Rotas|e
+Vigia das Fronteiras|e
+Sombra do Himalaia|e
+Soberano dos Atlas|l
+Imortal da Eurásia|l
+Guardião do Tempo|l
+Senhor de Todas as Rotas|l
+Lenda do Horizonte|l
+Estrela Polar|l
+Coroa de Cristal|l`.split("\n").forEach((l,q)=>{const[n,r]=l.split("|");addI("t","gt"+padN(q+1),n,r,"gem")});
+[["pgm","Portador da Gema","e"],["ces2","Cartógrafo Estelar","e"],["ghz","Guardião do Horizonte","e"],["lcr","Lorde de Cristal","l"],["olu","Oráculo Lunar","e"],["nas","Navegante Astral","e"],["alq","Alquimista","e"],["mpr","Mestre do Prisma","l"],["ere","Errante Eterno","e"],["sdo","Sombra Dourada","l"]].forEach(([i,n,r])=>addI("t",i,n,r,"gem"));
+/* banners */
+`Brisa Marinha|c|#8ed1fc,#4a90d9
+Campo Verde|c|#a8e063,#56ab2f
+Areia Quente|c|#f6d365,#fda085
+Neblina|c|#cfd9df,#e2ebf0
+Terra Batida|c|#c79081,#dfa579
+Lago Calmo|c|#5ee7df,#b490ca
+Limonada|c|#fff1a8,#f6c85a
+Algodão Doce|c|#ffc3e0,#c3e0ff
+Papel Antigo|c|#e7d7b1,#bfa57a
+Ardósia|c|#485563,#29323c
+Hortelã|c|#96e6a1,#d4fc79
+Pêssego|c|#ffd1b3,#ff9a8b
+Tulipa|r|#ff9a9e,#fad0c4,#fbc2eb
+Cobalto|r|#2b5876,#4e4376
+Âmbar Real|r|#f7971e,#ffd200
+Selva|r|#134e5e,#71b280
+Mar Profundo|r|#0f2027,#203a43,#2c5364
+Chama|r|#f12711,#f5af19
+Lilás Noturno|r|#41295a,#2f0743
+Jade|r|#11998e,#38ef7d
+Tempestade Cinza|r|#606c88,#3f4c6b
+Rubi Antigo|r|#642b73,#c6426e
+Arco de Luz|e|#ff6b6b,#feca57,#48dbfb,#ff9ff3
+Nebulosa Rosa|e|#3a1c71,#d76d77,#ffaf7b
+Oceano Elétrico|e|#00c6ff,#0072ff,#1c1c5e
+Ouro Velho|e|#8e6b1a,#e5c35a,#8e6b1a
+Floresta Mística|e|#0b3d2e,#2fd18b,#0b3d2e
+Pôr do Sol Persa|e|#f857a6,#ff5858,#ffd452
+Cristal de Gelo|e|#e0f7ff,#74c7ec,#ffffff
+Lava Negra|e|#000000,#7a0f0f,#ff5a1f`.split("\n").forEach((l,q)=>{const[n,r,c]=l.split("|");addI("b","cb"+padN(q+1),n,r,"coin",c)});
+`Aurora Violeta|e|#1b0036,#8a2be2,#00e5ff
+Dunas de Ouro|e|#3a2a0b,#e5c35a,#fff1b8
+Vitral|e|#e63946,#f1fa8c,#2a9d8f,#457b9d
+Maré Lunar|e|#0a1022,#3b4a8f,#cfe3ff
+Brasa Eterna|e|#200000,#c1121f,#ffb703
+Esmeralda Real|e|#013220,#00a86b,#e0ffe0
+Safira Estelar|e|#001a4d,#2f6fff,#a9c7ff
+Cosmos|l|conic:#050014,#6a0dad,#00e5ff,#ff2fb3,#050014
+Realeza Dourada|l|#5a3e00,#ffd700,#fff7c2,#ffd700,#5a3e00
+Tempestade Solar|l|conic:#ff5a1f,#ffd700,#ff5a1f,#7a0f0f,#ff5a1f
+Galáxia Branca|l|#ffffff,#b7c7ff,#7a5af8,#0b0b2b
+Oceano Infinito|l|#00111f,#006d77,#83c5be,#00111f
+Fênix Renascida|l|#7a0f0f,#ff5a1f,#ffd700,#fff7c2
+Prisma Cósmico|l|conic:#ff4d6d,#ffd24d,#4dff88,#4dd2ff,#a24dff,#ff4d6d
+Eclipse Dourado|l|#000000,#000000,#ffb703,#000000`.split("\n").forEach((l,q)=>{const[n,r,c]=l.split("|");addI("b","gb"+padN(q+1),n,r,"gem",c)});
+[["cri","Cristal","e","#e8f8ff,#7ac8f0,#2f6fcf"],["oni","Ônix","e","#0b0b12,#3a3a55,#0b0b12"],["opa","Opala","e","#ffd1f0,#9ad5ff,#d9ffd1"],["neb","Nebulosa","e","#1a0b3a,#7a2fd6,#ff2fb3"],["ecl","Eclipse","l","#000000,#f6c85a,#000000"],["prr","Prisma Real","l","#ff4d6d,#ffd24d,#4dff88,#4dd2ff,#a24dff"],["mam","Mar de Ametista","e","#2b1055,#a77bf0,#2b1055"],["lvv","Lava Viva","e","#2b0000,#e5484d,#ffcf5a"],["aet","Aurora Eterna","l","#0b1f3a,#2fe6a8,#7a5af8,#ff7ad9"],["pja","Pétalas de Jade","e","#0b4a35,#7ae8b0,#e8fff2"]].forEach(([i,n,r,c])=>addI("b",i,n,r,"gem",c));
+/* molduras */
+`Menta|c|#b9f6ca,#00c853
+Lavanda Suave|c|#e1bee7,#9c27b0
+Céu|c|#b3e5fc,#0288d1
+Limão|c|#f0f4c3,#cddc39
+Pêssego Suave|c|#ffe0b2,#ff9800
+Rosa Chá|c|#f8bbd0,#e91e63
+Cinza Pedra|c|#cfd8dc,#607d8b
+Areia Fina|c|#fff3e0,#bcaaa4
+Azul Duplo|r|#2196f3,#0d47a1,#2196f3
+Floresta Dupla|r|#66bb6a,#1b5e20,#66bb6a
+Rubi Duplo|r|#ef5350,#b71c1c,#ef5350
+Violeta Real|r|#7e57c2,#311b92
+Âmbar Duplo|r|#ffca28,#ff6f00,#ffca28
+Ciano Elétrico|r|#00e5ff,#006064
+Magenta Vivo|r|#ff4081,#880e4f
+Cometa Branco|e|conic:#ffffff,#6fa8ff,#ffffff,#0b0b2b,#ffffff
+Fogo e Gelo|e|conic:#ff5a1f,#74c7ec,#ff5a1f,#74c7ec,#ff5a1f
+Ouro Branco|e|conic:#fff7c2,#ffd700,#ffffff,#ffd700,#fff7c2
+Tricolor|e|conic:#e53935,#fdd835,#43a047,#e53935
+Néon Duplo|e|conic:#2fe6ff,#ff2fb3,#2fe6ff`.split("\n").forEach((l,q)=>{const[n,r,c]=l.split("|");addI("f","cf"+padN(q+1),n,r,"coin",c)});
+`Aurora Fina|e|conic:#2fe6a8,#7a5af8,#2fe6a8
+Chama Azul|e|conic:#00c6ff,#0072ff,#00c6ff
+Esmeralda Viva|e|#2fd18b,#003d2e,#2fd18b
+Rubi Sangue|e|#ff4d6d,#4a0010,#ff4d6d
+Safira Noturna|e|#6fa8ff,#001a4d,#6fa8ff
+Coroa de Sol|l|conic:#ffd700,#fff7c2,#ffd700,#b8860b,#ffd700
+Galáxia Viva|l|conic:#0b0b2b,#7a5af8,#ff2fb3,#2fe6ff,#0b0b2b
+Prisma Vivo|l|conic:#ff4d6d,#ffd24d,#4dff88,#4dd2ff,#a24dff,#ff4d6d
+Eclipse Solar|l|conic:#000000,#ffb703,#000000,#ffb703,#000000
+Platina Real|l|conic:#ffffff,#9db7d4,#ffffff,#6a7f99,#ffffff`.split("\n").forEach((l,q)=>{const[n,r,c]=l.split("|");addI("f","gf"+padN(q+1),n,r,"gem",c)});
+/* cores de nome (com borda ou fonte diferente) */
+[["Serifa Dourada","c","#e5a61f","font-family:Georgia,serif;font-style:italic"],["Máquina de Escrever","c","#9aa7b8","font-family:ui-monospace,Menlo,monospace"],["Maiúsculas Azuis","c","#4f86cc","text-transform:uppercase;letter-spacing:.08em"],["Verde Contorno","c","#2fb344","text-shadow:0 0 1px #0a3d17,0 0 1px #0a3d17"],["Rosa Cursiva","c","#ec4899","font-style:italic"],["Cinza Sublinhado","c","#93a0b8","text-decoration:underline"],
+["Caixa Azul","r","#4f86cc","border:1px solid #4f86cc;border-radius:6px;padding:0 6px"],["Brasa Brilhante","r","#ff7a45","text-shadow:0 0 8px rgba(255,122,69,.7)"],["Menta Neon","r","#2fe6a8","text-shadow:0 0 8px rgba(47,230,168,.8)"],["Violeta Bordada","r","#a855f7","border:1px solid #a855f7;border-radius:99px;padding:0 8px"],["Ouro Ondulado","r","#e5a61f","text-decoration:underline wavy #e5a61f"],
+["Chama Viva","e","linear-gradient(90deg,#e5484d,#f6c85a)","border:1px solid #e5484d;border-radius:6px;padding:0 6px"],["Aurora Escrita","e","linear-gradient(90deg,#2fe6a8,#7a5af8)","font-style:italic;border-bottom:2px solid #7a5af8"],["Oceano Moldurado","e","linear-gradient(90deg,#4f86cc,#2fe6ff)","border:1px solid #4f86cc;border-radius:99px;padding:0 8px"],["Pôr do Sol Serif","e","linear-gradient(90deg,#f6a04c,#ec4899)","font-family:Georgia,serif;letter-spacing:.04em"]]
+.forEach(([n,r,c,x],q)=>addI("n","cn"+padN(q+1),n,r,"coin",[c,x]));
+[["Platina Brilhante","e","linear-gradient(90deg,#ffffff,#9db7d4)","border:1px solid #9db7d4;border-radius:6px;padding:0 6px;font-weight:800"],["Rubi Régio","e","linear-gradient(90deg,#ff4d6d,#a2178b)","font-family:Georgia,serif;border:1px solid #ff4d6d;border-radius:6px;padding:0 6px"],["Gelo Cristalino","e","linear-gradient(90deg,#e8f8ff,#7ac8f0)","text-shadow:0 0 6px rgba(122,200,240,.8);letter-spacing:.06em"],
+["Ouro Imperial","l","linear-gradient(90deg,#b8860b,#ffd700,#fff7c2,#ffd700)","font-family:Georgia,serif;border:2px double #ffd700;border-radius:6px;padding:0 8px"],["Cosmos Escrito","l","linear-gradient(90deg,#7a5af8,#ff2fb3,#2fe6ff)","text-shadow:0 0 10px rgba(122,90,248,.7);letter-spacing:.1em"],["Arco-íris Cursivo","l","linear-gradient(90deg,#e5484d,#f6c85a,#3ecf6a,#4f86cc,#a855f7)","font-style:italic;border-bottom:2px solid #a855f7"],["Eclipse Escrito","l","linear-gradient(90deg,#000000,#ffb703,#000000)","border:2px solid #ffb703;border-radius:99px;padding:0 10px"]]
+.forEach(([n,r,c,x],q)=>addI("n","gn"+padN(q+1),n,r,"gem",[c,x]));
+/* emblemas */
+[["Coração","c","heart"],["Raio","c","bolt"],["Escudo","c","shield"],["Ave","r","bird"],["Foguete","r","rocket"],["Bola","r","ball"],["Livro","r","book"],["Templo","e","temple"],["Espadas","e","swords"],["Ampulheta","e","hourglass"]]
+.forEach(([n,r,ico],q)=>addI("m","cm"+padN(q+1),n,r,"coin",[ico,{c:"#4f86cc",r:"#2fb344",e:"#a855f7"}[r]]));
+[["Gema Rubi","e","gem","#ff4d6d"],["Mochila Estelar","e","backpack","#2fe6ff"],["Troféu Real","l","trophy","#e5a61f"],["Coroa Imperial","l","crown","#ffd700"],["Chama Eterna","l","flame","#ff5a1f"]]
+.forEach(([n,r,ico,c],q)=>addI("m","gm"+padN(q+1),n,r,"gem",[ico,c]));
+/* frases do perfil */
+["Mais um dia, mais um mapa|c","Cheguei para explorar|c","Capital é só o começo|c","Bandeira por bandeira|c","Rota traçada|c","Sem pressa, com estratégia|c","Do Atlântico ao Pacífico|r","Cada país tem uma história|r","Aposto na primeira tentativa|r","O mapa é meu quintal|r","Fronteiras são só linhas|r","Já fui em todos, no mapa|e","Quem erra, aprende|e","Mestre do chute certeiro|e","A bússola nunca mente|e"]
+.forEach((l,q)=>{const[n,r]=l.split("|");addI("p","cp"+padN(q+1),n,r,"coin")});
+["Vejo países no escuro|e","Atlas na cabeça|e","Nenhuma fronteira me para|e","Lenda viva da Eurásia|l","Minha bandeira, meu legado|l","O mundo cabe no meu mapa|l","Eterno explorador|l"]
+.forEach((l,q)=>{const[n,r]=l.split("|");addI("p","gp"+padN(q+1),n,r,"gem")});
+/* bandeiras históricas (desenhadas aqui, sem depender de CDN) */
+const st3=(a,b,c)=>`<rect width="30" height="20" fill="${a}"/><rect y="6.67" width="30" height="6.67" fill="${b}"/><rect y="13.33" width="30" height="6.67" fill="${c}"/>`;
+const star=(x,y,r,f,sk)=>{let p="";for(let q=0;q<10;q++){const a=-Math.PI/2+q*Math.PI/5,rr=q%2?r*.42:r;p+=(q?"L":"M")+(x+rr*Math.cos(a)).toFixed(2)+" "+(y+rr*Math.sin(a)).toFixed(2)}return`<path d="${p}Z" fill="${f}"${sk?` stroke="${sk}" stroke-width=".4"`:""}/>`};
+const HFD={
+H_SU:["União Soviética","l","gem",`<rect width="30" height="20" fill="#cc0000"/>${star(6,5.5,2.4,"#ffd700")}<path d="M9 7.5a4.2 4.2 0 1 0 0 8" stroke="#ffd700" stroke-width="1" fill="none"/><path d="M8 15l4-6" stroke="#ffd700" stroke-width="1"/>`],
+H_YU:["Iugoslávia","c","coin",`${st3("#0c4076","#ffffff","#c6363c")}${star(15,10,3.2,"#c6363c","#ffd700")}`],
+H_CS:["Tchecoslováquia","c","coin",`<rect width="30" height="20" fill="#ffffff"/><rect y="10" width="30" height="10" fill="#d7141a"/><path d="M0 0L15 10 0 20z" fill="#11457e"/>`],
+H_DD:["Alemanha Oriental","r","coin",`${st3("#000000","#dd0000","#ffce00")}<circle cx="15" cy="10" r="3.4" fill="none" stroke="#ffce00" stroke-width="1"/><circle cx="15" cy="10" r="1.6" fill="#dd0000"/>`],
+H_OT:["Império Otomano","l","gem",`<rect width="30" height="20" fill="#e30a17"/><circle cx="12" cy="10" r="5" fill="#ffffff"/><circle cx="13.4" cy="10" r="4" fill="#e30a17"/>${star(17.5,10,2.2,"#ffffff")}`],
+H_AH:["Habsburgo","e","gem",`<rect width="30" height="10" fill="#fcd116"/><rect y="10" width="30" height="10" fill="#111111"/>`],
+H_PR:["Prússia","c","coin",`<rect width="30" height="10" fill="#ffffff"/><rect y="10" width="30" height="10" fill="#111111"/>`],
+H_BZ:["Império Bizantino","l","gem",`<rect width="30" height="20" fill="#b3122b"/><path d="M13 3h4v5h5v4h-5v5h-4v-5H8V8h5z" fill="#ffcc00"/>`],
+H_QG:["Dinastia Qing","e","gem",`<rect width="30" height="20" fill="#ffd400"/><circle cx="15" cy="10" r="5.5" fill="#1d4e9e"/><circle cx="15" cy="10" r="2.2" fill="#e30a17"/>`],
+H_RC:["China de 1912","r","coin",`<rect width="30" height="4" fill="#d52b1e"/><rect y="4" width="30" height="4" fill="#ffd400"/><rect y="8" width="30" height="4" fill="#1d4e9e"/><rect y="12" width="30" height="4" fill="#ffffff"/><rect y="16" width="30" height="4" fill="#111111"/>`],
+H_RI:["Império Russo","c","coin",st3("#111111","#ffd400","#ffffff")],
+H_RM:["Roma Antiga","e","gem",`<rect width="30" height="20" fill="#b3122b"/><text x="15" y="12" text-anchor="middle" font-size="6" font-family="serif" font-weight="700" fill="#ffd700">SPQR</text>`],
+H_GC:["Grã-Colômbia","r","coin",`<rect width="30" height="10" fill="#fcd116"/><rect y="10" width="30" height="5" fill="#003893"/><rect y="15" width="30" height="5" fill="#ce1126"/>`],
+H_PA:["Pérsia Pahlavi","r","coin",`${st3("#239f40","#ffffff","#da0000")}<circle cx="15" cy="10" r="2.2" fill="#f6c85a"/>`],
+H_AF:["Reino do Afeganistão","c","coin",`<rect width="10" height="20" fill="#111111"/><rect x="10" width="10" height="20" fill="#be0000"/><rect x="20" width="10" height="20" fill="#007a36"/><circle cx="15" cy="10" r="2.4" fill="#ffffff"/>`],
+H_BH:["Boêmia","c","coin",`<rect width="30" height="10" fill="#ffffff"/><rect y="10" width="30" height="10" fill="#d7141a"/>`],
+H_BI:["Império do Brasil","r","coin",`<rect width="30" height="20" fill="#2f9e44"/><path d="M15 2L27 10 15 18 3 10z" fill="#ffdf00"/><circle cx="15" cy="10" r="3.8" fill="#2a4da1"/>`],
+H_VE:["República de Veneza","e","gem",`<rect width="30" height="20" fill="#b3122b"/><circle cx="15" cy="10" r="5.2" fill="#ffd700"/><circle cx="15" cy="10" r="2.2" fill="#b3122b"/>`],
+H_GI:["Império Alemão","c","coin",st3("#111111","#ffffff","#dd0000")],
+H_BF:["Biafra","r","coin",`${st3("#d21034","#111111","#009a49")}<circle cx="15" cy="10" r="2.4" fill="#f6c85a"/>`],
+H_VS:["Vietnã do Sul","c","coin",`<rect width="30" height="20" fill="#ffd400"/><rect y="7.5" width="30" height="1.1" fill="#d21034"/><rect y="9.5" width="30" height="1.1" fill="#d21034"/><rect y="11.5" width="30" height="1.1" fill="#d21034"/>`],
+H_TX:["República do Texas","r","coin",`<rect width="10" height="20" fill="#002868"/><rect x="10" width="20" height="10" fill="#ffffff"/><rect x="10" y="10" width="20" height="10" fill="#bf0a30"/>${star(5,10,3,"#ffffff")}`]};
+Object.entries(HFD).forEach(([c,[n,r,src,svg]])=>addI("w",c,n,r,src,svg));
+/* fotos de perfil por gema */
+[["fen","Fênix","flame","e","#f6c85a,#e5484d"],["lua","Lua","moon","e","#2b3a67,#8fa8ff"],["cro","Coroa","crown","l","#f6c85a,#8a5a0a"],["com2","Cometa","rocket","e","#0b0b2b,#2fe6ff"],["tpl","Templo","temple","e","#cdbb7a,#7a5a10"],["bus2","Bússola","compass","e","#16988f,#0a3d7a"],["mon","Montanha","mountain","e","#9db7d4,#2b3a67"],["ave","Ave","bird","e","#ff9a5a,#a02a8f"],["gem2","Gema","gem","e","#7ae8e0,#2f6fcf"],["esc","Escudo","shield","e","#4f86cc,#0f2c6b"],["est2","Estrela","star","l","#fff1b8,#e5a61f"],["esp2","Espadas","swords","l","#9aa7b8,#1d2b3f"]]
+.forEach(([i,n,ico,r,c])=>addI("a",i,n,r,"gem",[ico,c]));
+const gav=(id,z)=>{const a=AVG.find(x=>x[0]==id);return a?`<span style="width:${z}px;height:${z}px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;background:${gr(a[3])};color:#fff;vertical-align:middle;flex:none">${ic(a[2],z*.55)}</span>`:ic("user",z*.55)};
+/* cores de país (v2.2.1): épicas sólidas, lendárias em gradiente, limitadas no passe */
+CURV="2.2.1";
+`Carmim|#c0392b
+Cobalto|#1f4eb4
+Esmeralda|#1e9e5a
+Âmbar|#e08a00
+Violeta|#7e3fb8
+Turquesa|#14a3a3
+Rosa Antigo|#c2577a
+Oliva|#7a8a2b
+Grená|#7a1530
+Azul Marinho|#14305f
+Verde Floresta|#1c5a3a
+Laranja Queimado|#c9591a
+Lilás|#9a7fd1
+Ouro|#e5b730
+Prata|#c3ccd6
+Coral|#ff7f6b
+Menta|#7fe0b0
+Céu|#7cc4f5
+Marfim|#f1e8d0
+Chumbo|#4a5560`.split("\n").forEach((l,q)=>{const[n,c]=l.split("|");addI("k","ce"+padN(q+1),n,"e","coin",{t:"s",s:[c]})});
+`Aurora|#2fe6a8,#7a5af8
+Pôr do Sol|#ffcf5a,#e5484d,#8e44ad
+Oceano Profundo|#00c6ff,#0a2a6b
+Chama|#ffd24d,#e5484d
+Galáxia|#0b0b2b,#7a5af8,#ff2fb3
+Ouro Líquido|#fff1b8,#e5a61f,#8a5a0a
+Gelo Ártico|#e8f8ff,#74c7ec
+Floresta Encantada|#0b4a35,#7ae8b0
+Néon|#2fe6ff,#ff2fb3
+Rubi Real|#ff4d6d,#4a0010
+Arco-íris|#e5484d,#f6c85a,#3ecf6a,#4f86cc,#a855f7
+Prisma de Cristal|#b3e5fc,#e1bee7,#fff1b8`.split("\n").forEach((l,q)=>{const[n,c]=l.split("|");addI("k","cl"+padN(q+1),n,"l","gem",{t:"g",s:c.split(",")})});
+const lum=h=>{const n=parseInt(h.slice(1),16);return(.299*(n>>16)+.587*(n>>8&255)+.114*(n&255))/255};
+const ccLight=o=>o.s.some(c=>lum(c)>.62);
+const ccCss=o=>o.t=="g"?`linear-gradient(135deg,${o.s.join(",")})`:o.det?(o.det=="w"?`repeating-linear-gradient(135deg,rgba(255,255,255,.28) 0 3px,transparent 3px 8px),${o.s[0]}`:`radial-gradient(circle at 30% 30%,rgba(255,255,255,.8) 0 2px,transparent 3px),radial-gradient(circle at 68% 66%,rgba(255,255,255,.6) 0 1.5px,transparent 3px),${o.s[0]}`):o.s[0];
+function ccStyle(code){const id=SV.cc&&SV.cc[code],o=id&&CCD[id];if(!o)return"";const out=ccLight(o)?"-webkit-text-stroke:.7px rgba(0,0,0,.65);paint-order:stroke fill;":"";
+if(o.t=="g")return`background:${`linear-gradient(90deg,${o.s.join(",")})`};-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-stroke:.5px rgba(0,0,0,.5);`;
+return`color:${o.s[0]};${out}${o.det?`text-shadow:0 0 6px ${o.s[0]};`:""}`}
+function ccFill(id){const o=CCD[id];return o.t=="g"?`url(#ccg_${id})`:o.det?`url(#ccp_${id})`:o.s[0]}
+function ccDefs(){const svg=$("map");if(!svg)return;const old=svg.querySelector("#ccd");if(old)old.remove();const used=new Set(Object.values(SV.cc||{}));if(!used.size)return;let h="";
+used.forEach(id=>{const o=CCD[id];if(!o)return;if(o.t=="g")h+=`<linearGradient id="ccg_${id}" x1="0" y1="0" x2="1" y2="1">${o.s.map((c,i)=>`<stop offset="${i/(o.s.length-1)}" stop-color="${c}"/>`).join("")}</linearGradient>`;
+else if(o.det)h+=`<pattern id="ccp_${id}" width="9" height="7" patternUnits="userSpaceOnUse"><rect width="9" height="7" fill="${o.s[0]}"/>${o.det=="w"?`<path d="M0 3.5q2.25-2 4.5 0t4.5 0" fill="none" stroke="rgba(255,255,255,.4)" stroke-width=".7"/>`:`<circle cx="2" cy="2" r=".7" fill="rgba(255,255,255,.8)"/><circle cx="6.5" cy="5" r=".5" fill="rgba(255,255,255,.6)"/>`}</pattern>`});
+const e=document.createElementNS("http://www.w3.org/2000/svg","defs");e.id="ccd";e.innerHTML=h;svg.insertBefore(e,svg.firstChild)}
+function ccApply(p,code,c){const id=SV.cc&&SV.cc[code];if(id&&CCD[id]&&(c==""||c=="g"))p.style.fill=ccFill(id);else p.style.removeProperty("fill")}
+function showCcPick(id){const o=CCD[id];if(!o)return;pn(`<h2>Aplicar ${esc(o.n)}</h2><div style="text-align:center;margin:10px"><span class="ccs" style="width:70px;height:70px;background:${ccCss(o)}"></span></div><p class="mut">A cor é de uso único: depois de aplicada a um país, esse exemplar é consumido, e uma cor que já estivesse nesse país é substituída. Ela aparece no mapa e no nome do país no álbum.</p><div class="row2"><select id="ccs">${ALS().map(c=>`<option value="${c.c}">${esc(c.n)}</option>`).join("")}</select></div><button data-a="cca" data-id="${id}">Aplicar (uso único)</button> <button class="alt" data-a="inv">Cancelar</button>`)}
+function ccGo(id,c){const k="k:"+id;if(!CCD[id]||(SV.inv[k]||0)<1||!D.some(d=>d.c==c))return false;SV.inv[k]--;SV.cc[c]=id;save();colors();toast(ic("palette",26),"Cor aplicada",(D.find(d=>d.c==c)||{}).n+" · "+CCD[id].n);return true}
+ACT2.ccp=b=>showCcPick(b.dataset.id);
+ACT2.cca=b=>{if(ccGo(b.dataset.id,$("ccs").value))showInv("k")};
+ACT2.ccb=b=>{if(ccGo(b.dataset.id,ALS()[ABI].c))showBook()};
+ACT2.ccr=()=>{const c=ALS()[ABI].c;delete SV.cc[c];save();colors();showBook()};
+CURV="2.2.0";
+/* limpeza: lendários só por gema */
+for(let q=CT.length-1;q>=0;q--){const i=CT[q];if(i.r=="l"){CT.splice(q,1);i.src="gem";GEM.push(i)}}
+CT.forEach(i=>{i.src=i.src||"coin";ITM[i.k]=i});
+const BDNm=["Nenhum","Globo","Bússola","Mapa","Montanha","Sol","Foguete","Chama","Estrela","Coroa","Lua","Brasa","Alvo"];
+BD.forEach((o,q)=>{if(BDNm[q]&&o.length<6){o[5]=BDNm[q];o[6]="c"}});
+/* itens exclusivos do passe (limitados): 1 título, 2 banners, 2 molduras por Ato */
+const ACTD=[null,
+{t:"Fundador do Ato I",b:[["Primeira Luz","#fff1b8,#f6a04c,#e5484d"],["Horizonte Inaugural","#0b1f3a,#2f78b5,#f6c85a"]],f:[["Aro Fundador","conic:#f6c85a,#8a5a0a,#f6c85a"],["Aro do Pioneiro","#f6c85a,#e5484d,#f6c85a"]]},
+{t:"Mercador da Seda",b:[["Rota da Seda","#7a1424,#e5484d,#f6c85a"],["Caravana","#3a2a0b,#c9863c,#fff1b8"]],f:[["Aro de Seda","conic:#e5484d,#f6c85a,#e5484d"],["Aro Carmesim","#ff4d6d,#6b0f1f,#ff4d6d"]]},
+{t:"Filho da Monção",b:[["Chuva de Verão","#0b4a35,#2fd18b,#cfeaff"],["Delta Verde","#134e5e,#71b280,#e0ffe0"]],f:[["Aro de Chuva","conic:#74c7ec,#2fd18b,#74c7ec"],["Aro de Jade","#7ae8b0,#0b4a35,#7ae8b0"]]},
+{t:"Cavaleiro da Estepe",b:[["Vento da Estepe","#cdbb7a,#8a9a4a,#e8f1ff"],["Entardecer na Estepe","#2b1055,#f6a04c,#ffd452"]],f:[["Aro de Cavalaria","conic:#cdbb7a,#8a5a0a,#cdbb7a"],["Aro Dourado da Estepe","#ffd452,#8a5a0a,#ffd452"]]},
+{t:"Guardião da Aurora",b:[["Noite Polar","#050014,#2fe6a8,#7a5af8"],["Fiorde Gelado","#2a4a6b,#8bb8d8,#e8f4ff"]],f:[["Aro de Gelo","conic:#e8f8ff,#7ac8f0,#e8f8ff"],["Aro Boreal","conic:#2fe6a8,#7a5af8,#2fe6a8"]]},
+{t:"Navegador Mediterrâneo",b:[["Costa Dourada","#0a6ebd,#6fd3f0,#f6c85a"],["Azul Egeu","#0a6ebd,#ffffff,#0a6ebd"]],f:[["Aro de Coral","#ff9a8a,#e5484d,#ff9a8a"],["Aro Azul do Egeu","conic:#0a6ebd,#6fd3f0,#0a6ebd"]]}];
+const actDef=n=>{if(ACTD[n])return ACTD[n];const h=(n*47)%360,c=(a,l)=>hx((h+a)%360,70,l);return{t:"Veterano do Ato "+ROM(n),b:[["Ato "+ROM(n)+" · Alvorada",[c(0,80),c(30,55),c(60,35)].join(",")],["Ato "+ROM(n)+" · Crepúsculo",[c(180,20),c(210,45),c(240,70)].join(",")]],f:[["Aro do Ato "+ROM(n),"conic:"+[c(0,60),c(60,75),c(0,60)].join(",")],["Aro Raro do Ato "+ROM(n),[c(120,70),c(180,30),c(120,70)].join(",")]]}};
+const actTitle=n=>actDef(n).t;
+const ACTK=[null,["Ouro Fundador","#e5b730","s"],["Seda Carmesim","#b3122b","w"],["Jade da Monção","#1e9e5a","w"],["Estepe Dourada","#c9a24c","s"],["Gelo Boreal","#74c7ec","s"],["Azul Egeu","#0a6ebd","w"]];
+const actK=n=>ACTK[n]||["Cor do Ato "+ROM(n),hx((n*47+200)%360,65,50),n%2?"w":"s"];
+const ACTDONE={};
+function ensureAct(n){if(ACTDONE[n])return;ACTDONE[n]=1;const d=actDef(n);d.b.forEach((x,q)=>addI("b","pa"+n+"ab"[q],x[0],"x","pass",x[1],n));d.f.forEach((x,q)=>addI("f","pa"+n+"ab"[q],x[0],"x","pass",x[1],n));const k=actK(n);addI("k","pk"+n,k[0],"x","pass",{t:"s",s:[k[1]],det:k[2]},n).v="2.2.1"}
+for(let n=1;n<=6;n++)ensureAct(n);
+const limDesc=k=>{let m;if(m=/^[bf]:pa(\d+)[ab]$/.exec(k)||/^k:pk(\d+)$/.exec(k)||/^t:bpa(\d+)$/.exec(k)||/^t:w(\d+)\./.exec(k))return`Concedido ao jogador durante o Ato ${ROM(+m[1])}.`;return""};
+function prevK(kd,id,r,n){
+if(kd=="t")return`<span class="tpv" style="color:${(RAR[r]||RAR.c)[2]}">${esc(n)}</span>`;
+if(kd=="b")return`<div class="bpv" style="${bnS(id)}"></div>`;
+if(kd=="f")return frm(av(46),id);
+if(kd=="n")return`<span style="${ncS(id)};font-weight:800">${esc(SV.n)}</span>`;
+if(kd=="m"){const o=BD.find(x=>x[0]==id);return`<span class="emb" style="${o&&o[7]?"color:"+o[7]:""}">${ic(o?o[1]:"star",26)}</span>`}
+if(kd=="p"){const o=PHR.find(x=>x[0]==id);return`<span class="phv">${esc(o?o[1]:n||"")}</span>`}
+if(kd=="w")return`<span class="wpv">${fl(id)}</span>`;
+if(kd=="a")return gav(id,50);if(kd=="k"){const o=CCD[id];return o?`<span class="ccs" style="background:${ccCss(o)}"></span>`:""}return""}
+const prv=i=>prevK(i.kind,i.id,i.r,i.n),gprv=prv;
+function gemToday(){const r=rng(hs("gm"+day()));if(r()>=.55)return null;return GEM[Math.floor(r()*GEM.length)]}
+const gemBal=()=>SV.gems||0;
+function gemMig(){if(!SV.bp.gv){let g=0;Object.keys(SV.bp.cl||{}).forEach(t=>{g+=(BPG[t]||0)});SV.gems=gemBal()+g;SV.bp.gv=1;save()}}
 /* loja */
-const prv=i=>i.kind=="t"?`<span class="tpv" style="color:${RAR[i.r][2]}">${esc(i.n)}</span>`:i.kind=="b"?`<div class="bpv" style="${bnS(i.id)}"></div>`:i.kind=="f"?frm(av(46),i.id):`<span class="wpv">${fl(i.id)}</span>`;
-function itemCard(i){const own=hasI(i.k);return`<div class="itm ${own?"own":""}"><div class="pv">${prv(i)}</div><div class="it"><b>${esc(i.n)}</b><small style="color:${i.kind=="w"?"var(--mut)":RAR[i.r][2]}">${i.kind=="w"?"Bandeira de perfil":RAR[i.r][0]+" · "+{t:"Título",b:"Banner",f:"Moldura"}[i.kind]}</small></div>${own?`<span class="owned">Já adquirido</span>`:`<button data-a="buy" data-k="${i.k}" ${SV.coins<price(i)?"disabled":""}>${ic("coin",15)} ${price(i)}</button>`}</div>`}
-const SHD=[["t","cr"],["b","cr"],["f","cr"],["w","c"]],SHW=[["t","el"],["b","er"],["b","el"],["f","er"],["f","el"],["w","c"]];
+const SHD=[["t","cr"],["b","cr"],["f","cr"],["n","cr"],["m","cr"],["w","c"],["k","e"]],SHW=[["t","er"],["b","er"],["f","er"],["n","er"],["p","re"],["w","re"]];
 function shopPick(sd,spec){const r=rng(hs(sd)),u=new Set(),o=[];spec.forEach(([k,rs])=>{const P=CT.filter(i=>i.kind==k&&rs.includes(i.r)&&!u.has(i.k));if(P.length){const it=P[Math.floor(r()*P.length)];u.add(it.k);o.push(it)}});return o}
-function showShop(){pn(`<h2>Loja</h2><div class="wal">${ic("coin",18)} <b>${SV.coins}</b> moedas</div><h3>Loja do dia <small class="mut">renova em ${fmtD(toMid())}</small></h3>`+shopPick("sd"+day(),SHD).map(itemCard).join("")+`<h3>Loja da semana <small class="mut">renova em ${fmtD(toMon())}</small></h3>`+shopPick("sw"+wkKey(),SHW).map(itemCard).join("")+`<p class="note">A loja é igual para todos os jogadores. Ganhe moedas jogando, cumprindo missões e avançando no passe.</p>`)}
-ACT2.buy=b=>{const i=CT.find(x=>x.k==b.dataset.k);if(!i||hasI(i.k))return;if(SV.coins<price(i)){toast(ic("coin",26),"Moedas insuficientes","Faltam "+(price(i)-SV.coins)+" moedas");return}SV.coins-=price(i);giveItem(i.k);chk("shp");save();mp();showShop()};
+function itemCard(i){const own=hasI(i.k),p=prc(i);return`<div class="sc ${own?"own":""}"><div class="pv">${prv(i)}</div>${i.kind=="t"||i.kind=="p"?"":`<b>${esc(i.n)}</b>`}<small style="color:${RAR[i.r][2]}">${RAR[i.r][0]} · ${KN[i.kind]}</small>${own?`<span class="owned">Já adquirido</span>`:`<button data-a="buy" data-k="${i.k}" ${SV.coins<p.pc?"disabled":""}>${ic("coin",14)} ${p.pc}</button>${p.pg?`<button class="gb" data-a="gbuy" data-k="${i.k}" ${gemBal()<p.pg?"disabled":""}>${ic("gem",14)} ${p.pg}</button>`:""}`}</div>`}
+function gemCard(i){const own=hasI(i.k);return`<div class="sc gm ${own?"own":""}"><small style="color:#16a39a">Item de gema</small><div class="pv">${gprv(i)}</div>${i.kind=="t"||i.kind=="p"?"":`<b>${esc(i.n)}</b>`}<small style="color:${RAR[i.r][2]}">${RAR[i.r][0]} · ${KN[i.kind]}</small>${own?`<span class="owned">Já adquirido</span>`:`<button data-a="gbuy" data-k="${i.k}" ${gemBal()<gpr(i)?"disabled":""}>${ic("gem",14)} ${gpr(i)}</button>`}</div>`}
+const BOX={c:["Caixa Comum",250,"coin"],r:["Caixa Rara",700,"coin"],e:["Caixa Épica",5,"gem"],l:["Caixa Lendária",15,"gem"]};
+function weekBox(){const r=rng(hs("bx"+wkKey()));if(r()>=.4)return"";const x=r();return x<.70?"c":x<.95?"r":x<.99?"e":"l"}
+function boxCard(r,own){const[n,p,cu]=BOX[r],got=own?SV.bx[r]||0:0,sold=!own&&SV.bxb==wkKey();return`<div class="sc bx ${sold?"nb":""}"><div class="pv" style="color:${RAR[r][2]}">${ic("gift",38)}</div><b>${n}</b><small style="color:${RAR[r][2]}">${r=="l"?"Só itens lendários":"Item "+RAR[r][0].toLowerCase()+" aleatório"}</small>${own?`<button data-a="box" data-r="${r}" data-own="1">Abrir (${got})</button>`:sold?`<span class="owned">Comprada esta semana</span>`:`<button data-a="box" data-r="${r}" ${(cu=="coin"?SV.coins:gemBal())<p?"disabled":""}>${ic(cu=="coin"?"coin":"gem",14)} ${p}</button>`}</div>`}
+function showShop(){gemMig();const W2=shopPick("sw"+wkKey(),SHW),g=gemToday(),mid=Math.ceil(W2.length/2),wb=weekBox(),mk=g?gemCard(g):`<div class="sc nogm"><small>Item de gema</small><b>Sem item de gema hoje</b><small class="mut">Volte amanhã</small></div>`;
+pn(`<h2>Loja</h2><div class="wal">${ic("coin",18)} <b>${SV.coins}</b> moedas <span style="margin-left:10px;color:#16a39a;display:inline-flex;align-items:center;gap:4px">${ic("gem",18)} <b>${gemBal()}</b> gemas</span></div><div class="shh"><h3>Loja do dia</h3><small class="mut">renova em ${fmtD(toMid())}</small></div><div class="shr">`+shopPick("sd"+day(),SHD).map(itemCard).join("")+`</div><div class="shh"><h3>Loja da semana</h3><small class="mut">renova em ${fmtD(toMon())}</small></div><div class="shr" id="shw">`+W2.slice(0,mid).map(itemCard).join("")+mk+W2.slice(mid).map(itemCard).join("")+(wb?boxCard(wb):"")+`</div>${Object.keys(BOX).some(r=>SV.bx[r]>0)?`<div class="shh"><h3>Suas caixas</h3><small class="mut">ganhas no passe</small></div><div class="shr">${Object.keys(BOX).filter(r=>SV.bx[r]>0).map(r=>boxCard(r,1)).join("")}</div>`:""}<p class="note">A loja é igual para todos. A caixa aleatória aparece em 4 de cada 10 semanas (70% comum, 25% rara, 4% épica, 1% lendária, esta só com itens lendários). Itens épicos custam moedas ou gemas; lendários só gemas, e aparecem em poucos dias no centro da loja da semana. Itens repetidos podem ser vendidos no Inventário por metade do preço.</p>`,1);
+const w=$("shw"),c=w&&w.querySelector(".gm,.nogm");if(w&&c)w.scrollLeft=c.offsetLeft-(w.clientWidth-c.offsetWidth)/2}
+ACT2.buy=b=>{const i=ITM[b.dataset.k];if(!i||hasI(i.k)||i.src!="coin")return;const p=price(i);if(SV.coins<p){toast(ic("coin",26),"Moedas insuficientes","Faltam "+(p-SV.coins)+" moedas");return}SV.coins-=p;giveItem(i.k);chk("shp");save();mp();showShop()};
+ACT2.gbuy=b=>{const i=ITM[b.dataset.k];if(!i||hasI(i.k))return;const p=gpr(i);if(!p)return;if(!(i.src!="gem"&&i.r=="e")&&gemToday()!=i)return;if(gemBal()<p){toast(ic("gem",26),"Gemas insuficientes","Faltam "+(p-gemBal())+" gemas");return}SV.gems=gemBal()-p;giveItem(i.k);chk("shp");save();mp();showShop()};
+ACT2.shop=()=>showShop();
+ACT2.box=b=>{const r=b.dataset.r,bx=BOX[r],own=!!b.dataset.own;if(!bx)return;const[n,p,cu]=bx;if(own){if(!(SV.bx[r]>0))return}else{if(weekBox()!=r||SV.bxb==wkKey())return;if((cu=="coin"?SV.coins:gemBal())<p){toast(ic("gift",26),"Saldo insuficiente",n);return}}
+const by={};(r=="l"?GEM.filter(i=>i.r=="l"):CT.filter(i=>i.r==r).concat(r=="e"?GEM.filter(i=>i.r=="e"):[])).forEach(i=>(by[i.kind]=by[i.kind]||[]).push(i));const ks=Object.keys(by),L=by[ks[Math.random()*ks.length|0]],i=L[Math.random()*L.length|0];
+if(own)SV.bx[r]--;else{SV.bxb=wkKey();if(cu=="coin")SV.coins-=p;else SV.gems=gemBal()-p}giveItem(i.k);chk("shp");save();mp();const q=SV.inv[i.k];
+pn(`<h2>${n}</h2><div class="sc" style="margin:10px auto;width:200px"><small style="color:${RAR[i.r][2]}">${RAR[i.r][0]} · ${KN[i.kind]}</small><div class="pv">${prv(i)}</div>${i.kind=="t"||i.kind=="p"?"":`<b>${esc(i.n)}</b>`}${q>1?`<span class="xn">x${q}</span><small class="mut">Repetido: venda no Inventário</small>`:`<small class="mut">Novo no inventário</small>`}</div><div class="shb"><button class="alt" data-a="shop">Voltar à loja</button></div>`)};
 /* missões */
-const MS=[["jg3","Jogue 3 partidas","jg",3,"e"],["win1","Ganhe 1 partida","win",1,"e"],["cs8","Consulte 8 países no mapa","cs",8,"e"],["win2","Ganhe 2 partidas","win",2,"m"],["w3","Ganhe uma partida em até 3 tentativas","w3",1,"m"],["wh","Ganhe uma partida no modo Médio ou Difícil","wh",1,"m"],["ct3","Receba dicas de 3 tipos diferentes","ct",3,"m"],["dc","Complete o desafio diário","dc",1,"m"],["wd","Ganhe uma partida no modo Difícil","wd",1,"h"],["wb","Ganhe com no máximo 20% da bandeira revelada","wb",1,"h"],["jg5","Jogue 5 partidas","jg",5,"h"],["ws3","Ganhe 3 partidas seguidas","ws",3,"h"]];
-const MR={e:[30,20],m:[50,30],h:[80,40]},MSM=[[3,"b:mis","Banner Missão Cumprida"],[10,"f:mis","Moldura Missão"],[20,"b:mis2","Banner Dedicação"],[50,"f:mis2","Moldura Dedicação"]];
+const MS=[["jg3","Jogue 3 partidas","jg",3,"e"],["win1","Ganhe 1 partida","win",1,"e"],["cs8","Consulte 8 países no mapa","cs",8,"e"],["win2","Ganhe 2 partidas","win",2,"m"],["w3","Ganhe uma partida em até 3 tentativas","w3",1,"m"],["wh","Ganhe uma partida no modo Médio ou Difícil","wh",1,"m"],["ct3","Receba dicas de 3 tipos diferentes","ct",3,"m"],["dc","Complete o desafio diário","dc",1,"m"],["wd","Ganhe uma partida no modo Difícil","wd",1,"h"],["wb","Ganhe com no máximo 20% da bandeira revelada","wb",1,"h"],["jg5","Jogue 5 partidas","jg",5,"h"],["ws3","Ganhe 3 partidas seguidas","ws",3,"h"],["wf1","Ganhe uma partida com a bandeira escondida","wf",1,"h"],["wm1","Ganhe uma partida com o mapa escondido","wm",1,"h"]];
+const MR={e:[30,20],m:[50,30],h:[80,40]},MSM=[[3,"b:mis","Missão Cumprida"],[10,"f:mis","Missão"],[20,"b:mis2","Dedicação"],[50,"f:mis2","Dedicação"]];
 function msToday(){if(SV.ms.d!=day())SV.ms={d:day(),p:{},cl:{}};const r=rng(hs("ms"+day()));return["e","m","h"].map(t=>{const L=MS.filter(m=>m[4]==t);return L[Math.floor(r()*L.length)]})}
-function mEv(k,v){msToday();const p=SV.ms.p;if(k=="cs"){p.csS=p.csS||{};p.csS[v]=1;p.cs=Object.keys(p.csS).length}else p[k]=(p[k]||0)+(v==null?1:v)}
-function mGame(w,n,fr,tips){msToday();const p=SV.ms.p;p.jg=(p.jg||0)+1;if(w){p.win=(p.win||0)+1;if(n<=3)p.w3=(p.w3||0)+1;if(LV==1||LV==2)p.wh=(p.wh||0)+1;if(LV==2)p.wd=(p.wd||0)+1;if(fr<=.2)p.wb=(p.wb||0)+1;p.wsc=(p.wsc||0)+1;p.ws=Math.max(p.ws||0,p.wsc)}else p.wsc=0;p.ctS=p.ctS||{};tips.forEach(t=>{p.ctS[/^[HEACLNB]_/.test(t)?t[0]:"G"]=1});p.ct=Object.keys(p.ctS).length}
-function showMs(){const L=msToday();let h=`<h2>Missões diárias</h2><div class="wal">${ic("coin",18)} <b>${SV.coins}</b> moedas · renovam em ${fmtD(toMid())}</div>`+L.map(m=>{const v=Math.min(SV.ms.p[m[2]]||0,m[3]),ok=v>=m[3],cl=SV.ms.cl[m[0]],[c,x]=MR[m[4]];return`<div class="ar ${cl?"lk":""}"><div><b>${m[1]}</b><br><small>${{e:"Fácil",m:"Média",h:"Difícil"}[m[4]]} · ${c} moedas + ${x} XP</small>${bar(v,m[3])}</div>${cl?`<span class="owned">Recebido</span>`:`<button data-a="mcl" data-m="${m[0]}" ${ok?"":"disabled"}>Receber</button>`}</div>`}).join("");
-h+=`<h3>Dias completos: ${SV.md}</h3><small class="mut">Cumpra as 3 missões do dia para somar um dia completo.</small>`+MSM.map(r=>`<div class="ar ${SV.md>=r[0]?"":"lk"}"><div><b>${r[2]}</b><br><small>${r[0]} dias completos</small>${bar(Math.min(SV.md,r[0]),r[0])}</div></div>`).join("");pn(h)}
-ACT2.mcl=b=>{const L=msToday(),m=L.find(x=>x[0]==b.dataset.m);if(!m||SV.ms.cl[m[0]]||(SV.ms.p[m[2]]||0)<m[3])return;SV.ms.cl[m[0]]=1;const[c,x]=MR[m[4]];earn(c,x);coinT(c,x);if(L.every(q=>SV.ms.cl[q[0]])){SV.md++;chk("ms1");if(SV.md>=7)chk("ms7");MSM.forEach(r=>{if(SV.md==r[0]){giveItem(r[1]);toast(ic("gift",26),"Recompensa de missões",r[2])}})}save();showMs()};
+const MSW=[["wjg","Jogue 15 partidas","jg",15,"e"],["wwin","Ganhe 8 partidas","win",8,"e"],["wcs","Consulte 40 países diferentes","cs",40,"e"],["wdc","Complete 4 desafios diários","dc",4,"m"],["ww3","Ganhe 4 partidas em até 3 tentativas","w3",4,"m"],["wct","Receba dicas de 6 tipos diferentes","ct",6,"m"],["wh2","Ganhe 5 partidas no Médio ou Difícil","wh",5,"m"],["wwd","Ganhe 4 partidas no modo Difícil","wd",4,"h"],["wws","Ganhe 4 partidas seguidas","ws",4,"h"],["wwb","Ganhe 3 partidas com no máximo 20% da bandeira","wb",3,"h"],["wwf","Ganhe 2 partidas com a bandeira escondida","wf",2,"h"],["wwm","Ganhe 2 partidas com o mapa escondido","wm",2,"h"]];
+const MRW={e:[100,60],m:[160,100],h:[260,160]};
+const MSA=[["ajg","Jogue 120 partidas","jg",120,400,150],["awin","Ganhe 50 partidas","win",50,500,150],["acs","Consulte 90 países diferentes","cs",90,400,100],["adc","Complete 25 desafios diários","dc",25,600,200],["awd","Ganhe 20 partidas no modo Difícil","wd",20,600,200],["aws","Ganhe 8 partidas seguidas","ws",8,700,250],["awf","Ganhe 6 partidas com a bandeira escondida","wf",6,600,150],["awm","Ganhe 6 partidas com o mapa escondido","wm",6,600,150]];
+const maKey=()=>{bpSync();return(SS&&SS.act)||SV.bp.act||0};
+function msSync(){msToday();const k=wkKey();if(SV.mw.k!=k)SV.mw={k,p:{},cl:{}};const a=maKey();if(SV.ma.a!=a){const keep=SV.ma.a===-1||SV.ma.a===0;SV.ma={a,p:keep?SV.ma.p:{},cl:keep?SV.ma.cl:{}}}}
+const mT=()=>{msSync();return[SV.ms.p,SV.mw.p,SV.ma.p]};
+const DL={e:"Fácil",m:"Média",h:"Difícil"};
+function msList(sc){msSync();if(sc=="d")return msToday().map(m=>({id:m[0],t:m[1],k:m[2],n:m[3],c:MR[m[4]][0],x:MR[m[4]][1],lab:DL[m[4]]}));
+if(sc=="w"){const r=rng(hs("mw"+wkKey()));return["e","m","h"].map(t=>{const L=MSW.filter(m=>m[4]==t),m=L[Math.floor(r()*L.length)];return{id:m[0],t:m[1],k:m[2],n:m[3],c:MRW[t][0],x:MRW[t][1],lab:DL[t]}})}
+return MSA.map((m,i)=>({id:m[0],t:m[1],k:m[2],n:m[3],c:m[4],x:m[5],lab:"Ato"}))}
+const msSt=sc=>sc=="d"?SV.ms:sc=="w"?SV.mw:SV.ma;
+function mEv(k,v){mT().forEach(p=>{if(k=="cs"){p.csS=p.csS||{};p.csS[v]=1;p.cs=Object.keys(p.csS).length}else p[k]=(p[k]||0)+(v==null?1:v)})}
+function mGame(w,n,fr,tips){mT().forEach(p=>{p.jg=(p.jg||0)+1;if(w){p.win=(p.win||0)+1;if(n<=3)p.w3=(p.w3||0)+1;if(LV==1||LV==2)p.wh=(p.wh||0)+1;if(LV==2)p.wd=(p.wd||0)+1;if(fr<=.2)p.wb=(p.wb||0)+1;if(FH)p.wf=(p.wf||0)+1;if(MH)p.wm=(p.wm||0)+1;p.wsc=(p.wsc||0)+1;p.ws=Math.max(p.ws||0,p.wsc)}else p.wsc=0;p.ctS=p.ctS||{};tips.forEach(t=>{p.ctS[/^[HEACLNBFM]_/.test(t)?t[0]:"G"]=1});p.ct=Object.keys(p.ctS).length})}
+/* missão da comunidade */
+let CM=null,CMT=0;
+const CMK={win:"vitórias",game:"partidas",daily:"desafios diários",duel:"duelos vencidos"};
+async function commInfo(){if(!sbOn())return null;CMT=Date.now();try{CM=await rj("comm_get",{})||null}catch(e){}return CM}
+function commAdd(kind,n){if(!CM||!CM.id||CM.kind!=kind||CM.prog>=CM.goal)return;CM.prog=Math.min(CM.goal,CM.prog+n);SV.cmp[CM.id]=(SV.cmp[CM.id]||0)+n;save();rpc("comm_add",{...cred(),p_kind:kind,p_n:n}).catch(()=>{})}
+const cmRew=c=>c.rkind=="coins"?c.ramt+" moedas":c.rkind=="gems"?c.ramt+" gemas":(ITM[c.rkey]?ITM[c.rkey].n:"Item exclusivo");
+function commHTML(){if(!CM||!CM.id)return`<p class="mut">Nenhuma missão da comunidade ativa agora.</p>`;const done=CM.prog>=CM.goal,cl=SV.cmc[CM.id],ct=SV.cmp[CM.id]||0;return`<div class="mc" style="grid-column:1/-1"><small class="mut">Meta de todos os jogadores</small><b>${esc(CM.title)}</b><small>Juntos: ${CM.goal} ${CMK[CM.kind]||""}</small>${bar(CM.prog,CM.goal)}<small>Recompensa: ${esc(cmRew(CM))}</small>${cl?`<span class="owned">Recebido</span>`:`<button data-a="cmc" ${done&&ct>0?"":"disabled"}>Receber</button>`}${done&&!ct&&!cl?`<small class="mut">Jogue ao menos uma partida contando para a meta para receber.</small>`:""}</div>`}
+ACT2.cmc=()=>{if(!CM||!CM.id||CM.prog<CM.goal||SV.cmc[CM.id]||!(SV.cmp[CM.id]>0))return;SV.cmc[CM.id]=1;if(CM.rkind=="coins")SV.coins+=CM.ramt;else if(CM.rkind=="gems")SV.gems=gemBal()+CM.ramt;else if(ITM[CM.rkey])giveItem(CM.rkey);save();mp();toast(ic("gift",26),"Missão da comunidade",cmRew(CM));showMs()};
+let MST="d";
+function msCard(m,st,sc){const v=Math.min(st.p[m.k]||0,m.n),ok=v>=m.n,cl=st.cl[m.id];return`<div class="mc ${cl?"lk":""}"><small class="mut">${m.lab}</small><b>${m.t}</b>${bar(v,m.n)}<small>${ic("coin",13)} ${m.c} + ${m.x} XP</small>${cl?`<span class="owned">Recebido</span>`:`<button data-a="mcl" data-s="${sc}" data-m="${m.id}" ${ok?"":"disabled"}>Receber</button>`}</div>`}
+function showMs(t){if(t)MST=t;msSync();const sc=MST,L=sc=="c"?[]:msList(sc),st=msSt(sc),tabs=[["d","Diárias"],["w","Semanais"],["a","Do Ato"],["c","Comunidade"]];if(sc=="c"&&Date.now()-CMT>15000)commInfo().then(()=>{if(MST=="c"&&$("pn").style.display=="flex")showMs()});
+const sub=sc=="c"?"definida pelo dono do jogo":sc=="d"?`renovam em ${fmtD(toMid())}`:sc=="w"?`renovam em ${fmtD(toMon())}`:`valem até o fim do Ato ${maKey()?ROM(maKey()):""}`;
+let h=`<h2>Missões</h2><div class="mtab">`+tabs.map(x=>`<button data-a="mst" data-v="${x[0]}" class="${x[0]==sc?"on":""}">${x[1]}</button>`).join("")+`</div><div class="wal">${ic("coin",18)} <b>${SV.coins}</b> moedas · ${sub}</div><div class="mgr">`+(sc=="c"?commHTML():L.map(m=>msCard(m,st,sc)).join(""))+`</div>`;
+if(sc=="d")h+=`<h3>Dias completos: ${SV.md}</h3><small class="mut">Cumpra as 3 missões do dia para somar um dia completo.</small><div class="mgr">`+MSM.map(r=>`<div class="mc ${SV.md>=r[0]?"":"lk"}"><div style="display:flex;justify-content:space-between;align-items:center;gap:8px"><b>${r[2]}</b><span style="width:70px;display:inline-flex;justify-content:center">${prevK(r[1][0],r[1].slice(2),"e",r[2])}</span></div><small>${r[0]} dias completos</small>${bar(Math.min(SV.md,r[0]),r[0])}</div>`).join("")+`</div>`;
+else if(sc=="w")h+=`<p class="note">Semanas completas: <b>${SV.mwd||0}</b>. Cumpra as 3 missões da semana para somar uma.</p>`;
+else if(sc=="a")h+=`<p class="note">Atos completos: <b>${SV.mad||0}</b>. O progresso zera quando um novo Ato começa.</p>`;
+pn(h,1)}
+ACT2.mst=b=>showMs(b.dataset.v);
+ACT2.mcl=b=>{const sc=b.dataset.s||"d";msSync();const L=msList(sc),m=L.find(x=>x.id==b.dataset.m),st=msSt(sc);if(!m||st.cl[m.id]||(st.p[m.k]||0)<m.n)return;st.cl[m.id]=1;earn(m.c,m.x);coinT(m.c,m.x);
+if(L.every(q=>st.cl[q.id])){if(sc=="d"){SV.md++;chk("ms1");if(SV.md>=7)chk("ms7");MSM.forEach(r=>{if(SV.md==r[0]){giveItem(r[1]);toast(ic("gift",26),"Recompensa de missões",r[2])}})}else if(sc=="w"){SV.mwd=(SV.mwd||0)+1;toast(ic("gift",26),"Semana cumprida","Todas as missões semanais")}else{SV.mad=(SV.mad||0)+1;toast(ic("gift",26),"Ato cumprido","Todas as missões do Ato")}}
+save();tchk();showMs()};
+/* inventário */
+const IKT=[["t","Títulos"],["b","Banners"],["f","Molduras"],["n","Cores de nome"],["m","Emblemas"],["p","Frases"],["w","Fotos"],["k","Cores de país"]];
+let IVT="t";
+function invList(kd){const c=cz(),o=[];const add=(k,id,n,r,eq,d)=>o.push({k,id,kind:kd,n,r:r||"c",cnt:Math.max(1,SV.inv[k]||1),eq,d:d||(r=="x"?limDesc(k):"")});
+if(kd=="t"){TTX().forEach(t=>{if(t[3]())add("t:"+t[0],t[0],t[1],t[5]||"c",SV.t==t[0],t[5]=="x"?limDesc(t[0].startsWith("bpa")?"t:"+t[0]:"t:"+t[0]):t[2])});D.filter(d=>W(d.c)>=25).forEach(d=>add("t:c_"+d.c,"c_"+d.c,d.n+": "+d.cu,"e",SV.t=="c_"+d.c,"Maestria do país"))}
+else if(kd=="b")BN.forEach(x=>{if(x[3]())add("b:"+x[0],x[0],x[1],x[5]||"c",c.bn==x[0])});
+else if(kd=="f")FR.forEach(x=>{if(x[3]())add("f:"+x[0],x[0],x[1],x[5]||"c",c.fr==x[0])});
+else if(kd=="n")NC.forEach(x=>{if(x[3]())add("n:"+x[0],x[0],x[1],x[6]||"c",c.nc==x[0])});
+else if(kd=="m")BD.forEach(x=>{if(x[3]())add("m:"+x[0],x[0],x[5]||"Emblema",x[6]||"c",c.bd==x[0])});
+else if(kd=="p"){add("p:","","Sem frase","c",!c.ph);PHR.forEach(x=>{if(x.length<3||hasI(x[2]))add(x[2]||"p:"+x[0],x[0],x[1],x[3]||"c",c.ph==x[0])})}
+else if(kd=="k")Object.keys(CCD).forEach(id=>{if(hasI("k:"+id))add("k:"+id,id,CCD[id].n,CCD[id].r,false,CCD[id].r=="x"?limDesc("k:"+id):"Aplique no álbum, uso único")});
+else if(kd=="w"){D.forEach(d=>add("w:"+d.c,d.c,d.n,"c",SV.av=="f:"+d.c));WORLD.forEach(w=>{if(hasI("w:"+w[0]))add("w:"+w[0],w[0],w[1],(ITM["w:"+w[0]]||{}).r||"c",SV.av=="f:"+w[0])});AVG.forEach(a=>{if(hasI("a:"+a[0]))add("a:"+a[0],a[0],a[1],a[4],SV.av=="g:"+a[0])})}
+return o}
+const sellV=i=>{const it=ITM[i.k];if(!it||it.src=="pass")return null;const p=prc(it);return p.pc?{c:Math.floor(p.pc/2)}:p.pg?{g:Math.max(1,Math.floor(p.pg/2))}:null};
+function invCard(i){const q=i.cnt>1,sv=q?sellV(i):null,kd=i.k.startsWith("a:")?"a":i.kind;return`<div class="ic2 ${i.eq?"on":""}"><div class="pvw">${prevK(kd,i.id,i.r,i.n)}</div>${i.kind=="t"||i.kind=="p"?"":`<b>${esc(i.n)}</b>`}${q?`<span class="xn">x${i.cnt}</span>`:""}${i.d?`<small class="mut">${esc(i.d)}</small>`:""}<div class="ib">${kd=="k"?`<button data-a="ccp" data-id="${esc(i.id)}">Aplicar em um país</button>`:i.eq?`<span class="owned">${ic("check",13)} Equipado</span>`:`<button data-a="eq" data-kd="${kd}" data-id="${esc(i.id)}">Equipar</button>`}${sv?`<button class="alt" data-a="sell" data-k="${i.k}">Vender 1 · ${sv.c?ic("coin",13)+" "+sv.c:ic("gem",13)+" "+sv.g}</button>`:""}</div></div>`}
+function lockedTitles(){const L=TTX().filter(t=>!t[3]()&&!t[4]&&tgrp(t)<3);if(!L.length)return"";return`<details class="ttg"><summary>Títulos a desbloquear (${L.length})</summary>`+[0,1,2].map(g=>{const X=L.filter(t=>tgrp(t)==g);return X.length?`<div style="padding:0 10px"><small class="mut">${TGN[g]}</small></div>`+X.map(ttRow).join(""):""}).join("")+`</details>`}
+function showInv(t){if(t)IVT=t;const kd=IVT,L=invList(kd);
+let h=`<h2>Inventário</h2><div class="tb">`+IKT.map(x=>`<button data-a="ivt" data-v="${x[0]}" class="${x[0]==kd?"on":""}">${x[1]}</button>`).join("")+`</div>`;
+if(kd=="w")h+=`<label class="mb2" style="margin-bottom:8px"> Enviar imagem própria <input type="file" id="fi" accept="image/*" hidden></label>`;
+RK.forEach(r=>{const X=L.filter(i=>i.r==r).sort((a,b)=>a.n.localeCompare(b.n,"pt"));if(!X.length)return;h+=`<div class="rh"><b style="color:${RAR[r][2]}">${RAR[r][0]}</b><small>${X.length} ${X.length==1?"item":"itens"}</small></div><div class="igr">${X.map(invCard).join("")}</div>`});
+if(kd=="t")h+=lockedTitles();
+pn(h,1)}
+ACT2.inv=()=>showInv();ACT2.ivt=b=>showInv(b.dataset.v);ACT2.tg=()=>showInv("t");
+ACT2.eq=b=>{const kd=b.dataset.kd,id=b.dataset.id;if(!invList(kd=="a"?"w":kd).some(x=>x.id==id))return;if(kd=="t")SV.t=id;else if(kd=="w")SV.av="f:"+id;else if(kd=="a")SV.av="g:"+id;else{const c=cz();c[{b:"bn",f:"fr",n:"nc",m:"bd",p:"ph"}[kd]]=id;SV.cz=c}save();mp();chk("eu");sync();showInv()};
+ACT2.sell=b=>{const i=ITM[b.dataset.k],q=SV.inv[b.dataset.k]||0;if(!i||q<2)return;const v=sellV({k:i.k});if(!v)return;SV.inv[i.k]=q-1;if(v.c)SV.coins+=v.c;else SV.gems=gemBal()+v.g;save();mp();toast(ic(v.c?"coin":"gem",26),"Item vendido",v.c?"+"+v.c+" moedas":"+"+v.g+" gemas");showInv()};
 /* passe de batalha do Ato */
-const BPX=120,BPT=30;
-function bpRew(a,t){const coins=40+10*Math.floor((t-1)/5),sp={3:["f","c"],6:["b","c"],10:["w","c"],14:["b","r"],18:["f","r"],22:["t","r"],26:["b","e"]}[t];let it=null;if(sp){const P=CT.filter(i=>i.kind==sp[0]&&(sp[0]=="w"||i.r==sp[1])),r=rng(hs("bp"+a+"_"+t));it=P[Math.floor(r()*P.length)]}return{coins,it,fin:t==BPT}}
-function showBp(){bpSync();const a=SV.bp.act,xp=SV.bp.xp,lv=Math.min(BPT,Math.floor(xp/BPX));let h=`<h2>Passe do Ato ${a?ROM(a):""}</h2>`;
+const BPX=120,BPT=40,BPG={5:3,10:4,15:4,20:5,25:6,30:7,35:8,40:13};
+const BPSL={6:["b","a"],12:["f","a"],18:["b","b"],24:["f","b"],38:["k","a"]},BPBX={9:"c",19:"c",33:"r"};
+function bpRew(a,t){ensureAct(a);const g=BPG[t]||0,only=!!g&&t<BPT,sp=BPSL[t];return{coins:only||t==BPT?0:40+10*Math.floor((t-1)/5),it:sp?ITM[sp[0]+":"+(sp[0]=="k"?"pk"+a:"pa"+a+sp[1])]:null,box:BPBX[t]||"",fin:t==BPT,gems:g,only}}
+function bpVis(r,a){if(r.it)return prevK(r.it.kind,r.it.id,"x",r.it.n);if(r.fin)return`<span class="tpv" style="color:${RAR.x[2]}">${esc(actTitle(a))}</span>`;if(r.only)return`<span class="gimg">${ic("gem",30)}</span>`;if(r.box)return`<span class="cimg" style="background:${RAR[r.box][2]};color:#fff">${ic("gift",30)}</span>`;return`<span class="cimg">${ic("coin",30)}</span>`}
+function showBp(){bpSync();gemMig();const a=SV.bp.act,xp=SV.bp.xp,lv=Math.min(BPT,Math.floor(xp/BPX));let h=`<h2>Passe do Ato ${a?ROM(a):""}</h2>`;
 if(!a)h+=`<p class="mut">O próximo Ato ainda não começou. O XP que você ganhar até lá já conta para o passe.</p>`;
-h+=`<div class="wal">Nível <b>${lv}</b>/${BPT} · ${lv>=BPT?BPX:xp%BPX}/${BPX} XP</div>${bar(lv>=BPT?BPX:xp%BPX,BPX)}<small class="mut">Ganhe XP vencendo partidas, cumprindo missões e jogando o desafio diário.</small>`;
-for(let t=1;t<=BPT;t++){const r=bpRew(a||1,t),ok=lv>=t,cl=SV.bp.cl[t];h+=`<div class="ar ${ok?"":"lk"}"><span class="tn">${t}</span><div><b>${r.fin?"Título: Veterano do Ato "+ROM(a||1):r.coins+" moedas"}</b>${r.it?`<br><small>${esc(r.it.n)} (${{t:"título",b:"banner",f:"moldura",w:"bandeira"}[r.it.kind]})</small>`:""}</div>${cl?`<span class="owned">Recebido</span>`:`<button data-a="bpc" data-t="${t}" ${ok&&a?"":"disabled"}>Receber</button>`}</div>`}pn(h)}
-ACT2.bpc=b=>{bpSync();const a=SV.bp.act,t=+b.dataset.t;if(!a||SV.bp.cl[t]||Math.floor(SV.bp.xp/BPX)<t)return;SV.bp.cl[t]=1;const r=bpRew(a,t);if(r.fin){giveItem("t:bpa"+a);chk("bp30")}else SV.coins+=r.coins;if(r.it)giveItem(r.it.k);if(t>=10)chk("bp10");save();mp();toast(ic("gift",26),"Recompensa do passe",r.fin?"Título do Ato":r.coins+" moedas"+(r.it?" + "+r.it.n:""));showBp()};
+h+=`<div class="bpn"><button data-a="bps" data-d="-1" aria-label="Anterior">${ic("chr",16).replace('class="ic"','class="ic fl"')}</button><div class="grow"><div class="wal" style="margin:0 0 4px">Nível <b>${lv}</b>/${BPT} · ${lv>=BPT?BPX:xp%BPX}/${BPX} XP <span style="margin-left:auto;color:#16a39a;display:inline-flex;align-items:center;gap:4px">${ic("gem",16)} <b>${gemBal()}</b></span></div>${bar(lv>=BPT?BPX:xp%BPX,BPX)}</div><button data-a="bps" data-d="1" aria-label="Próximo">${ic("chr",16)}</button></div><div class="bpt" id="bpt">`;
+for(let t=1;t<=BPT;t++){const r=bpRew(a||1,t),ok=lv>=t,cl=SV.bp.cl[t],it=r.it;h+=`<div class="bc ${ok?"":"lk"} ${r.fin?"fin":""}"><span class="tn ${r.only?"gmi":""}">${r.only?ic("gem",16):t}</span><div class="bv">${bpVis(r,a||1)}</div><div class="rw">${r.coins?`<span>${ic("coin",14)} ${r.coins}</span>`:""}${r.gems?`<span class="gm2">${ic("gem",14)} ${r.gems}</span>`:""}${r.box?`<span>${ic("gift",14)} ${BOX[r.box][0]}</span>`:""}</div>${it?`<small class="mut">${esc(it.n)} · Limitado</small>`:r.fin?`<small class="mut">Título limitado</small>`:""}${cl?`<span class="owned">Recebido</span>`:`<button data-a="bpc" data-t="${t}" ${ok&&a?"":"disabled"}>Receber</button>`}</div>`}
+h+=`</div><small class="mut">Ganhe XP vencendo partidas, cumprindo missões e jogando o desafio diário. O passe dá 50 gemas no total (níveis 5, 10, 15, 20, 25, 30, 35 e 40), caixas, e itens limitados exclusivos do Ato (banners, molduras, cor de país e título), que não aparecem na loja.</small>`;pn(h,1);
+const tr=$("bpt"),c=tr&&tr.children[Math.max(0,Math.min(BPT-1,lv-(lv>=BPT?1:0)))];if(tr&&c)tr.scrollLeft=Math.max(0,c.offsetLeft-12)}
+ACT2.bps=b=>{const t=$("bpt");if(t)t.scrollBy({left:+b.dataset.d*Math.max(260,t.clientWidth*.8),behavior:"smooth"})};
+ACT2.bpc=b=>{bpSync();const a=SV.bp.act,t=+b.dataset.t;if(!a||SV.bp.cl[t]||Math.floor(SV.bp.xp/BPX)<t)return;SV.bp.cl[t]=1;const r=bpRew(a,t);if(r.fin){giveItem("t:bpa"+a);chk("bp30")}else if(r.coins)SV.coins+=r.coins;if(r.gems)SV.gems=gemBal()+r.gems;if(r.box){SV.bx[r.box]=(SV.bx[r.box]||0)+1}if(r.it)giveItem(r.it.k);if(t>=10)chk("bp10");save();mp();toast(ic("gift",26),"Recompensa do passe",[r.fin?"Título do Ato":"",r.coins?r.coins+" moedas":"",r.gems?r.gems+" gemas":"",r.box?BOX[r.box][0]:"",r.it?r.it.n:""].filter(Boolean).join(" + "));const sl=$("bpt")?$("bpt").scrollLeft:0;showBp();if($("bpt"))$("bpt").scrollLeft=sl};
 /* desafio diário */
 const dcN=()=>{const[y,m,d]=day().split("-").map(Number);return Math.floor((Date.UTC(y,m-1,d)-Date.UTC(2026,9,1))/864e5)+1};
 const dcCode=()=>D[hs("dc"+day())%D.length].c;
@@ -783,16 +1324,16 @@ function v2fin(w,n,full,fr){const st=SV.st;st.g++;if(w){st.w++;st.dist[n-1]++;st
 const lv=st.lv[LV]=st.lv[LV]||{g:0,w:0};lv.g++;if(w)lv.w++;const cc=st.c[S.c]=st.c[S.c]||{w:0,l:0};w?cc.w++:cc.l++;
 S.t.filter(t=>/^r[A-Z]/.test(t)).forEach(r=>{const o=st.r[r]=st.r[r]||{w:0,g:0};o.g++;if(w)o.w++});
 st.sec+=Math.round((Date.now()-GM.t0)/1000);st.fr+=fr;st.rec.push(w?n:0);if(st.rec.length>30)st.rec.shift();
-[...GM.tips].forEach(t=>{const c=/^[HEACLNB]_/.test(t)?t[0]:"G";st.cl[c]=(st.cl[c]||0)+1});
+[...GM.tips].forEach(t=>{const c=/^[HEACLNBFM]_/.test(t)?t[0]:"G";st.cl[c]=(st.cl[c]||0)+1});
 let c=w?20+(6-n)*5:5,x=w?15+(6-n)*3:5;
 if(LV==6){const dy=day();SV.dcr[dy]={w,n};SV.dct++;SV.dcs=SV.dcl==yday()?SV.dcs+1:1;SV.dcl=dy;mEv("dc");c+=w?50:10;x+=w?25:0;chk("dc1");if(SV.dct>=7)chk("dc7");if(SV.dcs>=7)chk("dcs")}
-mGame(w,n,fr,[...GM.tips]);
+mGame(w,n,fr,[...GM.tips]);commAdd("game",1);if(w)commAdd("win",1);if(LV==6)commAdd("daily",1);
 if(SS&&SS.state=="on"){const k=SS.act+"-"+SS.week;if(SV.wk.k!=k)SV.wk={k,w:0,g:0};SV.wk.g++;if(w)SV.wk.w++}
 if(typeof duelEnd=="function"&&GM.duel)duelEnd(w,n);
 if(Object.keys(SV.w).filter(c=>SV.w[c]>=5).length>=10)chk("alb");earn(c,x);coinT(c,x)}
 
 /* ===== v2 estatísticas, álbum e compartilhamento ===== */
-const RGN={rEO:"Europa Oriental",rEW:"Europa Ocidental e do Sul",rNO:"Norte da Europa",rBA:"Bálcãs",rBL:"Báltico",rCA:"Ásia Central",rCU:"Cáucaso",rME:"Oriente Médio",rSA:"Sul da Ásia",rEA:"Leste Asiático",rSE:"Sudeste Asiático"},CLN={B:"Fronteira",H:"Histórica",E:"Esportiva",A:"Atualidades",C:"Cultural",L:"Idioma",N:"Natureza",G:"Geral"};
+const RGN={rEO:"Europa Oriental",rEW:"Europa Ocidental e do Sul",rNO:"Norte da Europa",rBA:"Bálcãs",rBL:"Báltico",rCA:"Ásia Central",rCU:"Cáucaso",rME:"Oriente Médio",rSA:"Sul da Ásia",rEA:"Leste Asiático",rSE:"Sudeste Asiático"},CLN={B:"Fronteira",H:"Histórica",E:"Esportiva",A:"Atualidades",C:"Cultural",L:"Idioma",N:"Natureza",G:"Geral",F:"Culinária",M:"Música"};
 function donut(p,z=116){const r=z/2-10,C=2*Math.PI*r,m=z/2;return`<svg width="${z}" height="${z}" viewBox="0 0 ${z} ${z}"><circle cx="${m}" cy="${m}" r="${r}" fill="none" stroke="var(--line)" stroke-width="12"/><circle cx="${m}" cy="${m}" r="${r}" fill="none" stroke="#3ecf6a" stroke-width="12" stroke-linecap="round" stroke-dasharray="${C*p} ${C}" transform="rotate(-90 ${m} ${m})"/><text x="50%" y="52%" text-anchor="middle" dominant-baseline="middle" fill="var(--fg)" font-size="${z*.22}" font-weight="800">${Math.round(p*100)}%</text></svg>`}
 function hbar(rows){const m=Math.max(1,...rows.map(r=>r[1]));return rows.map(r=>`<div class="hb"><span>${r[0]}</span><div><i style="width:${r[1]/m*100}%;background:${r[2]||"var(--ac)"}"></i></div><b>${r[1]}</b></div>`).join("")}
 function showSt(){const s=SV.st,wr=s.g?s.w/s.g:0,avg=s.w?(s.att/s.w).toFixed(2):"-",hrs=s.sec>=3600?(s.sec/3600).toFixed(1)+" h":Math.round(s.sec/60)+" min";
@@ -809,12 +1350,23 @@ pn(`<h2>Estatísticas</h2><div class="sth"><div>${donut(wr)}<small class="mut">t
 <h3>Aproveitamento por região</h3>${hbar(reg)||`<p class="mut">Sem dados.</p>`}
 <h3>Tipos de dica recebidos</h3>${hbar(Object.entries(s.cl).map(e=>[CLN[e[0]]||e[0],e[1],"#a855f7"]))||`<p class="mut">Sem dados.</p>`}
 <h3>Geral</h3><div class="stg">${box(nW(),"países vencidos")}${box(nC(),"países consultados")}${box(nA()+"/"+AL.length,"conquistas")}${box(SV.coins,"moedas")}${box(SV.dct,"desafios diários")}${box(s.g?Math.round(s.fr/s.g*100)+"%":"-","bandeira revelada, em média")}</div>`)}
-/* álbum de maestrias */
-let ALP=0;const ALS=()=>D.slice().sort((a,b)=>a.n.localeCompare(b.n,"pt"));
-function showBook(d){const L=ALS(),per=5,pg=Math.ceil(L.length/per);if(d!=null)ALP=Math.max(0,Math.min(pg-1,ALP+d));
-const rows=L.slice(ALP*per,ALP*per+per).map(c=>{const w=W(c.c);return`<div class="bk"><div class="bkf">${fl(c.c)}</div><div class="bkm"><b>${c.n}</b><small>${c.cap} · ${w} vitória${w==1?"":"s"}</small><div class="mbar"><i style="width:${Math.min(100,w/25*100)}%"></i>${MT.map(m=>`<u class="${w>=m[0]?"on":""}" style="left:${m[0]/25*100}%"></u>`).join("")}</div><div class="mlab">${MT.map(m=>`<span class="${w>=m[0]?"on":""}" style="left:${m[0]/25*100}%">${m[0]}</span>`).join("")}</div></div></div>`}).join("");
-pn(`<div class="book"><div class="bkh"><b>Álbum de Maestrias</b><small>${L.filter(c=>W(c.c)>=25).length}/${L.length} completos</small></div>${rows}<div class="bkn"><button data-a="bkp">Anterior</button><span>Página ${ALP+1}/${pg}</span><button data-a="bkn">Próxima</button></div><div class="bkl">${MT.map(m=>`<span>${ic(m[1],14)} ${m[0]}: ${m[2]}</span>`).join("")}</div></div>`)}
-ACT2.bkp=()=>showBook(-1);ACT2.bkn=()=>showBook(1);
+/* álbum: uma página por país, coleção de selos e busca */
+const ALS=()=>D.slice().sort((a,b)=>a.n.localeCompare(b.n,"pt"));
+let ABT="p",ABI=0;
+const STN=[["Bronze","#b9732f"],["Prata","#8d99a6"],["Ouro","#d49a14"],["Platina","#3fa7c4"],["Diamante","#8a5cf0"]];
+const stTier=w=>w>=25?4:w>=20?3:w>=10?2:w>=5?1:w>=1?0:-1;
+function stamp(c,big){const w=W(c.c),t=stTier(w),col=t<0?"#a89c80":STN[t][1];return`<div class="stp ${t<0?"lk":""} ${big?"big":""}" style="--sc:${col}" ${big?"":`data-a="abg" data-c="${c.c}"`}>${fl(c.c)}<b style="${ccStyle(c.c)}">${esc(c.n)}</b><small>${t<0?"Sem selo":STN[t][0]+" · "+w}</small></div>`}
+function bookPage(c){const w=W(c.c),l=((SV.st.c||{})[c.c]||{}).l||0,rg=RGN[(c.t.find(t=>/^r[A-Z]/.test(t))||"")]||"";
+return`<div class="pgc"><div class="pgf">${fl(c.c)}</div><h2 style="${ccStyle(c.c)}">${esc(c.n)}</h2><small>${esc(c.cap)}${rg?" · "+esc(rg):""}</small><div class="pgs">${stamp(c,1)}<div class="pgk"><div><b>${w}</b><small>vitórias</small></div><div><b>${l}</b><small>derrotas</small></div><div><b>${SV.fw&&SV.fw[c.c]?SV.fw[c.c].split("-").reverse().join("/"):"—"}</b><small>1ª vitória</small></div></div></div><div class="mbar"><i style="width:${Math.min(100,w/25*100)}%"></i>${MT.map(m=>`<u class="${w>=m[0]?"on":""}" style="left:${m[0]/25*100}%"></u>`).join("")}</div><div class="mlab">${MT.map(m=>`<span class="${w>=m[0]?"on":""}" style="left:${m[0]/25*100}%">${m[0]}</span>`).join("")}</div><p class="cur">${esc(c.cu)}</p>${ccBar(c)}</div>`}
+function ccBar(c){const mine=Object.keys(CCD).filter(id=>(SV.inv["k:"+id]||0)>0),cur=SV.cc&&SV.cc[c.c];if(!mine.length&&!cur)return"";return`<div style="text-align:left"><small>Cor do país${cur&&CCD[cur]?": <b>"+esc(CCD[cur].n)+"</b>":""}</small><br>${cur?`<button class="ccb" data-a="ccr">Remover cor</button>`:""}${mine.map(id=>`<button class="ccb" data-a="ccb" data-id="${id}"><span class="ccs" style="background:${ccCss(CCD[id])}"></span>${esc(CCD[id].n)} x${SV.inv["k:"+id]}</button>`).join("")}<br><small>Uso único: o exemplar é consumido ao aplicar.</small></div>`}
+function showBook(d,tab){if(tab)ABT=tab;const L=ALS();if(d!=null)ABI=(ABI+d+L.length)%L.length;
+let h=`<div class="book"><div class="bkh"><b>Álbum</b><small>${L.filter(c=>W(c.c)>=1).length}/${L.length} selos · ${L.filter(c=>W(c.c)>=25).length} maestrias</small></div><div class="bkt"><button data-a="abt" data-v="p" class="${ABT=="p"?"on":""}">Páginas</button><button data-a="abt" data-v="s" class="${ABT=="s"?"on":""}">Selos</button></div><input id="abq" class="abq" placeholder="Pesquisar país ou capital..." autocomplete="off"><div id="abr" class="abr"></div>`;
+if(ABT=="p")h+=bookPage(L[ABI])+`<div class="bkn"><button data-a="bkp">Anterior</button><span>Página ${ABI+1}/${L.length}</span><button data-a="bkn">Próxima</button></div><div class="bkl">${MT.map(m=>`<span>${ic(m[1],14)} ${m[0]}: ${m[2]}</span>`).join("")}</div>`;
+else h+=`<div class="stg2">${L.map(c=>stamp(c)).join("")}</div><div class="bkl"><span>Selo: Bronze 1 vitória · Prata 5 · Ouro 10 · Platina 20 · Diamante 25</span></div>`;
+pn(h+`</div>`,1)}
+ACT2.bkp=()=>showBook(-1);ACT2.bkn=()=>showBook(1);ACT2.abt=b=>showBook(null,b.dataset.v);
+ACT2.abg=b=>{ABI=ALS().findIndex(c=>c.c==b.dataset.c);ABT="p";showBook()};
+$("pn").addEventListener("input",e=>{if(e.target.id!="abq")return;const q=N(e.target.value);$("abr").innerHTML=q?ALS().filter(c=>N(c.n).includes(q)||N(c.cap).includes(q)).slice(0,8).map(c=>`<button data-a="abg" data-c="${c.c}">${fl(c.c)} ${esc(c.n)}</button>`).join(""):""});
 /* compartilhar resultado (imagem com a paleta do jogo) */
 let SHR=null,SHC=null;
 const loadImg=u=>new Promise(r=>{const i=new Image();i.crossOrigin="anonymous";i.onload=()=>r(i);i.onerror=()=>r(null);i.src=u});
@@ -841,7 +1393,7 @@ if(k=="w")window.open("https://wa.me/?text="+encodeURIComponent(txt),"_blank");e
 ACT2.shw=()=>shDo("w");ACT2.shi=()=>shDo("i");ACT2.shs=()=>shDo("s");
 
 Object.assign(PR,{dc7:()=>[SV.dct,7],dcs:()=>[SV.dcs,7],ms7:()=>[SV.md,7],du5:()=>[SV.du,5],alb:()=>[Object.keys(SV.w).filter(c=>SV.w[c]>=5).length,10],bp10:()=>[Math.min(10,Math.floor(SV.bp.xp/BPX)),10],bp30:()=>[Math.min(30,Math.floor(SV.bp.xp/BPX)),30]});
-$("bMs").onclick=showMs;$("bSh").onclick=showShop;$("bBp").onclick=showBp;$("bAl").onclick=()=>{ALP=0;showBook()};$("bSt").onclick=showSt;$("bDaily").onclick=startDaily;
+$("bMs").onclick=()=>showMs();$("bSh").onclick=showShop;$("bBp").onclick=showBp;$("bAl").onclick=()=>showBook();$("bSt").onclick=showSt;$("bDaily").onclick=startDaily;
 /* ===== v2 online: temporadas, amigos, duelo, sincronização, moderação ===== */
 async function rj(f,b){const r=await rpc(f,b||{});if(!r.ok)throw new Error(r.status+" "+(await r.text()).slice(0,140));const t=await r.text();return t?JSON.parse(t):null}
 const cred=()=>{ids();return{p_id:SV.uid,p_k:SV.k}};
@@ -869,25 +1421,31 @@ function startDuel(){$("pn").style.display="none";LV=DR.mode;FS=DR.secret;$("men
 function duelEnd(w,n){const code=GM.duel,ms=Date.now()-GM.t0;rj("room_done",{...cred(),p_code:code,p_win:w,p_att:n,p_ms:ms}).then(()=>setTimeout(()=>duelRes(code,0),600)).catch(()=>{})}
 async function duelRes(code,k){try{const j=await rj("room_state",{p_code:code});if(!j)return;const ps=j.players||[],all=ps.length>=2&&ps.every(p=>p.done);
 if(!all&&k<60){setTimeout(()=>duelRes(code,k+1),2500);toastOnce("Aguardando o amigo terminar a partida...");return}
-const me=j.winner==SV.uid;if(me&&!(DR&&DR.cnt==code)){SV.du++;if(DR)DR.cnt=code;chk("du1");if(SV.du>=5)chk("du5");earn(40,20);coinT(40,20);save();tchk()}
+const me=j.winner==SV.uid;if(me&&!(DR&&DR.cnt==code)){SV.du++;commAdd("duel",1);if(DR)DR.cnt=code;chk("du1");if(SV.du>=5)chk("du5");earn(40,20);coinT(40,20);save();tchk()}
 pn(`<h2>Resultado do duelo</h2><div class="sth">`+ps.map(p=>`<div class="sb"><b>${esc(p.n||"?")}</b><small>${p.win?"acertou em "+p.att+"/5 · "+(p.ms/1000).toFixed(0)+"s":"não acertou"}</small></div>`).join("")+`</div><h3>${!j.winner?"Empate: ninguém acertou":me?"Você venceu o duelo":"Seu amigo venceu"}</h3>`)}catch(e){}}
 let TO1=0;const toastOnce=t=>{if(Date.now()-TO1>6000){TO1=Date.now();toast(ic("swords",26),"Duelo",t)}};
 /* sincronização de contas */
 async function pushCloud(){ids();const j=await rj("sync_push",{...cred(),p_blob:JSON.stringify(SV)});if(j&&j.ok){SV.sc=j.code;save();chk("nuv")}return j}
-function showSync(m){pn(`<h2>Conta e nuvem</h2><p class="mut">Salve seu progresso e continue em outro aparelho usando um código.</p>`+(SV.sc?`<div class="code">${SV.sc}</div><small class="mut">Guarde este código: quem o tiver pode restaurar sua conta. Ele é atualizado a cada partida.</small><br>`:"")+`<button data-a="syp">${SV.sc?"Atualizar na nuvem":"Salvar na nuvem"}</button><h3>Restaurar em outro aparelho</h3><div class="row2"><input id="syq" placeholder="CÓDIGO" maxlength="12" style="text-transform:uppercase"><button data-a="syl">Restaurar</button></div><div class="err">${esc(m||"")}</div>`)}
+function showSync(m){pn(`<h2>Conta e nuvem</h2><p class="mut">Seu progresso fica salvo no seu @, protegido por uma senha. Em outro aparelho, entre com o @ e a senha.</p>`+(SV.tag?`<div class="code">@${esc(SV.tag)}</div><div class="row2"><input id="syw" type="password" maxlength="64" placeholder="${SV.acc?"Nova senha (opcional)":"Crie uma senha (mín. 6)"}" autocomplete="new-password"></div><button data-a="syp">${SV.acc?"Atualizar na nuvem":"Salvar na nuvem"}</button><br><small class="mut">Guarde a senha: não há como recuperá-la. O progresso é atualizado a cada partida.</small>`:`<p>Defina seu @ no Perfil (lápis ao lado do nome) e jogue uma partida para usar a nuvem.</p>`)+`<h3>Entrar em outro aparelho</h3><div class="row2"><input id="syt" placeholder="@ do jogador" maxlength="21" autocapitalize="none"></div><div class="row2"><input id="syq" type="password" placeholder="Senha" maxlength="64" autocomplete="current-password"><button data-a="syl">Entrar</button></div><div class="err">${esc(m||"")}</div>`)}
 ACT2.syn=()=>showSync();
-ACT2.syp=async()=>{if(!sbOn()){showSync("Servidor não configurado.");return}try{const j=await pushCloud();showSync(j&&j.ok?"Salvo na nuvem.":"Não foi possível salvar.")}catch(e){showSync(e.message)}};
-ACT2.syl=async()=>{const c=$("syq").value.trim().toUpperCase();if(!c)return;try{const j=await rj("sync_pull",{p_code:c});if(j&&j.ok){const o=JSON.parse(j.blob);o.uid=j.id;o.k=j.k;o.sc=c;localStorage.setItem("euradle",JSON.stringify(o));location.reload()}else showSync("Código não encontrado.")}catch(e){showSync(e.message)}};
+ACT2.syp=async()=>{if(!sbOn()){showSync("Servidor não configurado.");return}try{await sync();const pw=$("syw")?$("syw").value:"";if(!SV.acc&&pw.length<6){showSync("A senha precisa de 6 ou mais caracteres.");return}if(pw){const r=await rj("acct_set",{...cred(),p_pass:pw});if(!r||!r.ok){showSync({sem_tag:"Defina seu @ no Perfil e jogue uma partida primeiro.",senha_curta:"A senha precisa de 6 a 64 caracteres.",auth:"Jogue uma partida primeiro para criar seu perfil online."}[r&&r.err]||"Não foi possível salvar a senha.");return}SV.acc=1;save()}const j=await pushCloud();showSync(j&&j.ok?"Salvo na nuvem.":"Não foi possível salvar.")}catch(e){showSync(e.message)}};
+ACT2.syl=async()=>{const t=$("syt").value.trim().replace(/^@/,"").toLowerCase(),p=$("syq").value;if(!t||!p)return;try{const j=await rj("acct_login",{p_tag:t,p_pass:p});if(j&&j.ok){const o=JSON.parse(j.blob);o.uid=j.id;o.k=j.k;o.acc=1;localStorage.setItem("euradle",JSON.stringify(o));location.reload()}else showSync(j&&j.err=="bloqueado"?"Muitas tentativas erradas. Tente de novo em 15 minutos.":"@ ou senha incorretos.")}catch(e){showSync(e.message)}};
 /* temporada: aba semanal do ranking e moderação com senha */
 ACT2.L2=()=>showLB(2);
 function devGate(){ADN=devOpen;if(AP)devPing();else admLogin()}
 const devOpen=()=>dev();
 async function devPing(){try{ids();const r=await rpc("admin_ping",{p_pass:AP,p_dev:SV.uid});if(!r.ok){AP="";admLogin("Servidor sem o SQL v2.0 ("+r.status+")");return}const j=await r.json();if(!j.ok){AP="";if(j.err=="bloqueado"){admW({u:Date.now()+864e5,f:0});admLogin();return}admFail();admLogin(admLock()?"":"Senha incorreta ("+(admS().f||0)+"/5).");return}admW({});ADN=null;devOpen()}catch(e){admLogin(String(e).slice(0,100))}}
 ACT2.dAct=async()=>{try{const j=await rj("admin_act",{p_pass:AP,p_dev:SV.uid});if(j&&j.ok){await seasonInfo();toast(ic("flag",26),"Novo Ato iniciado","Ato "+ROM(j.act)+" liberado para todos os jogadores")}else toast(ic("lock",26),"Não foi possível",String(j&&j.err||""))}catch(e){toast(ic("lock",26),"Erro",e.message.slice(0,60))}};
+ACT2.dCm=async()=>{try{const t=$("dct").value.trim();if(!t){toast(ic("lock",26),"Faltou o título","");return}const j=await rj("admin_comm_set",{p_pass:AP,p_dev:SV.uid,p_title:t,p_kind:$("dck").value,p_goal:+$("dcg").value||1,p_rkind:$("dcr").value,p_rkey:$("dci").value,p_ramt:+$("dca").value||1});if(j&&j.ok){await commInfo();toast(ic("flag",26),"Missão publicada",t);dev()}else toast(ic("lock",26),"Não foi possível",String(j&&j.err||""))}catch(e){toast(ic("lock",26),"Erro",e.message.slice(0,60))}};
+ACT2.dCe=async()=>{try{await rj("admin_comm_end",{p_pass:AP,p_dev:SV.uid});CM=null;toast(ic("flag",26),"Missão encerrada","");dev()}catch(e){toast(ic("lock",26),"Erro",e.message.slice(0,60))}};
+ACT2.dev=()=>dev();
+ACT2.dIt=()=>{let h=`<h2>Itens da atualização</h2><p class="mut">Itens novos por versão, mais os itens exclusivos dos 6 primeiros Atos do passe.</p>`;
+["2.2.1","2.2.0"].forEach(v=>{const V=NEWV.filter(i=>i.v==v);h+=`<h2 style="margin-top:14px">Versão ${v} (${V.length} itens)</h2>`;IKT.forEach(([kd,nm])=>{const L=V.filter(i=>i.kind==kd||(kd=="w"&&i.kind=="a"));if(!L.length)return;h+=`<h3>${nm} (${L.length})</h3><div class="igr">`+L.map(i=>`<div class="ic2"><div class="pvw">${prevK(i.kind,i.id,i.r,i.n)}</div>${i.kind=="t"||i.kind=="p"?"":`<b>${esc(i.n)}</b>`}<small style="color:${RAR[i.r][2]}">${RAR[i.r][0]}</small><small class="mut">${i.src=="pass"?"Passe · Ato "+ROM(i.act):i.src=="gem"?"Gemas: "+gpr(i):"Moedas: "+price(i)+(gpr(i)?" ou "+gpr(i)+" gemas":"")}</small></div>`).join("")+`</div>`})});
+h+=`<h3>Títulos do passe (limitados)</h3><div class="igr">`+[1,2,3,4,5,6].map(n=>`<div class="ic2"><div class="pvw"><span class="tpv" style="color:${RAR.x[2]}">${esc(actTitle(n))}</span></div><small class="mut">Passe · Ato ${ROM(n)} · nível 40</small></div>`).join("")+`</div><button data-a="dev">Voltar</button>`;pn(h,1)};
 ACT2.dCo=()=>{SV.coins+=1000;save();mp();toast(ic("coin",26),"+1000 moedas","Modo de teste")};
 ACT2.dXp=()=>{addXP(600);save();toast(ic("ticket",26),"+600 XP","Modo de teste")};
 $("bFr").onclick=()=>showFr();$("bDu").onclick=()=>showDu();
-if(sbOn()){seasonInfo().then(()=>claimWeeks())}
+if(sbOn()){seasonInfo().then(()=>claimWeeks());commInfo()}
 
 /* ===== v2 PWA e idioma ===== */
 const MOB=/Android|iPhone|iPad|iPod/i.test(navigator.userAgent),STAND=matchMedia("(display-mode: standalone)").matches||navigator.standalone;
@@ -897,614 +1455,9 @@ $("pwaB").onclick=async()=>{if(DEF){DEF.prompt();try{await DEF.userChoice}catch(
 $("pwaX").onclick=()=>{try{localStorage.setItem("eu_pwa","1")}catch(e){}$("pwa").style.display="none";document.body.classList.remove("hasPwa")};
 setTimeout(pwaShow,1500);
 if("serviceWorker" in navigator&&/^https?:/.test(location.protocol))navigator.serviceWorker.register("sw.js").catch(()=>{});
-function showLang(){pn(`<h2>Idioma</h2><p class="mut">Language · Idioma</p><div class="shb"><button data-a="lg" data-l="pt" ${LG=="pt"?"":'class="alt"'}>Português</button><button data-a="lg" data-l="en" ${LG=="en"?"":'class="alt"'}>English</button><button data-a="lg" data-l="es" ${LG=="es"?"":'class="alt"'}>Español</button></div><p class="note">Os nomes de países, a interface e as dicas são traduzidos. As curiosidades dos países continuam em português.</p>`)}
-ACT2.lg=b=>{const l=b.dataset.l;if(l!=LG){try{localStorage.setItem("eu_lang",l)}catch(e){}chk("lng");location.reload()}};
-$("bLg").onclick=showLang;
+$("bInv").onclick=()=>showInv();
 
-/* ===== v2 idiomas: inglês e espanhol (interface, nomes de países e dicas) ===== */
-(function(){if(LG=="pt")return;const li=LG=="en"?1:2;document.documentElement.lang=LG;
-const UI=`Jogar|Play|Jugar
-Desafio diário|Daily challenge|Desafío diario
-Fácil|Easy|Fácil
-Médio|Medium|Medio
-Difícil|Hard|Difícil
-Otomano|Ottoman|Otomano
-Romano|Roman|Romano
-Missões|Missions|Misiones
-Loja|Shop|Tienda
-Passe|Pass|Pase
-Ranking|Ranking|Clasificación
-Amigos|Friends|Amigos
-Duelo|Duel|Duelo
-Conquistas|Achievements|Logros
-Perfil|Profile|Perfil
-Idioma|Language|Idioma
-Álbum|Album|Álbum
-Estatísticas|Stats|Estadísticas
-Esconder mapa (mais difícil)|Hide map (harder)|Ocultar mapa (más difícil)
-Descubra o país da Eurásia em 5 tentativas|Find the Eurasian country in 5 tries|Descubre el país de Eurasia en 5 intentos
-Digite um país...|Type a country...|Escribe un país...
-TENTAR|GUESS|PROBAR
-Jogar de novo|Play again|Jugar de nuevo
-Compartilhar|Share|Compartir
-Instale o Euradle na tela inicial|Install Euradle on your home screen|Instala Euradle en tu pantalla de inicio
-Instalar|Install|Instalar
-Aproximar|Zoom in|Acercar
-Afastar|Zoom out|Alejar
-Passe o cursor (ou toque) nos países para ver bandeira, capital, população e curiosidade.|Hover (or tap) countries to see flag, capital, population and trivia.|Pasa el cursor (o toca) los países para ver bandera, capital, población y curiosidad.
-Não foi possível carregar o mapa (verifique sua conexão).|Could not load the map (check your connection).|No se pudo cargar el mapa (revisa tu conexión).
-Capital:|Capital:|Capital:
-População:|Population:|Población:
-Curiosidade:|Trivia:|Curiosidad:
-Vizinhos:|Neighbors:|Vecinos:
-Faz parte de:|Member of:|Forma parte de:
-Idiomas:|Languages:|Idiomas:
-Costa:|Coast:|Costa:
-Natureza:|Nature:|Naturaleza:
-Esportes:|Sports:|Deportes:
-Já fez parte de:|Once part of:|Fue parte de:
-País não encontrado nesta dificuldade.|Country not found in this difficulty.|País no encontrado en esta dificultad.
-Você já tentou esse.|You already tried that one.|Ya probaste ese.
-Seja mais específico: {0}|Be more specific: {0}|Sé más específico: {0}
-Vitória! Era {0} ({1}).|Victory! It was {0} ({1}).|¡Victoria! Era {0} ({1}).
-Fim de jogo. Era|Game over. It was|Fin del juego. Era
-A bandeira agora está colorida!|The flag now has color!|¡La bandera ahora tiene color!
-Última chance! 4 países destacados no mapa — um é o secreto.|Last chance! 4 countries are highlighted on the map: one is the secret.|¡Última oportunidad! 4 países resaltados en el mapa: uno es el secreto.
-Última chance! Um destes é o secreto: {0}|Last chance! One of these is the secret: {0}|¡Última oportunidad! Uno de estos es el secreto: {0}
-O país secreto tem {0} letras no nome (sem acentos e espaços).|The secret country's name has {0} letters (no accents or spaces).|El país secreto tiene {0} letras en el nombre (sin acentos ni espacios).
-A bandeira começa em preto e branco e só ganha cor nas 2 últimas tentativas.|The flag starts in black and white and only gets color in the last 2 attempts.|La bandera empieza en blanco y negro y solo toma color en los 2 últimos intentos.
-{0}% da bandeira revelada|{0}% of the flag revealed|{0}% de la bandera revelada
-{0} letra(s) encontrada(s)|{0} letter(s) found|{0} letra(s) encontrada(s)
-{0}% da bandeira|{0}% of the flag|{0}% de la bandera
-Modo secreto desbloqueado! Abra o menu e aperte Jogar (vale só até recarregar a página).|Secret mode unlocked! Open the menu and press Play (until you reload the page).|¡Modo secreto desbloqueado! Abre el menú y pulsa Jugar (hasta recargar la página).
-Países muito conhecidos ({0} países possíveis)|Well-known countries ({0} possible)|Países muy conocidos ({0} posibles)
-Inclui países menos famosos ({0} países possíveis)|Includes less famous countries ({0} possible)|Incluye países menos famosos ({0} posibles)
-Todos os países da Eurásia e do Oriente Médio ({0} países possíveis)|All Eurasian and Middle Eastern countries ({0} possible)|Todos los países de Eurasia y Oriente Medio ({0} posibles)
-Modo secreto: países do Império Otomano ({0} países possíveis)|Secret mode: Ottoman Empire countries ({0} possible)|Modo secreto: países del Imperio Otomano ({0} posibles)
-Modo secreto: países do Império Romano ({0} países possíveis)|Secret mode: Roman Empire countries ({0} possible)|Modo secreto: países del Imperio Romano ({0} posibles)
-Modo secreto: países da Dinastia Qing ({0} países possíveis)|Secret mode: Qing Dynasty countries ({0} possible)|Modo secreto: países de la dinastía Qing ({0} posibles)
-Hoje: #{0} · um país para todos|Today: #{0} · one country for everyone|Hoy: #{0} · un país para todos
-Concluído em {0}/5 · sequência {1}|Done in {0}/5 · streak {1}|Completado en {0}/5 · racha {1}
-Concluído hoje · sequência {0}|Done today · streak {0}|Completado hoy · racha {0}
-Desafio diário #{0}|Daily challenge #{0}|Desafío diario #{0}
-Você acertou em {0}/5.|You got it in {0}/5.|Acertaste en {0}/5.
-O país secreto tem mais habitantes que {0}.|The secret country has more people than {0}.|El país secreto tiene más habitantes que {0}.
-O país secreto tem menos habitantes que {0}.|The secret country has fewer people than {0}.|El país secreto tiene menos habitantes que {0}.
-Hoje não deu. Volte amanhã.|Not today. Come back tomorrow.|Hoy no se pudo. Vuelve mañana.
-Um país por dia, o mesmo para todos os jogadores.|One country a day, the same for every player.|Un país por día, el mismo para todos los jugadores.
-Jogar agora|Play now|Jugar ahora
-Próximo desafio em {0}|Next challenge in {0}|Próximo desafío en {0}
-Loja do dia|Daily shop|Tienda del día
-Loja da semana|Weekly shop|Tienda de la semana
-renova em {0}|resets in {0}|se renueva en {0}
-moedas|coins|monedas
-{0} moedas|{0} coins|{0} monedas
-+{0} moedas|+{0} coins|+{0} monedas
-+{0} XP do passe|+{0} pass XP|+{0} XP del pase
-Já adquirido|Owned|Adquirido
-Bandeira de perfil|Profile flag|Bandera de perfil
-Disponível na loja|Available in the shop|Disponible en la tienda
-A loja é igual para todos os jogadores. Ganhe moedas jogando, cumprindo missões e avançando no passe.|The shop is the same for every player. Earn coins by playing, completing missions and advancing the pass.|La tienda es igual para todos. Gana monedas jugando, cumpliendo misiones y avanzando en el pase.
-Moedas insuficientes|Not enough coins|Monedas insuficientes
-Faltam {0} moedas|{0} more coins needed|Faltan {0} monedas
-Missões diárias|Daily missions|Misiones diarias
-moedas · renovam em {0}|coins · reset in {0}|monedas · se renuevan en {0}
-Receber|Claim|Reclamar
-Recebido|Claimed|Reclamado
-Fácil · {0} moedas + {1} XP|Easy · {0} coins + {1} XP|Fácil · {0} monedas + {1} XP
-Média · {0} moedas + {1} XP|Medium · {0} coins + {1} XP|Media · {0} monedas + {1} XP
-Difícil · {0} moedas + {1} XP|Hard · {0} coins + {1} XP|Difícil · {0} monedas + {1} XP
-Dias completos: {0}|Completed days: {0}|Días completos: {0}
-Cumpra as 3 missões do dia para somar um dia completo.|Complete the day's 3 missions to add a full day.|Cumple las 3 misiones del día para sumar un día completo.
-{0} dias completos|{0} full days|{0} días completos
-Jogue {0} partidas|Play {0} games|Juega {0} partidas
-Ganhe {0} partida|Win {0} game|Gana {0} partida
-Ganhe {0} partidas|Win {0} games|Gana {0} partidas
-Consulte {0} países no mapa|Inspect {0} countries on the map|Consulta {0} países en el mapa
-Ganhe uma partida em até 3 tentativas|Win a game in 3 attempts or fewer|Gana una partida en 3 intentos o menos
-Ganhe uma partida no modo Médio ou Difícil|Win a game in Medium or Hard mode|Gana una partida en modo Medio o Difícil
-Receba dicas de 3 tipos diferentes|Receive clues of 3 different types|Recibe pistas de 3 tipos distintos
-Complete o desafio diário|Complete the daily challenge|Completa el desafío diario
-Ganhe uma partida no modo Difícil|Win a game in Hard mode|Gana una partida en modo Difícil
-Ganhe com no máximo 20% da bandeira revelada|Win with at most 20% of the flag revealed|Gana con máximo 20% de la bandera revelada
-Ganhe 3 partidas seguidas|Win 3 games in a row|Gana 3 partidas seguidas
-Passe do Ato {0}|Act {0} Pass|Pase del Acto {0}
-Título: Veterano do Ato {0}|Title: Act {0} Veteran|Título: Veterano del Acto {0}
-Ganhe XP vencendo partidas, cumprindo missões e jogando o desafio diário.|Earn XP by winning games, completing missions and playing the daily challenge.|Gana XP ganando partidas, cumpliendo misiones y jugando el desafío diario.
-O próximo Ato ainda não começou. O XP que você ganhar até lá já conta para o passe.|The next Act has not started yet. XP you earn until then already counts for the pass.|El próximo Acto aún no comenzó. El XP que ganes hasta entonces ya cuenta para el pase.
-Nível|Level|Nivel
-taxa de vitória|win rate|tasa de victorias
-partidas|games|partidas
-vitórias|wins|victorias
-tentativas por vitória|attempts per win|intentos por victoria
-melhor sequência|best streak|mejor racha
-sequência atual|current streak|racha actual
-tempo de jogo|play time|tiempo de juego
-Em quantas tentativas você acerta|How many attempts you need|En cuántos intentos aciertas
-Erro|Miss|Error
-Por modo|By mode|Por modo
-Últimas {0} partidas|Last {0} games|Últimas {0} partidas
-Países mais acertados|Most guessed countries|Países más acertados
-Países que mais te derrotaram|Countries that beat you most|Países que más te derrotaron
-Aproveitamento por região|Success by region|Rendimiento por región
-Tipos de dica recebidos|Clue types received|Tipos de pista recibidos
-Geral|General|General
-países vencidos|countries won|países ganados
-países consultados|countries inspected|países consultados
-conquistas|achievements|logros
-desafios diários|daily challenges|desafíos diarios
-bandeira revelada, em média|flag revealed, on average|bandera revelada, en promedio
-Álbum de Maestrias|Mastery Album|Álbum de maestrías
-{0}/{1} completos|{0}/{1} complete|{0}/{1} completos
-Página {0}/{1}|Page {0}/{1}|Página {0}/{1}
-Anterior|Previous|Anterior
-Próxima|Next|Siguiente
-{0} · {1} vitórias|{0} · {1} wins|{0} · {1} victorias
-{0} · {1} vitória|{0} · {1} win|{0} · {1} victoria
-{0}/{1} vitórias ({2}%)|{0}/{1} wins ({2}%)|{0}/{1} victorias ({2}%)
-Compartilhar resultado|Share result|Compartir resultado
-Salvar imagem|Save image|Guardar imagen
-Imagem salva|Image saved|Imagen guardada
-Duelo com amigo|Duel with a friend|Duelo con un amigo
-Criar sala|Create room|Crear sala
-Entrar|Join|Entrar
-Entrar em uma sala|Join a room|Entrar a una sala
-Os dois jogam o mesmo país. Vence quem acertar com menos tentativas; no empate, quem for mais rápido.|Both play the same country. Whoever guesses in fewer attempts wins; ties go to the faster one.|Ambos juegan el mismo país. Gana quien acierte con menos intentos; en empate, el más rápido.
-Resultado do duelo|Duel result|Resultado del duelo
-Aguardando o amigo...|Waiting for your friend...|Esperando al amigo...
-Adicionar|Add|Añadir
-Adicionar amigo|Add friend|Añadir amigo
-Ranking entre amigos|Friends ranking|Clasificación entre amigos
-Remover|Remove|Quitar
-@tag do amigo|friend's @tag|@tag del amigo
-Conta e nuvem|Account & cloud|Cuenta y nube
-Salvar na nuvem|Save to cloud|Guardar en la nube
-Atualizar na nuvem|Update cloud|Actualizar la nube
-Restaurar em outro aparelho|Restore on another device|Restaurar en otro dispositivo
-Restaurar|Restore|Restaurar
-Salve seu progresso e continue em outro aparelho usando um código.|Save your progress and continue on another device with a code.|Guarda tu progreso y continúa en otro dispositivo con un código.
-Os nomes de países, a interface e as dicas são traduzidos. As curiosidades dos países continuam em português.|Country names, the interface and clues are translated. Country trivia stays in Portuguese.|Los nombres de países, la interfaz y las pistas están traducidos. Las curiosidades de los países siguen en portugués.
-Procurar jogador|Find player|Buscar jugador
-Nome de exibição|Display name|Nombre visible
-Salvar|Save|Guardar
-Cancelar|Cancel|Cancelar
-Personalizar|Customize|Personalizar
-Personalização|Customization|Personalización
-Títulos|Titles|Títulos
-Foto de perfil|Profile photo|Foto de perfil
-Enviar imagem|Upload image|Subir imagen
-Mostrar minha foto no ranking|Show my photo in the ranking|Mostrar mi foto en la clasificación
-Partidas: {0} · Vitórias: {1}|Games: {0} · Wins: {1}|Partidas: {0} · Victorias: {1}
-Moldura da foto|Photo frame|Marco de la foto
-Cor do nome|Name color|Color del nombre
-Emblema|Badge|Insignia
-Frase do perfil|Profile phrase|Frase del perfil
-País favorito|Favorite country|País favorito
-Padrão|Default|Predeterminado
-Nenhum|None|Ninguno
-Sem moldura|No frame|Sin marco
-Habilidade|Skill|Habilidad
-Rotina|Routine|Rutina
-Mapa|Map|Mapa
-Coleção|Collection|Colección
-Dicas|Clues|Pistas
-Desafios|Challenges|Desafíos
-Segredos|Secrets|Secretos
-Maestria|Mastery|Maestría
-Conquista secreta|Secret achievement|Logro secreto
-Ocultar conquistas secretas ainda bloqueadas|Hide locked secret achievements|Ocultar logros secretos bloqueados
-{0}/{1} conquistas|{0}/{1} achievements|{0}/{1} logros
-Faltam {0}:|Missing {0}:|Faltan {0}:
-Clique no país no mapa para consultá-lo. No modo Difícil todos ficam disponíveis.|Click the country on the map to inspect it. In Hard mode all are available.|Haz clic en el país del mapa para consultarlo. En modo Difícil todos están disponibles.
-Global|Global|Global
-Diário|Daily|Diario
-Semanal|Weekly|Semanal
-Ninguém no ranking ainda.|Nobody in the ranking yet.|Aún no hay nadie en la clasificación.
-Sua posição|Your position|Tu posición
-Jogue uma partida para entrar no ranking.|Play a game to enter the ranking.|Juega una partida para entrar en la clasificación.
-Jogador não encontrado.|Player not found.|Jugador no encontrado.
-Buscar|Search|Buscar
-Maiores vencedores (por vitórias).|Top winners (by wins).|Mayores ganadores (por victorias).
-Toque num jogador para ver o perfil.|Tap a player to see the profile.|Toca un jugador para ver el perfil.
-Vitórias de hoje (reinicia à meia-noite, horário de Brasília).|Today's wins (resets at midnight, Brasília time).|Victorias de hoy (se reinicia a medianoche, hora de Brasilia).
-Os 100 melhores de cada semana ganham um título.|The top 100 of each week earn a title.|Los 100 mejores de cada semana ganan un título.
-A temporada ainda não começou. Aguarde a liberação do próximo Ato.|The season has not started yet. Wait for the next Act to be released.|La temporada aún no comenzó. Espera la liberación del próximo Acto.
-Ato {0} · Semana {1}/12 · termina em {2}|Act {0} · Week {1}/12 · ends in {2}|Acto {0} · Semana {1}/12 · termina en {2}
-Novo título|New title|Nuevo título
-Título de temporada|Season title|Título de temporada
-Maestria: {0}|Mastery: {0}|Maestría: {0}
-Brilho dourado|Golden glow|Brillo dorado
-Som exclusivo|Exclusive sound|Sonido exclusivo
-Mapa roxo|Purple map|Mapa morado
-Título do país|Country title|Título del país
-Recompensa do passe|Pass reward|Recompensa del pase
-Título do Ato|Act title|Título del Acto
-Primeira tentativa ou nada|First try or nothing|Primer intento o nada
-Maratonista|Marathoner|Maratonista
-Jogador|Player|Jugador
-Iniciante|Beginner|Principiante
-Fechar|Close|Cerrar
-Menu|Menu|Menú`;
-const NM=`BR|Brazil|Brasil
-FR|France|Francia
-DE|Germany|Alemania
-IT|Italy|Italia
-ES|Spain|España
-PT|Portugal|Portugal
-GB|United Kingdom|Reino Unido
-IE|Ireland|Irlanda
-NL|Netherlands|Países Bajos
-BE|Belgium|Bélgica
-CH|Switzerland|Suiza
-AT|Austria|Austria
-SE|Sweden|Suecia
-NO|Norway|Noruega
-DK|Denmark|Dinamarca
-FI|Finland|Finlandia
-IS|Iceland|Islandia
-PL|Poland|Polonia
-CZ|Czechia|Chequia
-SK|Slovakia|Eslovaquia
-HU|Hungary|Hungría
-RO|Romania|Rumanía
-BG|Bulgaria|Bulgaria
-GR|Greece|Grecia
-HR|Croatia|Croacia
-SI|Slovenia|Eslovenia
-RS|Serbia|Serbia
-BA|Bosnia and Herzegovina|Bosnia y Herzegovina
-ME|Montenegro|Montenegro
-AL|Albania|Albania
-MK|North Macedonia|Macedonia del Norte
-XK|Kosovo|Kosovo
-MD|Moldova|Moldavia
-UA|Ukraine|Ucrania
-BY|Belarus|Bielorrusia
-LT|Lithuania|Lituania
-LV|Latvia|Letonia
-EE|Estonia|Estonia
-RU|Russia|Rusia
-TR|Turkey|Turquía
-CY|Cyprus|Chipre
-MT|Malta|Malta
-LU|Luxembourg|Luxemburgo
-AD|Andorra|Andorra
-MC|Monaco|Mónaco
-SM|San Marino|San Marino
-VA|Vatican City|Ciudad del Vaticano
-LI|Liechtenstein|Liechtenstein
-GE|Georgia|Georgia
-AM|Armenia|Armenia
-AZ|Azerbaijan|Azerbaiyán
-KZ|Kazakhstan|Kazajistán
-UZ|Uzbekistan|Uzbekistán
-TM|Turkmenistan|Turkmenistán
-KG|Kyrgyzstan|Kirguistán
-TJ|Tajikistan|Tayikistán
-AF|Afghanistan|Afganistán
-IR|Iran|Irán
-IQ|Iraq|Irak
-SY|Syria|Siria
-LB|Lebanon|Líbano
-IL|Israel|Israel
-JO|Jordan|Jordania
-SA|Saudi Arabia|Arabia Saudita
-YE|Yemen|Yemen
-OM|Oman|Omán
-AE|United Arab Emirates|Emiratos Árabes Unidos
-QA|Qatar|Catar
-KW|Kuwait|Kuwait
-BH|Bahrain|Baréin
-EG|Egypt|Egipto
-IN|India|India
-PK|Pakistan|Pakistán
-NP|Nepal|Nepal
-BT|Bhutan|Bután
-BD|Bangladesh|Bangladés
-LK|Sri Lanka|Sri Lanka
-MV|Maldives|Maldivas
-MM|Myanmar|Myanmar
-TH|Thailand|Tailandia
-LA|Laos|Laos
-KH|Cambodia|Camboya
-VN|Vietnam|Vietnam
-MY|Malaysia|Malasia
-SG|Singapore|Singapur
-BN|Brunei|Brunéi
-ID|Indonesia|Indonesia
-PH|Philippines|Filipinas
-TL|Timor-Leste|Timor Oriental
-CN|China|China
-MN|Mongolia|Mongolia
-KP|North Korea|Corea del Norte
-KR|South Korea|Corea del Sur
-JP|Japan|Japón
-TW|Taiwan|Taiwán
-DZ|Algeria|Argelia
-AO|Angola|Angola
-BJ|Benin|Benín
-BW|Botswana|Botsuana
-BF|Burkina Faso|Burkina Faso
-BI|Burundi|Burundi
-CV|Cape Verde|Cabo Verde
-CM|Cameroon|Camerún
-CF|Central African Republic|República Centroafricana
-TD|Chad|Chad
-KM|Comoros|Comoras
-CG|Congo|Congo
-CD|DR Congo|RD del Congo
-CI|Ivory Coast|Costa de Marfil
-DJ|Djibouti|Yibuti
-GQ|Equatorial Guinea|Guinea Ecuatorial
-ER|Eritrea|Eritrea
-SZ|Eswatini|Esuatini
-ET|Ethiopia|Etiopía
-GA|Gabon|Gabón
-GM|Gambia|Gambia
-GH|Ghana|Ghana
-GN|Guinea|Guinea
-GW|Guinea-Bissau|Guinea-Bisáu
-KE|Kenya|Kenia
-LS|Lesotho|Lesoto
-LR|Liberia|Liberia
-LY|Libya|Libia
-MG|Madagascar|Madagascar
-MW|Malawi|Malaui
-ML|Mali|Malí
-MR|Mauritania|Mauritania
-MU|Mauritius|Mauricio
-MA|Morocco|Marruecos
-MZ|Mozambique|Mozambique
-NA|Namibia|Namibia
-NE|Niger|Níger
-NG|Nigeria|Nigeria
-RW|Rwanda|Ruanda
-ST|São Tomé and Príncipe|Santo Tomé y Príncipe
-SN|Senegal|Senegal
-SC|Seychelles|Seychelles
-SL|Sierra Leone|Sierra Leona
-SO|Somalia|Somalia
-ZA|South Africa|Sudáfrica
-SS|South Sudan|Sudán del Sur
-SD|Sudan|Sudán
-TZ|Tanzania|Tanzania
-TG|Togo|Togo
-TN|Tunisia|Túnez
-UG|Uganda|Uganda
-ZM|Zambia|Zambia
-ZW|Zimbabwe|Zimbabue
-AG|Antigua and Barbuda|Antigua y Barbuda
-AR|Argentina|Argentina
-BS|Bahamas|Bahamas
-BB|Barbados|Barbados
-BZ|Belize|Belice
-BO|Bolivia|Bolivia
-CA|Canada|Canadá
-CL|Chile|Chile
-CO|Colombia|Colombia
-CR|Costa Rica|Costa Rica
-CU|Cuba|Cuba
-DM|Dominica|Dominica
-DO|Dominican Republic|República Dominicana
-EC|Ecuador|Ecuador
-SV|El Salvador|El Salvador
-GD|Grenada|Granada
-GT|Guatemala|Guatemala
-GY|Guyana|Guyana
-HT|Haiti|Haití
-HN|Honduras|Honduras
-JM|Jamaica|Jamaica
-MX|Mexico|México
-NI|Nicaragua|Nicaragua
-PA|Panama|Panamá
-PY|Paraguay|Paraguay
-PE|Peru|Perú
-KN|Saint Kitts and Nevis|San Cristóbal y Nieves
-LC|Saint Lucia|Santa Lucía
-VC|Saint Vincent and the Grenadines|San Vicente y las Granadinas
-SR|Suriname|Surinam
-TT|Trinidad and Tobago|Trinidad y Tobago
-US|United States|Estados Unidos
-UY|Uruguay|Uruguay
-VE|Venezuela|Venezuela
-AU|Australia|Australia
-FJ|Fiji|Fiyi
-KI|Kiribati|Kiribati
-MH|Marshall Islands|Islas Marshall
-FM|Micronesia|Micronesia
-NR|Nauru|Nauru
-NZ|New Zealand|Nueva Zelanda
-PW|Palau|Palaos
-PG|Papua New Guinea|Papúa Nueva Guinea
-WS|Samoa|Samoa
-SB|Solomon Islands|Islas Salomón
-TO|Tonga|Tonga
-TV|Tuvalu|Tuvalu
-VU|Vanuatu|Vanuatu
-PS|Palestine|Palestina`;
-const CLUE=`LL|have no access to the sea|no tienen acceso al mar
-IS|are island countries|son países insulares
-EU|are part of the European Union|forman parte de la Unión Europea
-NA|are NATO members|son miembros de la OTAN
-SU|were once part of the Soviet Union|formaron parte de la Unión Soviética
-EZ|use the euro|usan el euro
-MU|have a Muslim majority|tienen mayoría musulmana
-OR|have an Orthodox Christian majority|tienen mayoría cristiana ortodoxa
-CA|have a Catholic majority|tienen mayoría católica
-BU|have a Buddhist majority|tienen mayoría budista
-MO|are monarchies|son monarquías
-TU|speak languages of Turkic origin|hablan lenguas de origen túrquico
-SL|have Slavic languages as official|tienen lenguas eslavas como oficiales
-OP|are OPEC members|integran la OPEP
-NU|have nuclear weapons|poseen armas nucleares
-rEO|are in Eastern Europe|están en Europa del Este
-rEW|are in Western or Southern Europe|están en Europa occidental o meridional
-rNO|are in Northern Europe|están en el norte de Europa
-rCA|are in Central Asia|están en Asia Central
-rCU|are in the Caucasus|están en el Cáucaso
-rME|are in the Middle East|están en Oriente Medio
-rSA|are in South Asia|están en el sur de Asia
-rEA|are in East Asia|están en Asia Oriental
-rSE|are in Southeast Asia|están en el sudeste asiático
-CM|are or were ruled by communist parties|son o fueron gobernados por partidos comunistas
-AR|have Arabic as an official language|tienen el árabe como lengua oficial
-GC|belong to the Gulf Cooperation Council|integran el Consejo de Cooperación del Golfo
-PO|have Portuguese as an official language|tienen el portugués como lengua oficial
-rBA|are in the Balkans|están en los Balcanes
-rBL|are in the Baltic|están en el Báltico
-PE|have Persian as an important language|tienen el persa como lengua importante
-H_OT|were once part of the Ottoman Empire|formaron parte del Imperio Otomano
-H_RU|were once dominated by the Russian Empire|fueron dominados por el Imperio Ruso
-H_BR|were colonies or dominions of the British Empire|fueron colonias o dominios del Imperio Británico
-H_FR|were French colonies or protectorates|fueron colonias o protectorados franceses
-H_EU|once controlled overseas colonies|controlaron colonias de ultramar
-H_WP|were part of the Warsaw Pact|formaron parte del Pacto de Varsovia
-H_YU|were once part of Yugoslavia|formaron parte de Yugoslavia
-H_AX|fought on the Axis side in World War II|lucharon en el Eje en la Segunda Guerra Mundial
-H_NZ|were occupied by Nazi Germany|fueron ocupados por la Alemania nazi
-H_JP|were occupied by Japan in World War II|fueron ocupados por Japón en la Segunda Guerra Mundial
-H_MG|were reached by the Mongol Empire|fueron alcanzados por el Imperio Mongol
-H_SR|lay along the Silk Road|estaban a lo largo de la Ruta de la Seda
-H_CW|were Cold War battlegrounds|fueron escenario de disputas de la Guerra Fría
-E_WC|have hosted the football World Cup|han sido sede del Mundial de fútbol
-E_WW|are football world champions|son campeones del mundo de fútbol
-E_OL|have hosted the Summer Olympics|han sido sede de los Juegos Olímpicos de verano
-E_OW|have hosted the Winter Olympics|han sido sede de los Juegos Olímpicos de invierno
-E_F1|host Formula 1 races|reciben carreras de Fórmula 1
-E_CR|have a strong cricket tradition|tienen fuerte tradición en el críquet
-E_MA|have a strong martial arts tradition|tienen fuerte tradición en artes marciales
-E_WR|have a strong wrestling tradition|tienen fuerte tradición en la lucha libre
-A_BR|are in BRICS|integran los BRICS
-A_G2|are in the G20|forman parte del G20
-A_CF|saw recent armed conflicts|fueron escenario de conflictos armados recientes
-A_UE|are candidates to join the European Union|son candidatos a ingresar en la Unión Europea
-A_OC|belong to the Shanghai Cooperation Organisation|forman parte de la Organización de Cooperación de Shanghái
-A_AS|are ASEAN members|son miembros de la ASEAN
-A_AB|signed the Abraham Accords|firmaron los Acuerdos de Abraham
-A_RF|host large numbers of refugees|reciben gran número de refugiados
-A_TC|are big tech and semiconductor hubs|son grandes polos de tecnología y semiconductores
-C_EV|have won the Eurovision Song Contest|han ganado Eurovisión
-C_CY|use the Cyrillic alphabet|usan el alfabeto cirílico
-C_TE|have tea at the heart of their culture|tienen el té en el centro de su cultura
-C_WI|are major wine producers|son grandes productores de vino
-C_NY|celebrate Lunar New Year|celebran el Año Nuevo lunar
-C_FD|have world-famous cuisine|tienen gastronomía famosa en el mundo
-A_MS|are microstates|son microestados
-N_MT|have large mountain ranges|tienen grandes cadenas montañosas
-N_HI|have mountains above 4,000 m|tienen montañas de más de 4.000 m
-N_DS|have large deserts|tienen grandes desiertos
-N_FT|have extensive tropical forests|tienen extensos bosques tropicales
-N_TG|have vast boreal forests (taiga)|tienen vastos bosques boreales (taiga)
-N_VO|have active volcanoes|tienen volcanes activos
-N_EQ|are in zones of high seismic activity|están en zonas de gran actividad sísmica
-N_DN|are bathed by the Danube|están bañados por el Danubio
-N_MK|are crossed by the Mekong|son atravesados por el Mekong
-N_RN|are bathed by the Rhine|están bañados por el Rin
-N_TE|are crossed by the Tigris or Euphrates|son atravesados por el Tigris o el Éufrates
-N_MD|have a Mediterranean coast|tienen costa en el Mediterráneo
-N_BL|have a Baltic Sea coast|tienen costa en el mar Báltico
-N_NS|have a North Sea coast|tienen costa en el mar del Norte
-N_BK|have a Black Sea coast|tienen costa en el mar Negro
-N_CP|have a Caspian Sea coast|tienen costa en el mar Caspio
-N_PG|have a Persian Gulf coast|tienen costa en el golfo Pérsico
-N_PC|have a Pacific coast|tienen costa en el océano Pacífico
-N_IO|have an Indian Ocean coast|tienen costa en el océano Índico
-N_AO|have an Atlantic coast|tienen costa en el océano Atlántico
-N_RD|have a Red Sea coast|tienen costa en el mar Rojo
-N_TR|have a tropical climate|tienen clima tropical
-N_CD|have extremely harsh winters|tienen inviernos extremadamente duros
-N_PL|are dominated by plains|tienen un paisaje dominado por llanuras
-N_LK|have large lakes|tienen grandes lagos
-N_AI|are made up of many islands|están formados por muchas islas
-N_BS|have areas below sea level|tienen zonas bajo el nivel del mar
-L_EN|have English as an official language|tienen el inglés como lengua oficial
-L_FR|have French as an official language|tienen el francés como lengua oficial
-L_DE|have German as an official language|tienen el alemán como lengua oficial
-L_RU|have Russian as an official language|tienen el ruso como lengua oficial
-L_ZH|have Mandarin as an official language|tienen el mandarín como lengua oficial
-L_MS|speak Malay or Indonesian|hablan malayo o indonesio
-L_KO|speak Korean|hablan coreano
-L_RM|speak Romance languages|hablan lenguas romances
-L_GM|speak Germanic languages|hablan lenguas germánicas
-L_UR|speak Uralic languages|hablan lenguas urálicas
-L_GR|have Greek as an official language|tienen el griego como lengua oficial
-L_IA|speak Indo-Aryan languages|hablan lenguas indoarias
-L_IS|use scripts of Indian origin|usan escrituras de origen indio
-L_AB|use the Arabic script|usan la escritura árabe
-L_CJ|use Chinese characters|usan caracteres chinos
-L_BT|speak Baltic languages|hablan lenguas bálticas
-E_WF|have played a football World Cup final|han disputado una final del Mundial de fútbol
-E_EC|have won the European Championship|han ganado la Eurocopa
-E_CH|produced great chess masters|formaron grandes maestros de ajedrez
-E_BA|have a strong basketball tradition|tienen fuerte tradición en el baloncesto
-E_VL|have a strong volleyball tradition|tienen fuerte tradición en el voleibol
-E_BM|have a strong badminton tradition|tienen fuerte tradición en el bádminton
-E_SK|have a strong winter sports tradition|tienen fuerte tradición en deportes de invierno
-E_CC|have a strong cycling tradition|tienen fuerte tradición en el ciclismo
-E_HK|have a strong ice hockey tradition|tienen fuerte tradición en el hockey sobre hielo
-E_RG|have a rugby tradition|tienen tradición en el rugby
-E_TT|have a strong table tennis tradition|tienen fuerte tradición en el tenis de mesa
-H_CS|were part of Czechoslovakia|formaban parte de Checoslovaquia
-H_AH|were once part of the Austro-Hungarian Empire|formaron parte del Imperio austrohúngaro
-H_PT|had a Portuguese colonial presence|tuvieron presencia colonial portuguesa
-H_W1|were World War I battlefields|fueron campos de batalla de la Primera Guerra Mundial
-H_CR|were the stage of the Crusades|fueron escenario de las Cruzadas
-H_BZ|were once part of the Byzantine Empire|formaron parte del Imperio bizantino
-H_PR|were once part of the Persian Empire|formaron parte del Imperio persa
-H_MU|were once ruled by the Mughal Empire|fueron gobernados por el Imperio mogol
-H_VK|were reached by the Vikings|fueron alcanzados por los vikingos
-H_DV|were or are divided countries|fueron o son países divididos
-H_IN|gained independence after World War II|lograron la independencia tras la Segunda Guerra Mundial
-H_ON|were founding members of the UN|fueron miembros fundadores de la ONU
-H_CE|were founders of the European Union|fueron fundadores de la Unión Europea
-H_E4|joined the European Union from 2004|ingresaron en la Unión Europea desde 2004
-A_CS|are permanent members of the UN Security Council|son miembros permanentes del Consejo de Seguridad de la ONU
-A_EC|have one of the 20 largest economies|tienen una de las 20 mayores economías del mundo
-A_HD|have a very high HDI|tienen un IDH muy alto
-A_PC|have one of the highest GDPs per capita|tienen uno de los PIB per cápita más altos
-A_TR|are among the most visited tourist destinations|están entre los destinos turísticos más visitados
-A_NE|generate nuclear power|generan energía nuclear
-A_LA|belong to the Arab League|forman parte de la Liga Árabe
-A_OI|belong to the Organisation of Islamic Cooperation|forman parte de la Organización para la Cooperación Islámica
-A_AP|belong to APEC|forman parte del APEC
-A_CI|belong to the Commonwealth of Independent States|forman parte de la Comunidad de Estados Independientes
-A_SC|belong to the Schengen Area|forman parte del espacio Schengen
-A_CE|belong to the Council of Europe|forman parte del Consejo de Europa
-A_G7|are in the G7|forman parte del G7
-A_CW|belong to the Commonwealth|forman parte de la Commonwealth
-A_SP|have a semi-presidential system|tienen sistema semipresidencialista
-A_NB|have had many Nobel Prize winners|han tenido varios premios Nobel
-C_UN|have many UNESCO World Heritage sites|tienen muchos sitios del Patrimonio Mundial de la UNESCO
-C_CF|have a coffee tradition|tienen tradición cafetera
-C_BR|have a strong beer tradition|tienen fuerte tradición cervecera
-C_NW|celebrate Nowruz, the Persian New Year|celebran el Nowruz, el Año Nuevo persa
-C_SI|have a Shia Muslim majority|tienen mayoría musulmana chií
-C_NO|have a nomadic yurt tradition|tienen tradición nómada de las yurtas
-C_FF|are famous for film festivals|son famosos por sus festivales de cine
-C_RC|have rice at the base of their cuisine|tienen el arroz como base de su cocina
-C_SA|have a sauna tradition|tienen tradición de sauna
-C_HN|have a large Hindu population|tienen una importante población hindú
-B_DIR|border each other|hacen frontera entre sí`;
-const mk=raw=>{const ex=new Map(),pt=[];raw.split("\n").forEach(l=>{const a=l.split("|");if(a.length<3)return;const k=a[0],v=a[li];if(/\{\d\}/.test(k))pt.push([new RegExp("^"+k.replace(/[.*+?^$()|[\]\\]/g,"\\$&").replace(/\{\d\}/g,"(.+?)")+"$"),v]);else ex.set(k,v)});return{ex,pt}};
-const U=mk(UI),pn_={};D.forEach(d=>pn_[d.c]=d.n);WORLD.forEach(([c,n])=>pn_[c]=n);
-const NMAP={};NM.split("\n").forEach(l=>{const a=l.split("|");if(pn_[a[0]])NMAP[pn_[a[0]]]=a[li]});
-const CL={};CLUE.split("\n").forEach(l=>{const a=l.split("|");CL[a[0]]=a[li]});
-const REV={};Object.keys(T).forEach(k=>REV[T[k]]=k);
-const names=Object.keys(NMAP).sort((a,b)=>b.length-a.length),NRE=new RegExp("(?<![\\p{L}])("+names.map(x=>x.replace(/[.*+?^$()|[\]\\]/g,"\\$&")).join("|")+")(?![\\p{L}])","gu");
-const RA={Comum:["Common","Común"],Raro:["Rare","Raro"],"Épico":["Epic","Épico"],"Lendário":["Legendary","Legendario"],"Título":["Title","Título"],Banner:["Banner","Banner"],Moldura:["Frame","Marco"]};
-const own=LG=="en"?["Both countries ","Los dos países "]:["Los dos países ","Los dos países "];
-function one(t){if(U.ex.has(t))return U.ex.get(t);for(const[re,v]of U.pt){const m=t.match(re);if(m)return v.replace(/\{(\d)\}/g,(_,i)=>m[+i+1])}
-let m=t.match(/^Os dois países (.+)\.$/);if(m){const k=REV[m[1]];if(k&&CL[k])return(LG=="en"?"Both countries ":"Los dos países ")+CL[k]+".";const b=m[1].match(/^têm (.+) como vizinho$/);if(b)return LG=="en"?"Both countries border "+b[1]+".":"Los dos países tienen a "+b[1]+" como vecino."}
-m=t.match(/^(Comum|Raro|Épico|Lendário) · (Título|Banner|Moldura)$/);if(m)return RA[m[1]][li-1]+" · "+RA[m[2]][li-1];return null}
-function tx(s){const t=s.trim();if(!t)return s;let r=one(t);if(r==null){const ps=t.split(/(?<=[.!?])\s+/);if(ps.length>1){let ok=0;const o=ps.map(p=>{const q=one(p);if(q!=null){ok++;return q}return p});if(ok)r=o.join(" ")}}
-if(r==null)r=t;r=r.replace(NRE,x=>NMAP[x]||x);return r==t?s:s.replace(t,r)}
-const AT_=["placeholder","title","aria-label"];
-function walk(n){if(n.nodeType==3){if(n.parentNode&&/^(SCRIPT|STYLE|TEXTAREA)$/.test(n.parentNode.nodeName))return;const v=tx(n.nodeValue);if(v!==n.nodeValue)n.nodeValue=v}else if(n.nodeType==1){AT_.forEach(a=>{const v=n.getAttribute&&n.getAttribute(a);if(v){const w=tx(v);if(w!==v)n.setAttribute(a,w)}});n.childNodes.forEach(walk)}}
-walk(document.body);new MutationObserver(ms=>{ms.forEach(m=>{if(m.type=="characterData")walk(m.target);else m.addedNodes.forEach(walk)})}).observe(document.body,{childList:true,subtree:true,characterData:true});
-window.NMAP_=NMAP;
-const alt=c=>NM.split("\n").find(l=>l.startsWith(c+"|"));
-window.ALT={};D.forEach(d=>{const l=alt(d.c);if(l){const a=l.split("|");ALT[d.c]=[a[1],a[2]]}});
-})();
+
 
 setInterval(()=>{if(!over&&!document.hidden&&$("menu").style.display=="none"&&$("pn").style.display!="flex"){SV.tm++;if(SV.tm%60==0){const m=SV.tm/60;if(m>=30)chk("t30");if(m>=120)chk("t2h");if(m>=600)chk("t10h");save()}}},1000);
 document.querySelectorAll("[data-ic]").forEach(e=>e.innerHTML=ic(e.dataset.ic,e.tagName=="BUTTON"?20:26));
